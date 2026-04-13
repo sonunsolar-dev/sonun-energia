@@ -192,7 +192,7 @@
         <!-- Floating Stats -->
         <div class="absolute bottom-10 right-10 hidden lg:flex flex-col gap-4 z-10">
             <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-white">
-                <div class="text-3xl font-bold text-safety">+500</div>
+                <div class="text-3xl font-bold text-safety">+200</div>
                 <div class="text-xs uppercase tracking-wider opacity-70">Obras Entregues</div>
             </div>
             <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-2xl text-white">
@@ -520,17 +520,22 @@
                 </div>
 
                 <!-- Newsletter -->
-                <div>
-                    <h4 class="font-bold text-lg mb-6">Newsletter</h4>
-                    <p class="text-slate-400 mb-4 text-sm">Receba novidades sobre tecnologia solar.</p>
-                    <div class="flex gap-2">
-                        <input type="email" placeholder="Seu e-mail" class="bg-white/5 border border-white/10 rounded-lg px-4 py-2 outline-none focus:border-safety w-full text-sm">
-                        <button class="bg-safety text-navy p-2 rounded-lg hover:brightness-110 transition-all">
-                            <i data-lucide="send" class="w-5 h-5"></i>
-                        </button>
-                    </div>
-                </div>
-            </div>
+<div>
+  <h4 class="font-bold text-lg mb-6">Newsletter</h4>
+  <p class="text-slate-400 mb-4 text-sm">Receba novidades sobre tecnologia solar.</p>
+  
+  <form action="https://formspree.io/f/mwvakapq" method="POST" class="flex gap-2">
+    <input type="email" name="email" placeholder="Seu e-mail" 
+           class="bg-white/5 border border-white/10 rounded-lg px-4 py-2 outline-none focus:border-safety w-full text-sm" 
+           required>
+    <button type="submit" class="bg-safety text-navy p-2 rounded-lg hover:brightness-110 transition-all">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 512 512" class="w-5 h-5">
+        <path d="M476 3L36 270c-15 9-14 31 2 38l111 45 45 111c7 16 29 17 38 2l267-440c9-15-7-31-22-22z"/>
+      </svg>
+    </button>
+  </form>
+</div>
+
 
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
                 <p>&copy; 2026 SONUN Energia Solar e Baterias. Todos os direitos reservados.</p>
