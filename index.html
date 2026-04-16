@@ -370,7 +370,7 @@
 
     <div style="background: #f8fafc; padding: 15px; border-radius: 15px; border: 1px solid #edf2f7;">
         
-        <p style="font-weight: 800; color: #003366; font-size: 11px; text-transform: uppercase; border-bottom: 2px solid #003366; padding-bottom: 5px; margin-bottom: 10px;">Equipamentos em Uso</p>
+        <p style="font-weight: 800; color: #003366; font-size: 11px; text-transform: uppercase; border-bottom: 2px solid #003366; padding-bottom: 5px; margin-bottom: 10px;">Equipamentos em Uso (Contínuo)</p>
         
         <div class="row-sonun">
             <div>
@@ -406,8 +406,12 @@
             <div class="ctrl"><button onclick="mudar('wifi',-1)">-</button><span id="q-wifi">0</span><button onclick="mudar('wifi',1)">+</button></div>
         </div>
 
-        <p style="font-weight: 800; color: #003366; font-size: 11px; text-transform: uppercase; border-bottom: 2px solid #003366; padding-bottom: 5px; margin-top: 20px; margin-bottom: 10px;">Cargas de Pico (Temporário)</p>
+        <p style="font-weight: 800; color: #003366; font-size: 11px; text-transform: uppercase; border-bottom: 2px solid #003366; padding-bottom: 5px; margin-top: 20px; margin-bottom: 10px;">Cargas de Pico (Temporário - Minutos)</p>
         
+        <div class="row-sonun">
+            <span>Micro-ondas (1.2kW)</span>
+            <div class="ctrl-input"><input type="number" id="t-micro" placeholder="0" class="mini-input"> <span>min</span></div>
+        </div>
         <div class="row-sonun">
             <span>AirFryer / Forno (1.8kW)</span>
             <div class="ctrl-input"><input type="number" id="t-air" placeholder="0" class="mini-input"> <span>min</span></div>
@@ -438,6 +442,75 @@
     </div>
 </div>
 
+<style>
+    .row-sonun { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid #eee; font-size: 14px; font-weight: 600; color: #333; }
+    .ctrl { display: flex; align-items: center; gap: 10px; }
+    .ctrl button { width: 30px; height: 30px; border-radius: 8px; border: 1px solid #cbd5e0; background: white; cursor: pointer; font-size: 16px; font-weight: bold; }
+    .ctrl span { font-weight: 800; width: 18px; text-align: center; color: #003366; }
+    .mini-input { width: 50px; padding: 6px; border-radius: 8px; border: 1px solid #cbd5e0; text-align: center; font-weight: bold; color: #003366; }
+</style>
+
+<script>
+    const potCont = { ar: 1.0, gel: 0.3, luz: 0.15, tv: 0.15, wifi: 0.08 };
+    const potTemp = { micro: 1.2, air: 1.8, fog: 2.0, bomb: 0.8 };
+    const qtdCont = { ar: 0, gel: 0, luz: 0, tv: 0, wifi: 0 };
+
+    function mudar(i, d) {
+        qtdCont[i] = Math.max(0, qtdCont[i] + d);
+        document.getElementById('q-' + i).innerText = qtdCont[i];
+    }
+
+    function calcularSONUN() {
+        let capUtil = parseFloat(document.getElementById('cap-bateria').value) * 0.9;
+        
+        let consumoTempKwh = 0;
+        let picoTemp = 0;
+        
+        for (let i in potTemp) {
+            let m = parseFloat(document.getElementById('t-' + i).value) || 0;
+            consumoTempKwh += (potTemp[i] * (m / 60));
+            if (m > 0) picoTemp += potTemp[i];
+        }
+
+        let sobra = capUtil - consumoTempKwh;
+        
+        if (sobra <= 0) {
+            alert("Atenção: O consumo dos equipamentos de pico excede a capacidade da bateria!");
+            return;
+        }
+
+        let consumoHora = 0;
+        for (let i in qtdCont) {
+            consumoHora += qtdCont[i] * potCont[i];
+        }
+
+        let potTotalRequerida = (consumoHora + picoTemp) * 1.1; 
+        let sugestaoInv = "";
+
+        if (potTotalRequerida <= 5.0) sugestaoInv = "Híbrido 5.0 kW";
+        else if (potTotalRequerida <= 8.0) sugestaoInv = "Híbrido 8.0 kW";
+        else if (potTotalRequerida <= 10.0) sugestaoInv = "Híbrido 10.0 kW";
+        else if (potTotalRequerida <= 12.0) sugestaoInv = "Híbrido 12.0 kW";
+        else sugestaoInv = "Sistema em Paralelo (15kW+)";
+
+        document.getElementById('resultado-sonun').style.display = 'block';
+        document.getElementById('inv-sugestao').innerText = sugestaoInv;
+        const displayH = document.getElementById('val-sonun');
+
+        if (consumoHora === 0) {
+            displayH.innerText = "Check OK";
+        } else {
+            let h = sobra / consumoHora;
+            if (h >= 24) {
+                displayH.innerText = (h / 24).toFixed(1) + " Dias";
+            } else if (h < 1) {
+                displayH.innerText = (h * 60).toFixed(0) + " Min";
+            } else {
+                displayH.innerText = h.toFixed(1) + " Horas";
+            }
+        }
+    }
+</script>
 <style>
     .row-sonun { 
         display: flex; 
