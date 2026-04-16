@@ -348,6 +348,202 @@
         </div>
     </section>
 
+<div id="simulador-sonun" style="font-family: 'Segoe UI', Arial, sans-serif; max-width: 500px; margin: 10px auto; padding: 25px; border-radius: 25px; background: #ffffff; border: 1px solid #e1e8ed; box-shadow: 0 15px 35px rgba(0,0,0,0.1);">
+    
+    <div style="text-align: center; margin-bottom: 25px;">
+        <h2 style="color: #003366; margin: 0; font-size: 26px; font-weight: 800;">Simulador de Autonomia SONUN</h2>
+        <p style="color: #718096; font-size: 11px; margin-top: 8px; font-weight: 600; text-transform: uppercase;">Residências com consumo superior a 1000 kW</p>
+    </div>
+
+    <div style="margin-bottom: 25px;">
+        <label style="font-weight: 700; display: block; margin-bottom: 8px; color: #333; font-size: 14px;">CAPACIDADE DO BANCO (LFP):</label>
+        <select id="cap-bateria" style="width: 100%; padding: 15px; border-radius: 12px; border: 2px solid #003366; font-size: 18px; font-weight: bold; color: #003366; background: #fdfdfd;">
+            <option value="5">5 kWh (Backup Básico)</option>
+            <option value="10" selected>10 kWh (Conforto)</option>
+            <option value="15">15 kWh (Conforto PRO)</option>
+            <option value="20">20 kWh (Alta Performance)</option>
+            <option value="30">30 kWh (Full Backup Mansão)</option>
+        </select>
+    </div>
+
+    <div style="background: #f8fafc; padding: 15px; border-radius: 15px; border: 1px solid #edf2f7;">
+        
+        <p style="font-weight: 800; color: #003366; font-size: 11px; text-transform: uppercase; border-bottom: 2px solid #003366; padding-bottom: 5px; margin-bottom: 10px;">Equipamentos em Uso</p>
+        
+        <div class="row-sonun">
+            <div>
+                <span>Ar Condicionado (9k)</span>
+                <small style="color: #0066cc; display:block; font-size: 10px;">Ref: 1.0 kW</small>
+            </div>
+            <div class="ctrl"><button onclick="mudar('ar',-1)">-</button><span id="q-ar">0</span><button onclick="mudar('ar',1)">+</button></div>
+        </div>
+
+        <div class="row-sonun">
+            <div>
+                <span>Geladeira / Freezer</span>
+                <small style="color: #0066cc; display:block; font-size: 10px;">Ref: 0.3 kW</small>
+            </div>
+            <div class="ctrl"><button onclick="mudar('gel',-1)">-</button><span id="q-gel">0</span><button onclick="mudar('gel',1)">+</button></div>
+        </div>
+
+        <div class="row-sonun">
+            <div>
+                <span>Lâmpadas Frias / Fluoresc.</span>
+                <small style="color: #0066cc; display:block; font-size: 10px;">Kit 5 (0.15 kW)</small>
+            </div>
+            <div class="ctrl"><button onclick="mudar('luz',-1)">-</button><span id="q-luz">0</span><button onclick="mudar('luz',1)">+</button></div>
+        </div>
+
+        <div class="row-sonun">
+            <span>Smart TV / Home Theater</span>
+            <div class="ctrl"><button onclick="mudar('tv',-1)">-</button><span id="q-tv">0</span><button onclick="mudar('tv',1)">+</button></div>
+        </div>
+
+        <div class="row-sonun">
+            <span>Wi-Fi / Câmeras</span>
+            <div class="ctrl"><button onclick="mudar('wifi',-1)">-</button><span id="q-wifi">0</span><button onclick="mudar('wifi',1)">+</button></div>
+        </div>
+
+        <p style="font-weight: 800; color: #003366; font-size: 11px; text-transform: uppercase; border-bottom: 2px solid #003366; padding-bottom: 5px; margin-top: 20px; margin-bottom: 10px;">Cargas de Pico (Temporário)</p>
+        
+        <div class="row-sonun">
+            <span>AirFryer / Forno (1.8kW)</span>
+            <div class="ctrl-input"><input type="number" id="t-air" placeholder="0" class="mini-input"> <span>min</span></div>
+        </div>
+        <div class="row-sonun">
+            <span>Fogão Indução (2.0kW)</span>
+            <div class="ctrl-input"><input type="number" id="t-fog" placeholder="0" class="mini-input"> <span>min</span></div>
+        </div>
+        <div class="row-sonun">
+            <span>Bomba Hidráulica (0.8kW)</span>
+            <div class="ctrl-input"><input type="number" id="t-bomb" placeholder="0" class="mini-input"> <span>min</span></div>
+        </div>
+    </div>
+
+    <button onclick="calcularSONUN()" style="width: 100%; margin-top: 25px; padding: 20px; background: #28a745; color: white; border: none; border-radius: 15px; font-size: 18px; font-weight: 800; cursor: pointer; text-transform: uppercase; box-shadow: 0 5px 15px rgba(40,167,69,0.3);">Analisar Sistema SONUN</button>
+
+    <div id="resultado-sonun" style="display: none; margin-top: 20px; padding: 20px; background: #eef7ff; border-radius: 15px; border: 1px solid #bcd7f3;">
+        <div style="text-align: center; margin-bottom: 15px;">
+            <span style="color: #444; font-size: 13px; font-weight: 600;">Autonomia Estimada:</span>
+            <div id="val-sonun" style="font-size: 42px; font-weight: 900; color: #003366;">--</div>
+        </div>
+        
+        <div style="border-top: 1px solid #bcd7f3; padding-top: 15px; text-align: center;">
+            <span style="color: #c53030; font-size: 12px; font-weight: 800; text-transform: uppercase;">Sugestão Técnica de Inversor:</span>
+            <div id="inv-sugestao" style="font-size: 22px; font-weight: 800; color: #2d3748; margin-top: 5px;">--</div>
+            <p style="font-size: 10px; color: #666; margin-top: 5px;">*Inclui margem de segurança de 10% e suporte a picos.</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    .row-sonun { 
+        display: flex; 
+        justify-content: space-between; 
+        align-items: center; 
+        padding: 10px 0; 
+        border-bottom: 1px solid #eee; 
+        font-size: 14px; 
+        font-weight: 600; 
+        color: #333; 
+    }
+    .ctrl { 
+        display: flex; 
+        align-items: center; 
+        gap: 10px; 
+    }
+    .ctrl button { 
+        width: 30px; 
+        height: 30px; 
+        border-radius: 8px; 
+        border: 1px solid #cbd5e0; 
+        background: white; 
+        cursor: pointer; 
+        font-size: 16px; 
+        font-weight: bold; 
+    }
+    .ctrl span { 
+        font-weight: 800; 
+        width: 18px; 
+        text-align: center; 
+        color: #003366; 
+    }
+    .mini-input { 
+        width: 50px; 
+        padding: 6px; 
+        border-radius: 8px; 
+        border: 1px solid #cbd5e0; 
+        text-align: center; 
+        font-weight: bold; 
+        color: #003366; 
+    }
+    /* NOVA CLASSE ADICIONADA AQUI 👇 */
+    .ctrl-input {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        white-space: nowrap; /* Impede a quebra de linha no mobile */
+    }
+</style>
+
+<script>
+    const potCont = { ar: 1.0, gel: 0.30, luz: 0.15, tv: 0.15, wifi: 0.08 };
+    const potTemp = { air: 1.8, fog: 2.0, bomb: 0.8 };
+    const qtdCont = { ar: 0, gel: 0, luz: 0, tv: 0, wifi: 0 };
+
+    function mudar(i, d) {
+        qtdCont[i] = Math.max(0, qtdCont[i] + d);
+        document.getElementById('q-' + i).innerText = qtdCont[i];
+    }
+
+    function calcularSONUN() {
+        let capUtil = parseFloat(document.getElementById('cap-bateria').value) * 0.9;
+        
+        // 1. Cálculo de Autonomia
+        let consumoTempKwh = 0;
+        let picoTemp = 0;
+        for (let i in potTemp) {
+            let m = parseFloat(document.getElementById('t-' + i).value) || 0;
+            consumoTempKwh += (potTemp[i] * (m / 60));
+            if(m > 0) picoTemp += potTemp[i]; // Soma potências temporárias se houver minutos
+        }
+
+        let sobra = capUtil - consumoTempKwh;
+        if (sobra <= 0) { alert("Consumo temporário excede a bateria!"); return; }
+
+        let consumoHora = 0;
+        for (let i in qtdCont) { consumoHora += qtdCont[i] * potCont[i]; }
+
+        // 2. Cálculo da Sugestão de Inversor
+        // Soma todas as potências selecionadas + 10% segurança
+        let potTotalRequerida = (consumoHora + picoTemp) * 1.1; 
+        let sugestaoInv = "";
+        
+        if (potTotalRequerida <= 5.0) sugestaoInv = "Híbrido 5.0 kW";
+        else if (potTotalRequerida <= 8.0) sugestaoInv = "Híbrido 8.0 kW";
+        else if (potTotalRequerida <= 10.0) sugestaoInv = "Híbrido 10.0 kW";
+        else if (potTotalRequerida <= 12.0) sugestaoInv = "Híbrido 12.0 kW";
+        else sugestaoInv = "Sistema em Paralelo (15kW+)";
+
+        // Exibição
+        document.getElementById('resultado-sonun').style.display = 'block';
+        const displayH = document.getElementById('val-sonun');
+        const displayI = document.getElementById('inv-sugestao');
+
+        displayI.innerText = sugestaoInv;
+
+        if (consumoHora === 0) {
+            displayH.innerText = "Check OK";
+        } else {
+            let h = sobra / consumoHora;
+            displayH.innerText = h >= 24 ? (h/24).toFixed(1)+" Dias" : (h < 1 ? (h*60).toFixed(0)+" Min" : h.toFixed(1)+" Horas");
+        }
+    }
+</script>
+
+
+
+    
     <!-- Gallery Section -->
     <section id="projetos" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
