@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
@@ -6,21 +5,29 @@
     <title>SONUN Solar| Apagão Nunca Mais</title>
     <meta name="description" content="Gere sua própria energia e armazene em baterias com a SONUN. Soluções completas em energia solar, sistemas híbridos e retrofit.">
     
-    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <script>
         tailwind.config = {
             theme: {
                 extend: {
+                    // Reduzindo a escala de fontes padrão em ~12% para manter a harmonia
+                    fontSize: {
+                        'xs': '0.65rem',
+                        'sm': '0.77rem',
+                        'base': '0.88rem',
+                        'lg': '1rem',
+                        'xl': '1.1rem',
+                        '2xl': '1.32rem',
+                        '3xl': '1.65rem',
+                        '4xl': '2rem',
+                    },
                     colors: {
                         navy: '#003366',
                         safety: '#FF8C00',
@@ -38,6 +45,8 @@
         @layer base {
             html {
                 scroll-behavior: smooth;
+                /* Define o tamanho base menor (90% do padrão) */
+                font-size: 14.5px; 
             }
         }
         
@@ -88,7 +97,7 @@
         /* Mobile Menu Animation */
         #mobile-menu {
             transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            max-height: 0;
+            max-height: 400px; /* Ajustado para o novo tamanho */
             opacity: 0;
             overflow: hidden;
         }
@@ -100,7 +109,6 @@
     </style>
 </head>
 <body class="font-sans text-slate-800 bg-white overflow-x-hidden">
-
     <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 glass-header transition-shadow duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
