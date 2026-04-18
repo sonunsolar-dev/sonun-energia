@@ -40,7 +40,30 @@
                 scroll-behavior: smooth;
             }
         }
-        
+
+        /* Redução específica de 15% nas frases solicitadas */
+    /* Alvos: Título Principal e Subtítulo */
+    
+    /* "Apagão Nunca Mais" costuma ser um h1 ou span de destaque */
+    .hero-title, 
+    h1:contains("Apagão Nunca Mais"),
+    [data-text="apagao"] { 
+        font-size: 0.85em !important; 
+    }
+
+    /* "Gere Sua Energia e Armazene em Baterias" costuma ser o subtítulo */
+    .hero-subtitle,
+    p:contains("Gere Sua Energia"),
+    [data-text="gere-energia"] {
+        font-size: 0.85em !important;
+    }
+
+    /* Alternativa caso você esteja usando Tailwind direto nas tags: */
+    /* Adicione estas classes personalizadas no seu CSS para garantir a precisão */
+    .font-reduced-15 {
+        font-size: 0.85em !important;
+        line-height: 1.2;
+    }
         .glass-header {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
