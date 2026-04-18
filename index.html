@@ -17,16 +17,16 @@
         tailwind.config = {
             theme: {
                 extend: {
-                    // Reduzindo a escala de fontes padrão em ~12% para manter a harmonia
+                    // Redução global de escala de fonte em ~12%
                     fontSize: {
                         'xs': '0.65rem',
-                        'sm': '0.77rem',
+                        'sm': '0.78rem',
                         'base': '0.88rem',
                         'lg': '1rem',
-                        'xl': '1.1rem',
-                        '2xl': '1.32rem',
+                        'xl': '1.12rem',
+                        '2xl': '1.35rem',
                         '3xl': '1.65rem',
-                        '4xl': '2rem',
+                        '4xl': '2.1rem',
                     },
                     colors: {
                         navy: '#003366',
@@ -45,15 +45,18 @@
         @layer base {
             html {
                 scroll-behavior: smooth;
-                /* Define o tamanho base menor (90% do padrão) */
-                font-size: 14.5px; 
+                font-size: 14.5px; /* Redução da base de cálculo */
             }
         }
         
+        /* Ajuste do Header para não ocupar metade da tela no mobile */
         .glass-header {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(8px);
             border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+            /* Garantir que a altura não seja excessiva */
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
         }
         
         .hero-gradient {
@@ -64,52 +67,26 @@
             box-shadow: 0 10px 30px -5px rgba(0, 51, 102, 0.1);
             transition: all 0.3s ease;
         }
-        
-        .card-shadow:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(0, 51, 102, 0.2);
+
+        /* Melhoria na rolagem mobile */
+        body {
+            line-height: 1.4;
+            -webkit-font-smoothing: antialiased;
         }
 
-        .btn-hover {
-            transition: all 0.3s ease;
-        }
-
-        .btn-hover:hover {
-            transform: scale(1.05);
-            filter: brightness(1.1);
-        }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #003366;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #002244;
-        }
-
-        /* Mobile Menu Animation */
         #mobile-menu {
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            max-height: 400px; /* Ajustado para o novo tamanho */
+            transition: all 0.3s ease-in-out;
+            max-height: 0;
             opacity: 0;
-            overflow: hidden;
         }
 
         #mobile-menu.open {
-            max-height: 400px;
+            max-height: 50vh; /* Limita o menu mobile a metade da tela se aberto */
             opacity: 1;
         }
     </style>
 </head>
-<body class="font-sans text-slate-800 bg-white overflow-x-hidden">
-    <!-- Header -->
+<body class="font-sans text-slate-800 bg-white overflow-x-hidden">    <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 glass-header transition-shadow duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-24">
