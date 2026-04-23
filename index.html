@@ -45,6 +45,20 @@
     </script>
     
     <style>
+
+/* Quando a tela estiver deitada e for um dispositivo móvel */
+@media (max-height: 500px) and (orientation: landscape) {
+    header, .fixed-header { 
+        display: none !important; 
+    }
+    
+    /* Ajusta o espaçamento do topo que ficou vazio */
+    main, section {
+        margin-top: 0 !important;
+        padding-top: 10px !important;
+    }
+}
+        
         @layer base {
             html {
                 scroll-behavior: smooth;
