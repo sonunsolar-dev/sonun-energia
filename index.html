@@ -1204,6 +1204,42 @@
         #video-flutuante-container iframe { height: 200px; }
     }
 </style>
+-->
     
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+<style>
+    .whatsapp-link {
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 20px; /* Distância da borda inferior */
+        right: 20px;  /* Distância da borda direita */
+        background-color: #25d366;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 30px;
+        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+        z-index: 9999; /* Garante que ele fique por cima de tudo */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-decoration: none;
+        transition: transform 0.3s;
+    }
+
+    .whatsapp-link:hover {
+        transform: scale(1.1); /* Efeito de aumentar ao passar o mouse */
+        background-color: #128C7E;
+        color: #FFF;
+    }
+</style>
+
+<a href="https://wa.me/5547988692568?text=Olá! Estive no seu site e gostaria de tirar uma dúvida sobre energia solar." 
+   class="whatsapp-link" 
+   target="_blank">
+    <i class="fa fa-whatsapp"></i>
+</a>
 </body>
 </html>
