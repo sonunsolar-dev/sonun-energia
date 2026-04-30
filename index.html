@@ -1191,7 +1191,7 @@
 </style>
 
 <script>
-    const potCont = { ar: 0.53, gel: 0.1, luz: 0.15, tv: 0.15, wifi: 0.08 };
+    const potCont = { ar: 0.50, gel: 0.1, luz: 0.15, tv: 0.15, wifi: 0.08 };
     const potTemp = { micro: 1.3, air: 1.8, fog: 2.0, bomb: 0.8 };
     const qtdCont = { ar: 0, gel: 0, luz: 0, tv: 0, wifi: 0 };
 
@@ -1229,8 +1229,8 @@
 
         if (potTotalRequerida <= 2.5) sugestaoInv = "Híbrido 5.0 kW";
         else if (potTotalRequerida <= 5) sugestaoInv = "Híbrido 8.0 kW";
-        else if (potTotalRequerida <= 6.5) sugestaoInv = "Híbrido 10.0 kW";
-        else if (potTotalRequerida <= 7.5) sugestaoInv = "Híbrido 12.0 kW";
+        else if (potTotalRequerida <= 7) sugestaoInv = "Híbrido 10.0 kW";
+        else if (potTotalRequerida <= 9) sugestaoInv = "Híbrido 12.0 kW";
         else sugestaoInv = "Sistema em Paralelo (15kW+)";
 
         document.getElementById('resultado-sonun').style.display = 'block';
