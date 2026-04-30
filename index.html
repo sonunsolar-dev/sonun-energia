@@ -1227,10 +1227,10 @@
         let potTotalRequerida = (consumoHora + picoTemp) * 1.1; 
         let sugestaoInv = "";
 
-        if (potTotalRequerida <= 5.0) sugestaoInv = "Híbrido 5.0 kW";
-        else if (potTotalRequerida <= 8.0) sugestaoInv = "Híbrido 8.0 kW";
-        else if (potTotalRequerida <= 10.0) sugestaoInv = "Híbrido 10.0 kW";
-        else if (potTotalRequerida <= 12.0) sugestaoInv = "Híbrido 12.0 kW";
+        if (potTotalRequerida <= 4.0) sugestaoInv = "Híbrido 5.0 kW";
+        else if (potTotalRequerida <= 7.0) sugestaoInv = "Híbrido 8.0 kW";
+        else if (potTotalRequerida <= 9.0) sugestaoInv = "Híbrido 10.0 kW";
+        else if (potTotalRequerida <= 11.0) sugestaoInv = "Híbrido 12.0 kW";
         else sugestaoInv = "Sistema em Paralelo (15kW+)";
 
         document.getElementById('resultado-sonun').style.display = 'block';
