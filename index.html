@@ -1243,50 +1243,6 @@
             }
         });
     </script>
-<!--
-<div id="video-flutuante-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999; width: 180px; transition: all 0.3s ease;">
-    
-    <button onclick="pararVideoSonun()" style="position: absolute; top: -10px; left: -10px; background: #c53030; color: white; border: none; border-radius: 50%; width: 25px; height: 25px; cursor: pointer; font-weight: bold; z-index: 10000; display: flex; align-items: center; justify-content: center; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">×</button>
-    
-    <div style="width: 100%; border-radius: 15px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.3); border: 3px solid #003366; background: #000;">
-        <iframe 
-            id="video-iframe-sonun"
-            width="100%" 
-            height="280" 
-            src="https://www.youtube.com/embed/2o-6xjfeADs?enablejsapi=1&autoplay=0&controls=1" 
-            title="Explicação Técnica SONUN" 
-            frameborder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
-    </div>
-    <p style="background: #003366; color: white; margin: 0; padding: 6px 4px; text-align: center; font-size: 10px; font-weight: bold; border-radius: 0 0 10px 10px; font-family: sans-serif; letter-spacing: 0.5px; line-height: 1.2;">
-        SAIBA COMO USAR O SIMULADOR DE BATERIAS
-    </p>
-</div>
-
-<script>
-    function pararVideoSonun() {
-        var container = document.getElementById('video-flutuante-container');
-        var iframe = document.getElementById('video-iframe-sonun');
-        
-        // Esconde o container
-        container.style.display = 'none';
-        
-        // O "pulo do gato": Reseta o SRC do iframe. 
-        // Isso força o YouTube a parar o vídeo e o áudio imediatamente.
-        var iframeSrc = iframe.src;
-        iframe.src = iframeSrc;
-    }
-</script>
-
-<style>
-    @media (max-width: 600px) {
-        #video-flutuante-container { width: 130px; bottom: 15px; right: 15px; }
-        #video-flutuante-container iframe { height: 200px; }
-    }
-</style>
--->
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
@@ -1324,34 +1280,5 @@
     <i class="fa fa-whatsapp"></i>
 </a>
 
-<!--
-    
-<script>
-// Função para simular o login e abrir a área de texto
-function acessarPainel() {
-    const email = document.getElementById('email-cliente').value;
-    const senha = document.getElementById('senha-cliente').value;
-
-    if (email !== "" && senha !== "") {
-        document.getElementById('tela-login').classList.add('hidden');
-        document.getElementById('tela-painel').classList.remove('hidden');
-    } else {
-        alert("Por favor, preencha e-mail e senha para acessar.");
-    }
-}
-
-// Função para simular o envio da mensagem
-function enviarSolicitacao() {
-    const texto = document.getElementById('texto-necessidade').value;
-    
-    if (texto.length > 5) {
-        alert("Solicitação enviada com sucesso! Nossa equipe entrará em contato.");
-        location.reload(); // Recarrega para voltar ao login após o envio
-    } else {
-        alert("Por favor, detalhe um pouco mais sua necessidade.");
-    }
-}
-</script>
-    -->
 </body>
 </html>
