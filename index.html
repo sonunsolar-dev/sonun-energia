@@ -1700,5 +1700,522 @@
     <i class="fa fa-whatsapp"></i>
 </a>
 
+
+
+    
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Energia Solar com Baterias</title>
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #031424;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        /* HEADER SECTION */
+        .hero {
+            display: table;
+            width: 100%;
+            margin-bottom: 60px;
+        }
+        .hero-col-left {
+            display: table-cell;
+            width: 50%;
+            vertical-align: middle;
+            padding-right: 40px;
+        }
+        .hero-col-right {
+            display: table-cell;
+            width: 50%;
+            vertical-align: middle;
+            text-align: center;
+        }
+        
+        .badge {
+            display: inline-block;
+            border: 1px solid #f26522;
+            color: #f26522;
+            padding: 6px 15px;
+            border-radius: 4px;
+            font-size: 11pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        h1 {
+            font-size: 32pt;
+            font-weight: 800;
+            line-height: 1.1;
+            margin: 0 0 20px 0;
+        }
+        h1 span {
+            color: #f26522;
+        }
+        
+        .subtitle {
+            font-size: 14pt;
+            color: #b0c4de;
+            margin-bottom: 30px;
+        }
+        
+        .features-grid {
+            display: table;
+            width: 100%;
+            margin-bottom: 35px;
+        }
+        .features-item {
+            display: table-cell;
+            width: 25%;
+            font-size: 10pt;
+            font-weight: 600;
+            color: #ffffff;
+        }
+        .features-item span {
+            display: block;
+            font-size: 9pt;
+            color: #a0aec0;
+            font-weight: normal;
+        }
+        
+        /* BUTTONS */
+        .btn-orange {
+            display: block;
+            background-color: #f26522;
+            color: white;
+            text-decoration: none;
+            text-align: center;
+            padding: 15px 25px;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 13pt;
+            margin-bottom: 15px;
+            transition: background 0.3s;
+        }
+        .btn-orange span {
+            display: block;
+            font-size: 9pt;
+            font-weight: normal;
+            opacity: 0.9;
+        }
+        
+        .trust-bar {
+            text-align: center;
+            font-size: 9pt;
+            color: #a0aec0;
+            margin-bottom: 30px;
+        }
+        .trust-bar span {
+            margin: 0 10px;
+            color: #f26522;
+        }
+        
+        /* MAIN VISUAL IMAGE WRAPPER */
+        .main-image-box {
+            background-color: #05203a;
+            border-radius: 12px;
+            padding: 20px;
+            border: 1px solid #0b3154;
+        }
+        .main-image-box img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            display: block;
+        }
+        
+        /* FINANCING BANNER */
+        .financing-banner {
+            display: table;
+            width: 100%;
+            background-color: #020d18;
+            border: 1px solid #f26522;
+            border-radius: 6px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+        .fin-left {
+            display: table-cell;
+            padding: 15px 20px;
+            vertical-align: middle;
+            font-size: 11pt;
+        }
+        .fin-left strong {
+            color: #f26522;
+            text-transform: uppercase;
+        }
+        .fin-right {
+            display: table-cell;
+            background-color: #f26522;
+            width: 180px;
+            text-align: center;
+            vertical-align: middle;
+            color: white;
+            font-weight: bold;
+            font-size: 10pt;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+        
+        /* SECTION TITLE */
+        .section-title {
+            text-align: center;
+            font-size: 20pt;
+            font-weight: 700;
+            margin: 60px 0 40px 0;
+            position: relative;
+        }
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: #f26522;
+            margin: 10px auto 0 auto;
+        }
+        
+        /* BENEFITS GRID */
+        .benefits-table {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            margin-bottom: 60px;
+        }
+        .benefits-cell {
+            display: table-cell;
+            width: 20%;
+            padding: 0 15px;
+            text-align: center;
+            vertical-align: top;
+            border-right: 1px solid #0b3154;
+        }
+        .benefits-cell:last-child {
+            border-right: none;
+        }
+        .benefit-icon {
+            width: 45px;
+            height: 45px;
+            margin: 0 auto 15px auto;
+        }
+        .benefit-icon img {
+            width: 100%;
+            height: auto;
+        }
+        .benefits-cell h3 {
+            font-size: 12pt;
+            font-weight: 700;
+            margin: 0 0 10px 0;
+            color: #ffffff;
+        }
+        .benefits-cell p {
+            font-size: 9.5pt;
+            color: #a0aec0;
+            margin: 0;
+            line-height: 1.4;
+        }
+        
+        /* STEPS SECTION */
+        .steps-table {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            margin-bottom: 60px;
+        }
+        .steps-cell {
+            display: table-cell;
+            width: 33.33%;
+            padding: 0 15px;
+            vertical-align: top;
+        }
+        .step-box {
+            background-color: #041b30;
+            border: 1px solid #0b3154;
+            border-radius: 8px;
+            padding: 25px 20px;
+            position: relative;
+            min-height: 150px;
+        }
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 15px;
+            background-color: #f26522;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            font-weight: bold;
+            font-size: 11pt;
+        }
+        .step-content-layout {
+            display: table;
+            width: 100%;
+        }
+        .step-icon-cell {
+            display: table-cell;
+            width: 50px;
+            vertical-align: top;
+            padding-right: 15px;
+        }
+        .step-icon-cell img {
+            width: 40px;
+            height: auto;
+        }
+        .step-text-cell {
+            display: table-cell;
+            vertical-align: top;
+        }
+        .step-text-cell h4 {
+            margin: 0 0 8px 0;
+            font-size: 11pt;
+            font-weight: 700;
+        }
+        .step-text-cell p {
+            margin: 0;
+            font-size: 9pt;
+            color: #a0aec0;
+            line-height: 1.4;
+        }
+        
+        /* FOOTER FINANCING BAR */
+        .footer-fin-bar {
+            display: table;
+            width: 100%;
+            background-color: #041b30;
+            border: 1px solid #0b3154;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 40px;
+        }
+        .ff-left {
+            display: table-cell;
+            vertical-align: middle;
+            font-size: 14pt;
+            font-weight: bold;
+        }
+        .ff-left span {
+            color: #f26522;
+        }
+        .ff-right-table {
+            display: table-cell;
+            text-align: right;
+            vertical-align: middle;
+        }
+        .ff-item {
+            display: inline-block;
+            text-align: center;
+            padding: 0 15px;
+            border-right: 1px solid #0b3154;
+        }
+        .ff-item:last-child {
+            border-right: none;
+        }
+        .ff-item img {
+            width: 24px;
+            height: auto;
+            margin-bottom: 5px;
+        }
+        .ff-item-title {
+            display: block;
+            font-size: 8pt;
+            color: #a0aec0;
+            text-transform: uppercase;
+        }
+        .ff-item-value {
+            display: block;
+            font-size: 10pt;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        
+        .footer-text {
+            text-align: center;
+            font-size: 10pt;
+            color: #a0aec0;
+            margin-top: 20px;
+        }
+        .footer-text span {
+            color: #f26522;
+            margin: 0 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        
+        <!-- HERO SECTION -->
+        <div class="hero">
+            <div class="hero-col-left">
+                <div class="badge">⚙ Energia Solar com Baterias</div>
+                <h1>Nunca mais<br><span>fique sem energia.</span></h1>
+                <p class="subtitle">Economia todos os meses e proteção total contra apagões para sua casa ou negócio.</p>
+                
+                <div class="features-grid">
+                    <div class="features-item">📈 Mais<span>economia</span></div>
+                    <div class="features-item">🛡 Mais<span>segurança</span></div>
+                    <div class="features-item">🏠 Mais<span>conforto</span></div>
+                    <div class="features-item">💎 Mais<span>valorização</span></div>
+                </div>
+                
+                <a href="#" class="btn-orange">
+                    QUERO RECEBER UMA SIMULAÇÃO GRATUITA
+                    <span>Atendimento rápido pelo WhatsApp</span>
+                </a>
+                
+                <div class="trust-bar">
+                    🔵 Resposta em até 15 min &bull; 🔄 Sem compromisso &bull; 🔒 100% Seguro
+                </div>
+            </div>
+            
+            <div class="hero-col-right">
+                <div class="main-image-box">
+                    <!-- INCLUSÃO DA IMAGEM PRINCIPAL EXPLICATIVA -->
+                    <img src="diagrama-sistema-solar.png" alt="6 Módulos Fotovoltaicos, Rede Elétrica, Bateria All-in-One FoxESS">
+                </div>
+                
+                <div class="financing-banner">
+                    <div class="fin-left">
+                        💰 <strong>Financiamento</strong> Em até 96 parcelas (1ª parcela somente em 120 dias!)
+                    </div>
+                    <a href="#" class="fin-right">Clique e fale conosco ➔</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- BENEFITS SECTION -->
+        <div class="section-title">Benefícios que fazem a diferença</div>
+        
+        <div class="benefits-table">
+            <div class="benefits-cell">
+                <div class="benefit-icon"><img src="icon-backup.png" alt="Backup"></div>
+                <h3>Backup Automático</h3>
+                <p>Seu sistema entra em ação automaticamente quando falta energia.</p>
+            </div>
+            <div class="benefits-cell">
+                <div class="benefit-icon"><img src="icon-economia.png" alt="Economia"></div>
+                <h3>Economia Todos os Meses</h3>
+                <p>Reduza sua conta de luz usando energia solar e gerenciamento inteligente.</p>
+            </div>
+            <div class="benefits-cell">
+                <div class="benefit-icon"><img src="icon-relogio.png" alt="Dia e Noite"></div>
+                <h3>Energia Dia e Noite</h3>
+                <p>Armazene energia durante o dia e use quando mais precisar.</p>
+            </div>
+            <div class="benefits-cell">
+                <div class="benefit-icon"><img src="icon-carro.png" alt="Futuro"></div>
+                <h3>Pronto para o Futuro</h3>
+                <p>Prepare sua casa para carregar carro elétrico e expansão do sistema.</p>
+            </div>
+            <div class="benefits-cell">
+                <div class="benefit-icon"><img src="icon-qualidade.png" alt="Qualidade"></div>
+                <h3>Equipamentos de Alta Qualidade</h3>
+                <p>Tecnologia de ponta com a confiabilidade Fox ESS.</p>
+            </div>
+        </div>
+        
+        <!-- STEPS SECTION -->
+        <div class="section-title">Como funciona em 3 passos</div>
+        
+        <div class="steps-table">
+            <div class="steps-cell">
+                <div class="step-box">
+                    <div class="step-number">1</div>
+                    <div class="step-content-layout">
+                        <div class="step-icon-cell"><img src="icon-wpp.png" alt="Whatsapp"></div>
+                        <div class="step-text-cell">
+                            <h4>Fale conosco</h4>
+                            <p>Envie uma mensagem pelo WhatsApp e conte sobre sua necessidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="steps-cell">
+                <div class="step-box">
+                    <div class="step-number">2</div>
+                    <div class="step-content-layout">
+                        <div class="step-icon-cell"><img src="icon-simulacao.png" alt="Simulação"></div>
+                        <div class="step-text-cell">
+                            <h4>Receba sua simulação</h4>
+                            <p>Fazemos uma análise personalizada e enviamos sua proposta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="steps-cell">
+                <div class="step-box">
+                    <div class="step-number">3</div>
+                    <div class="step-content-layout">
+                        <div class="step-icon-cell"><img src="icon-suporte.png" alt="Suporte"></div>
+                        <div class="step-text-cell">
+                            <h4>Instalação e suporte</h4>
+                            <p>Instalamos e você conta com suporte especializado.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FOOTER BAR -->
+        <div class="footer-fin-bar">
+            <div class="ff-left">
+                📅 Financiamento facilitado para<br><span>você realizar agora o seu projeto</span>
+            </div>
+            <div class="ff-right-table">
+                <div class="ff-item">
+                    <img src="icon-calendario.png" alt="Parcelas">
+                    <span class="ff-item-title">Até</span>
+                    <span class="ff-item-value">96 parcelas</span>
+                </div>
+                <div class="ff-item">
+                    <img src="icon-Ampulheta.png" alt="Carência">
+                    <span class="ff-item-title">1ª parcela</span>
+                    <span class="ff-item-value">em 120 dias</span>
+                </div>
+                <div class="ff-item">
+                    <img src="icon-check.png" alt="Aprovação">
+                    <span class="ff-item-title">Aprovação</span>
+                    <span class="ff-item-value">rápida</span>
+                </div>
+                <div class="ff-item">
+                    <img src="icon-estrela.png" alt="Condições">
+                    <span class="ff-item-title">Condições</span>
+                    <span class="ff-item-value">especiais</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- CTA FINAL -->
+        <a href="#" class="btn-orange" style="margin-bottom: 30px;">
+            QUERO RECEBER UMA SIMULAÇÃO GRATUITA
+            <span>Clique aqui e fale com um especialista agora mesmo!</span>
+        </a>
+        
+        <div class="footer-text">
+            Atendimento rápido <span>•</span> Sem compromisso <span>•</span> Soluções sob medida para você
+        </div>
+
+    </div>
+
+</body>
+</html>
+
 </body>
 </html>
