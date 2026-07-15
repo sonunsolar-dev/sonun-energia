@@ -1816,5 +1816,542 @@ footer{
    target="_blank">
     <i class="fa fa-whatsapp"></i>
 </a>
+
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reduza sua Conta de Luz em até 90% | Energia Solar - SONUN</title>
+<meta name="description" content="Sistema de Energia Solar Fotovoltaica com projeto, homologação e instalação completos. Equipamentos Tier 1 com até 25 anos de garantia. Simule sua economia grátis.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy-950:#08152B;
+    --navy-900:#0E1F3D;
+    --navy-800:#16294F;
+    --navy-700:#1E3563;
+    --amber:#FFB020;
+    --amber-dark:#E89400;
+    --teal:#17B6A7;
+    --off-white:#F6F7FA;
+    --gray-600:#5B6472;
+    --white:#FFFFFF;
+    --radius:14px;
+    --shadow:0 20px 40px -20px rgba(8,21,43,0.35);
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    color:var(--navy-900);
+    background:var(--off-white);
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:'Sora',sans-serif;line-height:1.15;letter-spacing:-0.01em;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:inherit;}
+  .container{max-width:1120px;margin:0 auto;padding:0 24px;}
+  .eyebrow{
+    display:inline-flex;align-items:center;gap:8px;
+    font-size:13px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;
+    color:var(--amber);
+  }
+  .eyebrow::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--amber);box-shadow:0 0 0 4px rgba(255,176,32,0.18);}
+
+  /* ---------- HEADER ---------- */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:rgba(8,21,43,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;padding:16px 24px;max-width:1120px;margin:0 auto;}
+  .logo{font-family:'Sora',sans-serif;font-weight:800;font-size:20px;color:var(--white);letter-spacing:0.02em;}
+  .logo span{color:var(--amber);}
+  .nav-cta{
+    background:var(--amber);color:var(--navy-950);font-weight:700;font-size:14px;
+    padding:10px 20px;border-radius:100px;transition:transform .15s ease, background .15s ease;
+  }
+  .nav-cta:hover{background:var(--amber-dark);transform:translateY(-1px);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:radial-gradient(1200px 600px at 80% -10%, rgba(23,182,167,0.25), transparent 60%),
+               linear-gradient(160deg, var(--navy-950) 0%, var(--navy-900) 55%, var(--navy-800) 100%);
+    color:var(--white);
+    padding:88px 24px 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";position:absolute;right:-120px;top:-80px;width:420px;height:420px;
+    background:radial-gradient(circle, rgba(255,176,32,0.16), transparent 70%);
+    border-radius:50%;
+  }
+  .hero-inner{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.1fr 0.9fr;gap:56px;align-items:center;position:relative;z-index:2;}
+  .hero h1{font-size:44px;font-weight:800;margin:18px 0 18px;}
+  .hero h1 .accent{color:var(--amber);}
+  .hero p.lead{font-size:18px;color:#C6CEDD;max-width:520px;margin-bottom:32px;}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap;align-items:center;margin-bottom:22px;}
+  .btn-primary{
+    background:var(--amber);color:var(--navy-950);font-weight:700;font-size:16px;
+    padding:16px 28px;border-radius:100px;display:inline-flex;align-items:center;gap:10px;
+    box-shadow:0 12px 30px -8px rgba(255,176,32,0.55);
+    transition:transform .15s ease, box-shadow .15s ease;border:none;cursor:pointer;
+  }
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 34px -8px rgba(255,176,32,0.65);}
+  .trust-line{font-size:14px;color:#9FAAC0;display:flex;gap:6px;align-items:center;flex-wrap:wrap;}
+  .trust-line b{color:var(--white);}
+
+  .hero-card{
+    background:var(--white);border-radius:20px;padding:26px;box-shadow:var(--shadow);color:var(--navy-900);
+  }
+  .hero-card .switch-badge{
+    display:flex;align-items:center;gap:14px;background:var(--navy-950);color:var(--white);
+    border-radius:14px;padding:16px 18px;margin-bottom:18px;
+  }
+  .switch-badge .bolt{
+    width:40px;height:40px;border-radius:10px;background:var(--amber);color:var(--navy-950);
+    display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;flex-shrink:0;
+  }
+  .switch-badge .ms{font-family:'Sora',sans-serif;font-weight:800;font-size:18px;color:var(--amber);}
+  .hero-card ul{list-style:none;display:grid;gap:10px;font-size:14px;color:var(--gray-600);}
+  .hero-card ul li{display:flex;gap:10px;align-items:flex-start;}
+  .hero-card ul li::before{content:"✓";color:var(--teal);font-weight:800;}
+
+  /* ---------- PAIN SECTION ---------- */
+  .section{padding:80px 24px;}
+  .section-title{font-size:32px;font-weight:800;margin-bottom:14px;max-width:680px;}
+  .section-sub{color:var(--gray-600);font-size:16px;max-width:600px;margin-bottom:44px;}
+  .pain-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .pain-card{
+    background:var(--white);border-radius:var(--radius);padding:28px 24px;border:1px solid #E7EAF0;
+  }
+  .pain-card .icon{font-size:28px;margin-bottom:14px;}
+  .pain-card h3{font-size:17px;margin-bottom:8px;}
+  .pain-card p{font-size:14px;color:var(--gray-600);}
+
+  /* ---------- HOW IT WORKS ---------- */
+  .how{background:var(--navy-950);color:var(--white);}
+  .how .section-title, .how .section-sub{color:var(--white);}
+  .how .section-sub{color:#9FAAC0;}
+  .how-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;counter-reset:step;}
+  .how-card{background:var(--navy-900);border-radius:var(--radius);padding:28px 24px;border:1px solid rgba(255,255,255,0.06);position:relative;}
+  .how-card .num{
+    font-family:'Sora',sans-serif;font-weight:800;font-size:14px;color:var(--navy-950);
+    background:var(--amber);width:32px;height:32px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;margin-bottom:16px;
+  }
+  .how-card h3{font-size:16px;margin-bottom:8px;}
+  .how-card p{font-size:14px;color:#AEB7C7;}
+  .center-cta{text-align:center;margin-top:44px;}
+  .btn-ghost{
+    border:1px solid rgba(255,255,255,0.25);color:var(--white);padding:14px 26px;border-radius:100px;
+    font-weight:600;font-size:15px;display:inline-block;transition:background .15s ease;
+  }
+  .btn-ghost:hover{background:rgba(255,255,255,0.08);}
+
+  /* ---------- INVERTER COMPARISON ---------- */
+  .compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+  .compare-card{
+    background:var(--white);border-radius:var(--radius);padding:30px;border:1px solid #E7EAF0;
+  }
+  .compare-card.highlight{border:1px solid var(--amber);box-shadow:0 12px 30px -14px rgba(255,176,32,0.4);}
+  .compare-card .tag{
+    display:inline-block;font-size:12px;font-weight:700;color:var(--amber-dark);background:rgba(255,176,32,0.14);
+    padding:5px 12px;border-radius:100px;margin-bottom:14px;
+  }
+  .compare-card h3{font-size:19px;margin-bottom:10px;}
+  .compare-card p{font-size:14.5px;color:var(--gray-600);margin-bottom:16px;}
+  .compare-card ul{list-style:none;display:grid;gap:8px;font-size:14px;color:var(--navy-800);}
+  .compare-card ul li{display:flex;gap:10px;align-items:flex-start;}
+  .compare-card ul li::before{content:"✓";color:var(--teal);font-weight:800;}
+
+  /* ---------- TESTIMONIALS ---------- */
+  .testi-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  .testi-card{
+    background:var(--white);border-radius:var(--radius);padding:26px;border:1px solid #E7EAF0;
+  }
+  .stars{color:var(--amber);font-size:14px;margin-bottom:12px;letter-spacing:2px;}
+  .testi-card p.quote{font-size:14.5px;color:var(--navy-800);margin-bottom:18px;}
+  .testi-who{display:flex;align-items:center;gap:12px;}
+  .avatar{width:38px;height:38px;border-radius:50%;background:var(--navy-900);color:var(--amber);
+    display:flex;align-items:center;justify-content:center;font-weight:700;font-size:14px;font-family:'Sora',sans-serif;}
+  .testi-who .name{font-weight:600;font-size:14px;}
+  .testi-who .city{font-size:12.5px;color:var(--gray-600);}
+
+  .badges-row{display:flex;gap:28px;flex-wrap:wrap;justify-content:center;margin-top:40px;padding-top:32px;border-top:1px solid #E7EAF0;}
+  .badge-stat{text-align:center;}
+  .badge-stat .num{font-family:'Sora',sans-serif;font-weight:800;font-size:28px;color:var(--navy-900);}
+  .badge-stat .label{font-size:13px;color:var(--gray-600);}
+
+  /* ---------- SIMULATOR ---------- */
+  .simulator{background:var(--white);}
+  .sim-box{
+    background:linear-gradient(160deg, var(--navy-950), var(--navy-800));
+    border-radius:22px;padding:40px;color:var(--white);
+    display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center;
+  }
+  .sim-box h2{font-size:26px;margin-bottom:12px;}
+  .sim-box p{color:#B7C0D2;font-size:14.5px;margin-bottom:24px;}
+  .plan-select{display:flex;flex-direction:column;gap:10px;}
+  .plan-option{
+    background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.12);border-radius:10px;
+    padding:12px 16px;font-size:14px;display:flex;justify-content:space-between;cursor:pointer;transition:.15s;
+  }
+  .plan-option:hover, .plan-option.active{border-color:var(--amber);background:rgba(255,176,32,0.08);}
+  .plan-option .cap{color:var(--amber);font-weight:700;}
+  .sim-result{
+    background:var(--navy-900);border-radius:16px;padding:26px;border:1px solid rgba(255,255,255,0.08);
+  }
+  .sim-result .row{display:flex;justify-content:space-between;font-size:14px;color:#AEB7C7;padding:10px 0;border-bottom:1px dashed rgba(255,255,255,0.1);}
+  .sim-result .row:last-child{border-bottom:none;}
+  .sim-result .row b{color:var(--white);}
+
+  /* ---------- FAQ ---------- */
+  .faq-list{max-width:760px;margin:0 auto;display:grid;gap:12px;}
+  details{background:var(--white);border:1px solid #E7EAF0;border-radius:12px;padding:18px 20px;}
+  summary{font-weight:600;font-size:15.5px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;}
+  summary::-webkit-details-marker{display:none;}
+  summary::after{content:"+";font-size:20px;color:var(--amber);font-weight:700;}
+  details[open] summary::after{content:"–";}
+  details p{margin-top:12px;font-size:14.5px;color:var(--gray-600);}
+
+  /* ---------- FORM ---------- */
+  .form-section{
+    background:radial-gradient(900px 400px at 20% 0%, rgba(255,176,32,0.12), transparent 60%),
+               linear-gradient(160deg, var(--navy-950), var(--navy-900));
+    color:var(--white);
+  }
+  .form-wrap{max-width:560px;margin:0 auto;text-align:center;}
+  .form-wrap h2{font-size:30px;margin-bottom:10px;}
+  .form-wrap p{color:#B7C0D2;margin-bottom:32px;}
+  form{background:var(--white);border-radius:18px;padding:32px;text-align:left;color:var(--navy-900);box-shadow:var(--shadow);}
+  .field{margin-bottom:16px;}
+  .field label{display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--navy-800);}
+  .field input{
+    width:100%;padding:13px 14px;border-radius:10px;border:1px solid #DDE1E8;font-size:14.5px;font-family:'Inter',sans-serif;
+  }
+  .field input:focus{outline:2px solid var(--amber);outline-offset:1px;border-color:var(--amber);}
+  .submit-btn{
+    width:100%;background:var(--amber);color:var(--navy-950);font-weight:700;font-size:16px;
+    padding:15px;border-radius:10px;border:none;cursor:pointer;margin-top:6px;transition:background .15s;
+  }
+  .submit-btn:hover{background:var(--amber-dark);}
+  .form-note{font-size:12.5px;color:var(--gray-600);text-align:center;margin-top:14px;}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--navy-950);color:#8C97AC;padding:36px 24px;text-align:center;font-size:13.5px;}
+  footer .logo{margin-bottom:10px;justify-content:center;display:flex;}
+  footer a{color:var(--amber);}
+
+  /* ---------- WHATSAPP FLOAT ---------- */
+  .wa-float{
+    position:fixed;bottom:22px;right:22px;z-index:60;
+    background:#25D366;color:var(--white);width:58px;height:58px;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;font-size:26px;
+    box-shadow:0 10px 24px -6px rgba(0,0,0,0.4);transition:transform .15s;
+  }
+  .wa-float:hover{transform:scale(1.06);}
+
+  /* ---------- RESPONSIVE ---------- */
+  @media (max-width:860px){
+    .hero-inner{grid-template-columns:1fr;}
+    .hero h1{font-size:32px;}
+    .pain-grid, .how-grid, .testi-grid, .compare-grid{grid-template-columns:1fr;}
+    .sim-box{grid-template-columns:1fr;padding:26px;}
+    .badges-row{gap:20px;}
+    .nav-cta{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="logo">SONUN <span>Energia</span></div>
+    <a href="#form" class="nav-cta">Simular Grátis</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <span class="eyebrow">Energia Solar Fotovoltaica</span>
+      <h1>Reduza sua Conta de Luz em <span class="accent">até 90%.</span> Comece a gerar sua própria energia.</h1>
+      <p class="lead">Projeto, homologação e instalação completos, do início ao fim. Equipamentos Tier 1 com até 25 anos de garantia.</p>
+      <div class="cta-row">
+        <a class="btn-primary" href="https://wa.me/5547988692568?text=Olá!%20Vim%20do%20anúncio%20de%20Energia%20Solar%20e%20quero%20simular%20minha%20economia." target="_blank" rel="noopener">
+          ☀️ Simular Minha Economia Grátis
+        </a>
+      </div>
+      <div class="trust-line">⭐⭐⭐⭐⭐ <b>4.9/5</b> no Google · <b>100%</b> aprovação Copel/Celesc · Resposta em até <b>2h úteis</b></div>
+    </div>
+
+    <div class="hero-card">
+      <div class="switch-badge">
+        <div class="bolt">☀️</div>
+        <div>
+          <div style="font-size:12px;color:#9FAAC0;">Economia média na conta de luz</div>
+          <div class="ms">Até 90%</div>
+        </div>
+      </div>
+      <ul>
+        <li>Estudo técnico e orçamento sem custo</li>
+        <li>Homologação na concessionária inclusa</li>
+        <li>Equipamentos certificados Tier 1, TUV Rheinland</li>
+        <li>Monitoramento de geração pelo app</li>
+        <li>Valorização do imóvel</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow">O problema</span>
+    <h2 class="section-title">Sua conta de luz só aumenta e você continua pagando pra concessionária todo mês, sem nunca ser "seu"?</h2>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="icon">📈</div>
+        <h3>Tarifas subindo todo ano</h3>
+        <p>Bandeiras tarifárias e reajustes fazem sua conta pesar cada vez mais no orçamento.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">💸</div>
+        <h3>Dinheiro que não volta</h3>
+        <p>Você paga a mesma conta há anos e nunca constrói nenhum patrimônio com isso.</p>
+      </div>
+      <div class="pain-card">
+        <div class="icon">🏠</div>
+        <h3>Imóvel sem diferencial</h3>
+        <p>Casas e comércios com energia solar se valorizam e vendem mais rápido no mercado.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section class="section how">
+  <div class="container">
+    <span class="eyebrow">Como funciona</span>
+    <h2 class="section-title">Do projeto à geração, cuidamos de tudo pra você</h2>
+    <p class="section-sub">Você não precisa entender de engenharia elétrica. A gente cuida de cada etapa.</p>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="num">1</div>
+        <h3>Estudo técnico gratuito</h3>
+        <p>Analisamos sua conta de luz e telhado para dimensionar o sistema ideal, sem custo.</p>
+      </div>
+      <div class="how-card">
+        <div class="num">2</div>
+        <h3>Instalação e homologação</h3>
+        <p>Nossa equipe instala e cuida de toda a homologação junto à concessionária (Copel/Celesc).</p>
+      </div>
+      <div class="how-card">
+        <div class="num">3</div>
+        <h3>Geração e monitoramento</h3>
+        <p>Seu sistema começa a gerar energia e você acompanha tudo pelo aplicativo em tempo real.</p>
+      </div>
+    </div>
+    <div class="center-cta">
+      <a class="btn-ghost" href="#form">Quero saber quanto posso economizar</a>
+    </div>
+  </div>
+</section>
+
+<!-- INVERTER COMPARISON -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow">Tecnologia</span>
+    <h2 class="section-title">Qual sistema é ideal para o seu telhado?</h2>
+    <p class="section-sub">Avaliamos gratuitamente qual tecnologia entrega o melhor resultado para o seu caso.</p>
+    <div class="compare-grid">
+      <div class="compare-card">
+        <span class="tag">Custo-benefício</span>
+        <h3>Sistema com Inversor String</h3>
+        <p>Painéis conectados em série, enviando energia para um único inversor central.</p>
+        <ul>
+          <li>Ideal para telhados amplos e sem sombra</li>
+          <li>Melhor custo-benefício</li>
+          <li>Instalação mais simplificada</li>
+        </ul>
+      </div>
+      <div class="compare-card highlight">
+        <span class="tag">Máxima eficiência</span>
+        <h3>Sistema com Microinversores</h3>
+        <p>Cada painel tem seu próprio inversor individual, operando de forma independente.</p>
+        <ul>
+          <li>Sombra ou sujeira em 1 painel não afeta os outros</li>
+          <li>Ideal para telhados complexos</li>
+          <li>Segurança aprovada pelas novas normativas dos Bombeiros</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow">Quem já instalou, recomenda</span>
+    <h2 class="section-title">Clientes reais, economia real</h2>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Minha conta caiu de forma impressionante. O processo de homologação foi todo cuidado pela equipe, não precisei correr atrás de nada."</p>
+        <div class="testi-who">
+          <div class="avatar">A</div>
+          <div>
+            <div class="name">Álvaro T.</div>
+            <div class="city">Balneário Camboriú, SC</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Instalamos no hotel e a redução na conta foi enorme. Equipe profissional do início ao fim."</p>
+        <div class="testi-who">
+          <div class="avatar">L</div>
+          <div>
+            <div class="name">Hotel Luar Atlântico</div>
+            <div class="city">Santa Catarina</div>
+          </div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <div class="stars">★★★★★</div>
+        <p class="quote">"Fizemos o projeto para a clínica e o retorno do investimento veio mais rápido do que esperávamos."</p>
+        <div class="testi-who">
+          <div class="avatar">C</div>
+          <div>
+            <div class="name">Clínica em Curitiba</div>
+            <div class="city">Curitiba, PR</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="badges-row">
+      <div class="badge-stat"><div class="num">Até 90%</div><div class="label">De economia na conta de luz</div></div>
+      <div class="badge-stat"><div class="num">10 anos</div><div class="label">De mercado</div></div>
+      <div class="badge-stat"><div class="num">100%</div><div class="label">Aprovação Copel/Celesc</div></div>
+      <div class="badge-stat"><div class="num">25 anos</div><div class="label">De garantia nos equipamentos</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- SIMULATOR -->
+<section class="section simulator">
+  <div class="container">
+    <div class="sim-box">
+      <div>
+        <span class="eyebrow" style="color:var(--amber);">Simulador</span>
+        <h2>Quanto posso economizar por mês?</h2>
+        <p>Escolha a faixa que mais se aproxima do valor da sua conta de luz atual e veja uma estimativa de economia.</p>
+        <div class="plan-select">
+          <div class="plan-option"><span>Conta até R$ 300/mês</span><span class="cap">Residencial P</span></div>
+          <div class="plan-option active"><span>Conta até R$ 800/mês</span><span class="cap">Residencial M</span></div>
+          <div class="plan-option"><span>Conta até R$ 1.500/mês</span><span class="cap">Residencial G</span></div>
+          <div class="plan-option"><span>Conta até R$ 5.000/mês</span><span class="cap">Comercial</span></div>
+          <div class="plan-option"><span>Acima de R$ 5.000/mês</span><span class="cap">Industrial</span></div>
+        </div>
+      </div>
+      <div class="sim-result">
+        <div class="row"><span>Faixa selecionada</span><b>Até R$ 800/mês</b></div>
+        <div class="row"><span>Economia estimada</span><b>Até 90% na conta</b></div>
+        <div class="row"><span>Retorno do investimento</span><b>~ 3 a 5 anos</b></div>
+        <div class="row"><span>Vida útil do sistema</span><b>25+ anos</b></div>
+        <a class="btn-primary" style="margin-top:20px;width:100%;justify-content:center;" href="#form">Quero este sistema instalado</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section">
+  <div class="container">
+    <span class="eyebrow" style="display:flex;justify-content:center;">Dúvidas frequentes</span>
+    <h2 class="section-title" style="text-align:center;margin:0 auto 40px;">Perguntas que todo mundo faz antes de instalar</h2>
+    <div class="faq-list">
+      <details open>
+        <summary>Quanto tempo dura a instalação?</summary>
+        <p>Em média de 1 a 3 dias, dependendo do tamanho do sistema e da complexidade do telhado.</p>
+      </details>
+      <details>
+        <summary>Quanto tempo leva para a homologação na concessionária?</summary>
+        <p>O prazo varia conforme a concessionária (Copel ou Celesc), mas nossa equipe acompanha todo o processo até a aprovação.</p>
+      </details>
+      <details>
+        <summary>Funciona em dias nublados ou à noite?</summary>
+        <p>Em dias nublados o sistema gera menos, mas continua gerando. À noite, você consome normalmente da rede, com créditos acumulados durante o dia.</p>
+      </details>
+      <details>
+        <summary>Qual a garantia dos equipamentos?</summary>
+        <p>Trabalhamos com marcas certificadas Tier 1 e TUV Rheinland, com garantias que chegam a até 25 anos.</p>
+      </details>
+      <details>
+        <summary>Em quanto tempo o sistema se paga?</summary>
+        <p>Na maioria dos casos residenciais e comerciais, o retorno do investimento acontece entre 3 e 5 anos, dependendo do consumo.</p>
+      </details>
+      <details>
+        <summary>Posso adicionar baterias no futuro?</summary>
+        <p>Sim. Nossos sistemas são compatíveis com baterias anti apagão, permitindo evoluir para um sistema híbrido quando quiser.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- FORM -->
+<section class="section form-section" id="form">
+  <div class="container form-wrap">
+    <span class="eyebrow">Última etapa</span>
+    <h2>Peça seu Orçamento Gratuito</h2>
+    <p>Um especialista entra em contato em até 2h úteis. Estudo técnico sem custo.</p>
+    <form onsubmit="event.preventDefault(); window.location.href='https://wa.me/5547988692568?text=Olá!%20Quero%20meu%20orçamento%20de%20Energia%20Solar.';">
+      <div class="field">
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" placeholder="Seu nome" required>
+      </div>
+      <div class="field">
+        <label for="whatsapp">WhatsApp</label>
+        <input type="tel" id="whatsapp" placeholder="(00) 00000-0000" required>
+      </div>
+      <div class="field">
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" placeholder="Sua cidade" required>
+      </div>
+      <button class="submit-btn" type="submit">Quero Meu Orçamento Grátis</button>
+    </form>
+    <p class="form-note">🔒 Seus dados estão seguros. Não fazemos spam.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="logo">SONUN <span style="color:var(--amber);">Energia</span></div>
+  <p>Balneário Camboriú-SC, Brasil · (47) 98869-2568 · contato@sonun.com.br</p>
+  <p style="margin-top:10px;">© 2026 SONUN Energia Solar e Baterias. Todos os direitos reservados. · <a href="https://instagram.com/sonunsolar" target="_blank">Instagram</a></p>
+</footer>
+
+<a class="wa-float" href="https://wa.me/5547988692568?text=Olá!%20Vim%20do%20anúncio%20de%20Energia%20Solar%20e%20quero%20tirar%20uma%20dúvida." target="_blank" rel="noopener" aria-label="WhatsApp">💬</a>
+
+<script>
+  document.querySelectorAll('.plan-option').forEach(opt=>{
+    opt.addEventListener('click',()=>{
+      document.querySelectorAll('.plan-option').forEach(o=>o.classList.remove('active'));
+      opt.classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
+
 </body>
 </html>
