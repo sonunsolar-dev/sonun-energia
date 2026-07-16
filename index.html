@@ -107,8 +107,21 @@
             max-height: 410px;
             opacity: 1;
         }
+
+@media (max-width: 480px) and (orientation: portrait) {
+
+    .hero-btn{
+        font-size:18px !important;
+        padding:18px 20px !important;
+        max-width:260px;
+        line-height:1.3;
+    }
+
+}
+        
     </style>
 </head>
+    
 <body class="font-sans text-slate-800 bg-white overflow-x-hidden">
 
     <!-- Header -->
@@ -201,9 +214,10 @@
 10 anos de Soluções Inovadoras.
 </p>
               <div class="flex flex-col sm:flex-row gap-4">
-  <a href="#contato" 
-     class="inline-flex items-center justify-center gap-2 bg-safety text-white px-6 py-4 rounded-xl font-bold 
-            [font-size:_clamp(0.7rem,1.8vw,1rem)] text-center leading-tight max-w-xs sm:max-w-sm">
+  <a href="#contato"
+   class="hero-btn inline-flex items-center justify-center gap-2
+          bg-safety text-white px-6 py-4 rounded-xl font-bold
+          text-base text-center leading-tight max-w-xs sm:max-w-sm">
     Estudo Técnico e Orçamento sem Custo
     <i data-lucide="arrow-right" class="w-4 h-4"></i>
   </a>
