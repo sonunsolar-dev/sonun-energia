@@ -1855,6 +1855,40 @@ footer{
             });
         }
     </script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const menuBtn = document.getElementById("mobile-menu-btn");
+        const mobileMenu = document.getElementById("mobile-menu");
+        const hamburgerIcon = document.getElementById("menu-icon-hamburger");
+        const closeIcon = document.getElementById("menu-icon-close");
+        const menuLinks = document.querySelectorAll(".mobile-link");
+
+        function toggleMenu() {
+            // Alterna a classe 'hidden' do container do menu
+            mobileMenu.classList.toggle("hidden");
+            mobileMenu.classList.toggle("flex");
+            
+            // Ativa a animação de altura e opacidade (Tailwind configurado no seu CSS)
+            mobileMenu.classList.toggle("open");
+
+            // Alterna os ícones de hambúrguer e fechar (X)
+            hamburgerIcon.classList.toggle("hidden");
+            closeIcon.classList.toggle("hidden");
+        }
+
+        // Abre/Fecha ao clicar no botão do menu
+        menuBtn.addEventListener("click", toggleMenu);
+
+        // Fecha o menu automaticamente ao clicar em qualquer link dele
+        menuLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                if (mobileMenu.classList.contains("open")) {
+                    toggleMenu();
+                }
+            });
+        });
+    });
+</script>
 </body>
 </html>
 <!-- site novo -->
