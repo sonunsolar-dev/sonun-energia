@@ -1781,43 +1781,91 @@ footer{
         });
     </script>
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
-<style>
-    .whatsapp-link {
-        position: fixed;
-        width: 60px;
-        height: 60px;
-        bottom: 20px; /* Distância da borda inferior */
-        right: 20px;  /* Distância da borda direita */
-        background-color: #25d366;
-        color: #FFF;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
-        z-index: 9999; /* Garante que ele fique por cima de tudo */
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: transform 0.3s;
-    }
+    <style>
+        .whatsapp-link {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: transform 0.3s, background-color 0.3s;
+        }
 
-    .whatsapp-link:hover {
-        transform: scale(1.1); /* Efeito de aumentar ao passar o mouse */
-        background-color: #128C7E;
-        color: #FFF;
-    }
-</style>
+        .whatsapp-link:hover {
+            transform: scale(1.1);
+            background-color: #128C7E;
+            color: #FFF;
+        }
+    </style>
 
-<a href="https://wa.me/5547988692568?text=Olá! Estive no seu site e gostaria de tirar uma dúvida sobre energia solar." 
-   class="whatsapp-link" 
-   target="_blank">
-    <i class="fa fa-whatsapp"></i>
-</a>
+    <a href="https://wa.me/5547988692568?text=Olá! Estive no seu site e gostaria de tirar uma dúvida sobre energia solar." 
+       class="whatsapp-link" 
+       target="_blank">
+        <i class="fa fa-whatsapp"></i>
+    </a>
 
+    <script>
+        // Inicializa os ícones do Lucide instalados no site
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+
+        // Seleção dos elementos do menu mobile
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Função para abrir/fechar o menu mobile adicionando/removendo a classe "open"
+        if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileMenu.classList.toggle('open');
+            });
+        }
+
+        // Fecha o menu automaticamente ao clicar em qualquer link interno
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu) {
+                    mobileMenu.classList.remove('open');
+                }
+            });
+        });
+
+        // Fecha o menu se o usuário clicar em qualquer outro lugar fora do cabeçalho
+        document.addEventListener('click', (e) => {
+            if (mobileMenu && mobileMenu.classList.contains('open')) {
+                if (!e.target.closest('#header')) {
+                    mobileMenu.classList.remove('open');
+                }
+            }
+        });
+
+        // Efeito de sombra no header ao rolar a página
+        const header = document.getElementById('header');
+        if (header) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('shadow-md');
+                } else {
+                    header.classList.remove('shadow-md');
+                }
+            });
+        }
+    </script>
 </body>
 </html>
-
 <!-- site novo -->
