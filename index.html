@@ -2065,60 +2065,29 @@ footer{
             </div>
         </div>
 
-<form id="meuFormulario" class="space-y-4">
-    <div class="space-y-2">
-        <label for="mensagem" class="block text-sm font-bold text-navy">Mensagem</label>
-        <textarea 
-            id="mensagem"
-            name="mensagem" 
-            placeholder="Deixe sua mensagem e no máximo em 8 hs um especialista entrará em contato."
-            rows="4"
-            class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 focus:border-safety focus:ring-2 focus:ring-safety/20 outline-none transition-all resize-none"
-            required
-            aria-label="Mensagem"
-        ></textarea>
-    </div>
+        <div class="space-y-2">
+            <label for="mensagem" class="block text-sm font-bold text-navy">Mensagem</label>
+            <textarea 
+                id="mensagem"
+                name="mensagem" 
+                placeholder="Deixe sua mensagem e no máximo em 8 hs um especialista entrará em contato."
+                rows="4"
+                class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 focus:border-safety focus:ring-2 focus:ring-safety/20 outline-none transition-all resize-none"
+                required
+                aria-label="Mensagem"
+            ></textarea>
+        </div>
 
-    <button 
-        type="submit" 
-        class="w-full btn-primary flex items-center justify-center gap-2 hover:[&>span]:text-orange-500 active:[&>span]:text-orange-600"
-    >
-        <i data-lucide="send" class="w-5 h-5 hover:text-orange-500"></i>
-        <span class="font-bold">Enviar Mensagem</span>
-    </button>
-</form>
+        <button 
+            type="submit" 
+            class="w-full btn-primary flex items-center justify-center gap-2 hover:[&>span]:text-orange-500 active:[&>span]:text-orange-600"
+        >
+            <i data-lucide="send" class="w-5 h-5 hover:text-orange-500"></i>
+            <span class="font-bold">Enviar Mensagem</span>
+        </button>
 
-<div id="mensagemSucesso" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-lg text-center font-bold animate-fade-in">
-    ✓ Obrigado! Sua mensagem foi enviada com sucesso.
+    </form>
 </div>
-
-<script>
-    // Garante que o script só rode após o HTML estar 100% carregado
-    document.addEventListener('DOMContentLoaded', function() {
-        const formulario = document.getElementById('meuFormulario');
-        const feedback = document.getElementById('mensagemSucesso');
-        const campoMensagem = document.getElementById('mensagem');
-
-        // Verifica se os elementos realmente existem na página para não dar erro
-        if (formulario && feedback) {
-            formulario.addEventListener('submit', function(event) {
-                event.preventDefault(); // Para o recarregamento da página
-                
-                // Mostra a mensagem de sucesso
-                feedback.classList.remove('hidden');
-                
-                // Limpa o campo
-                if (campoMensagem) campoMensagem.value = '';
-                
-                // Esconde depois de 5 segundos
-                setTimeout(() => {
-                    feedback.classList.add('hidden');
-                }, 5000);
-            });
-        }
-    });
-</script>
-            </div>
             </div>
             </div>
         </section>
