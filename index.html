@@ -1986,30 +1986,30 @@ footer{
         </div>
 
         <div class="space-y-3">
-            <span class="block text-sm font-bold text-navy">Qual solução você procura?</span>
+            <span class="block text-sm font-bold text-navy">Qual solução você procura? (Selecione quantas desejar)</span>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-slate-300 cursor-pointer transition-all bg-white">
-                    <input type="radio" name="solucao" value="Energia-Solar" class="w-4 h-4 text-safety focus:ring-safety border-slate-300" checked>
+                    <input type="checkbox" name="solucao[]" value="Energia-Solar" class="w-4 h-4 text-safety focus:ring-safety border-slate-300 rounded">
                     <span class="text-sm text-slate-700 font-medium">Energia Solar</span>
                 </label>
                 <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-slate-300 cursor-pointer transition-all bg-white">
-                    <input type="radio" name="solucao" value="Baterias-Anti-Apagao" class="w-4 h-4 text-safety focus:ring-safety border-slate-300">
+                    <input type="checkbox" name="solucao[]" value="Baterias-Anti-Apagao" class="w-4 h-4 text-safety focus:ring-safety border-slate-300 rounded">
                     <span class="text-sm text-slate-700 font-medium">Baterias Anti Apagão</span>
                 </label>
                 <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-slate-300 cursor-pointer transition-all bg-white">
-                    <input type="radio" name="solucao" value="Carregador-Posto-Eletrico" class="w-4 h-4 text-safety focus:ring-safety border-slate-300">
+                    <input type="checkbox" name="solucao[]" value="Carregador-Posto-Eletrico" class="w-4 h-4 text-safety focus:ring-safety border-slate-300 rounded">
                     <span class="text-sm text-slate-700 font-medium">Carregador Posto Elétrico</span>
                 </label>
                 <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-slate-300 cursor-pointer transition-all bg-white">
-                    <input type="radio" name="solucao" value="Mercado-Livre" class="w-4 h-4 text-safety focus:ring-safety border-slate-300">
+                    <input type="checkbox" name="solucao[]" value="Mercado-Livre" class="w-4 h-4 text-safety focus:ring-safety border-slate-300 rounded">
                     <span class="text-sm text-slate-700 font-medium">Mercado Livre</span>
                 </label>
                 <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-slate-300 cursor-pointer transition-all bg-white">
-                    <input type="radio" name="solucao" value="BESS" class="w-4 h-4 text-safety focus:ring-safety border-slate-300">
+                    <input type="checkbox" name="solucao[]" value="BESS" class="w-4 h-4 text-safety focus:ring-safety border-slate-300 rounded">
                     <span class="text-sm text-slate-700 font-medium">BESS</span>
                 </label>
                 <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-slate-300 cursor-pointer transition-all bg-white">
-                    <input type="radio" name="solucao" value="Plano-Safra" class="w-4 h-4 text-safety focus:ring-safety border-slate-300">
+                    <input type="checkbox" name="solucao[]" value="Plano-Safra" class="w-4 h-4 text-safety focus:ring-safety border-slate-300 rounded">
                     <span class="text-sm text-slate-700 font-medium">Plano Safra</span>
                 </label>
             </div>
@@ -2086,11 +2086,18 @@ footer{
 
         <button 
             type="submit" 
-            class="w-full btn-primary flex items-center justify-center gap-2 hover:[&>span]:text-orange-500 active:
+            class="w-full btn-primary flex items-center justify-center gap-2 hover:[&>span]:text-orange-500 active:[&>span]:text-orange-600"
+        >
+            <i data-lucide="send" class="w-5 h-5 hover:text-orange-500"></i>
+            <span class="font-bold">Enviar Mensagem</span>
+        </button>
+           </form>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
+
 
     
     <!-- Área do Cliente -->
