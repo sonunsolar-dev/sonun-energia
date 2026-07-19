@@ -2169,12 +2169,17 @@ footer{
                     <!-- Campo oculto para organizar emails -->
                     <input type="hidden" name="_subject" value="Nova mensagem - Área do Cliente">
 
-                   <button 
+                 <button 
     type="submit" 
-    class="w-full btn-primary flex items-center justify-center gap-2 hover:[&>span]:text-orange-500 active:[&>span]:text-orange-600"
+    class="w-full btn-primary flex items-center justify-center gap-2 group transition-colors duration-200"
 >
-    <i data-lucide="arrow-right-circle" class="w-5 h-5 md:w-6 md:h-6 text-safety group-hover:translate-x-1 transition-transform shrink-0"></i>
-    <span class="font-bold">Enviar Mensagem</span>
+    <i 
+        data-lucide="arrow-right-circle" 
+        class="w-5 h-5 md:w-6 md:h-6 text-safety group-hover:translate-x-1 transition-transform shrink-0 group-hover:text-orange-500 group-active:text-orange-600"
+    ></i>
+    <span class="font-bold group-hover:text-orange-500 group-active:text-orange-600">
+        Enviar Mensagem
+    </span>
 </button>
 
                 </form>
