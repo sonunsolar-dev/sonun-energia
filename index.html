@@ -2065,29 +2065,53 @@ footer{
             </div>
         </div>
 
-        <div class="space-y-2">
-            <label for="mensagem" class="block text-sm font-bold text-navy">Mensagem</label>
-            <textarea 
-                id="mensagem"
-                name="mensagem" 
-                placeholder="Deixe sua mensagem e no máximo em 8 hs um especialista entrará em contato."
-                rows="4"
-                class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 focus:border-safety focus:ring-2 focus:ring-safety/20 outline-none transition-all resize-none"
-                required
-                aria-label="Mensagem"
-            ></textarea>
-        </div>
+<form id="meuFormulario" class="space-y-4">
+    <div class="space-y-2">
+        <label for="mensagem" class="block text-sm font-bold text-navy">Mensagem</label>
+        <textarea 
+            id="mensagem"
+            name="mensagem" 
+            placeholder="Deixe sua mensagem e no máximo em 8 hs um especialista entrará em contato."
+            rows="4"
+            class="w-full px-4 py-3 rounded-lg border-2 border-slate-200 focus:border-safety focus:ring-2 focus:ring-safety/20 outline-none transition-all resize-none"
+            required
+            aria-label="Mensagem"
+        ></textarea>
+    </div>
 
-        <button 
-            type="submit" 
-            class="w-full btn-primary flex items-center justify-center gap-2 hover:[&>span]:text-orange-500 active:[&>span]:text-orange-600"
-        >
-            <i data-lucide="send" class="w-5 h-5 hover:text-orange-500"></i>
-            <span class="font-bold">Enviar Mensagem</span>
-        </button>
+    <button 
+        type="submit" 
+        class="w-full btn-primary flex items-center justify-center gap-2 hover:[&>span]:text-orange-500 active:[&>span]:text-orange-600"
+    >
+        <i data-lucide="send" class="w-5 h-5 hover:text-orange-500"></i>
+        <span class="font-bold">Enviar Mensagem</span>
+    </button>
+</form>
 
-    </form>
+<div id="mensagemSucesso" class="hidden mt-4 p-4 bg-green-100 text-green-800 rounded-lg text-center font-bold animate-fade-in">
+    ✓ Obrigado! Sua mensagem foi enviada com sucesso.
 </div>
+
+<script>
+    document.getElementById('meuFormulario').addEventListener('submit', function(event) {
+        // Impede a página de recarregar imediatamente
+        event.preventDefault(); 
+        
+        // Seus processos de envio (ex: fetch/axios) entrariam aqui
+        
+        // Mostra a mensagem de sucesso (removendo a classe 'hidden' do Tailwind)
+        const feedback = document.getElementById('mensagemSucesso');
+        feedback.classList.remove('hidden');
+        
+        // Limpa o campo de texto após o envio
+        document.getElementById('mensagem').value = '';
+        
+        // Opcional: Ocultar a mensagem depois de 5 segundos
+        setTimeout(() => {
+            feedback.classList.add('hidden');
+        }, 5000);
+    });
+</script></div>
             </div>
             </div>
         </section>
