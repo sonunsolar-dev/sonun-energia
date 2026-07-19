@@ -1,26 +1,30 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7H6CPQ3JL7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-    
-      gtag('config', 'G-7H6CPQ3JL7');
-    </script>
+    <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7H6CPQ3JL7"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-7H6CPQ3JL7');
+</script>
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SONUN Solar| Apagão Nunca Mais</title>
     <meta name="description" content="Gere sua própria energia e armazene em baterias com a SONUN. Soluções completas em energia solar, sistemas híbridos e retrofit.">
     
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
+    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     
     <script>
@@ -93,41 +97,49 @@
             background: #002244;
         }
 
-        /* CORREÇÃO DA ANIMAÇÃO DO MENU MOBILE */
+        /* Mobile Menu Animation */
         #mobile-menu {
-            transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
             max-height: 0;
             opacity: 0;
-            overflow-y: auto; /* Permite rolar se o conteúdo passar do tamanho */
+            overflow: hidden;
         }
 
         #mobile-menu.open {
-            max-height: 85vh; /* Ocupa até 85% do visor do celular de forma dinâmica */
+            max-height: 410px;
             opacity: 1;
         }
 
-        @media (max-width: 480px) and (orientation: portrait) {
-            .hero-btn{
-                font-size:17px;
-                padding:16px 18px;
-                max-width:235px;
-                line-height:1.25;
-            }
-        }
+@media (max-width: 480px) and (orientation: portrait) {
+
+    .hero-btn{
+        font-size:17px;
+        padding:16px 18px;   /* era 18px 20px */
+        max-width:235px;     /* era 260px */
+        line-height:1.25;
+    }
+
+}
+        
     </style>
 </head>
     
 <body class="font-sans text-slate-800 bg-white overflow-x-hidden">
 
+    <!-- Header -->
     <header id="header" class="fixed top-0 left-0 right-0 z-50 glass-header transition-shadow duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-18">
+                <!-- Logo -->
                 <div class="flex items-center">
                     <div class="flex items-center gap-2">
+                        <!-- AQUI ESTÁ A SUA LOGO SUBSTITUINDO O ÍCONE -->
                         <img src="./logoarmazen.png" alt="Logo SONUN" class="h-[68px] w-auto object-contain">
+                        <!--<span class="font-display text-[16px] font-extrabold tracking-tighter text-navy uppercase">Bem Vindo</span> -->
                     </div>
                 </div>
 
+                <!-- Desktop Menu -->
                 <nav class="hidden md:flex items-center space-x-4">
                     <a href="#inicio" class="text-xs font-bold text-navy hover:text-safety transition-colors">Início</a>
                     <a href="#servicos" class="text-xs font-bold text-navy hover:text-safety transition-colors">Serviços</a>
@@ -139,57 +151,47 @@
                     <a href="#bess" class="text-xs font-bold text-navy hover:text-safety transition-colors">BESS</a>
                     <a href="#AGRO" class="text-xs font-bold text-navy hover:text-safety transition-colors">Plano Safra</a>
                 </nav>
-                
-                <a href="#contato" class="hidden md:inline-flex items-center justify-center bg-[#1e4b8a] text-white px-3 py-2 rounded-xl font-semibold text-[12px] hover:text-safety transition-all ml-2 uppercase tracking-wider shadow-sm">
-                    Orçamento
-                </a>
-
-                <div class="md:hidden">
-                    <button id="mobile-menu-btn" class="relative flex items-center justify-center" style="width: 44px; height: 44px; border-radius: 50%; background: #003366; border: none; cursor: pointer; box-shadow: 0 2px 8px rgba(0,51,102,0.3);">
-                        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect y="0" width="22" height="2.5" rx="1.25" fill="#FF8C00"/>
-                            <rect y="6.75" width="22" height="2.5" rx="1.25" fill="#FF8C00"/>
-                            <rect y="13.5" width="22" height="2.5" rx="1.25" fill="#FF8C00"/>
-                        </svg>
-                    </button>
-                </div>
+            <a href="#contato" 
+   class="hidden md:inline-flex items-center justify-center 
+          bg-[#1e4b8a] text-white px-3 py-2 rounded-xl font-semibold 
+          text-[12px] hover:text-safety transition-all ml-2 uppercase 
+          tracking-wider shadow-sm">
+   Orçamento
+</a>
+               <!-- Mobile Menu Button -->
+<div class="md:hidden">
+    <button id="mobile-menu-btn" class="relative flex items-center justify-center" style="width: 44px; height: 44px; border-radius: 50%; background: #003366; border: none; cursor: pointer; box-shadow: 0 2px 8px rgba(0,51,102,0.3);">
+        <svg width="22" height="16" viewBox="0 0 22 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect y="0" width="22" height="2.5" rx="1.25" fill="#FF8C00"/>
+            <rect y="6.75" width="22" height="2.5" rx="1.25" fill="#FF8C00"/>
+            <rect y="13.5" width="22" height="2.5" rx="1.25" fill="#FF8C00"/>
+        </svg>
+    </button>
+</div>
             </div>
         </div>
 
-        <div id="mobile-menu" class="md:hidden bg-white border-t border-slate-100 px-6 shadow-inner">
-            <div class="py-4 space-y-3.5">
-                <a href="#inicio" class="block text-base font-semibold text-navy mobile-link">Início</a>
-                <a href="#servicos" class="block text-base font-semibold text-navy mobile-link">Serviços</a>
-                <a href="#projetos" class="block text-base font-semibold text-navy mobile-link">Projetos</a>
-                <a href="#diferenciais" class="block text-base font-semibold text-navy mobile-link">Energia Solar</a>
-                <a href="#hibridos" class="block text-base font-semibold text-navy mobile-link">Baterias Anti Apagão</a>
-                <a href="#carregador" class="block text-base font-semibold text-navy mobile-link">Auto Posto Elétrico</a>
-                <a href="#mercadolivre" class="block text-base font-semibold text-[#f09433] mobile-link">Mercado Livre de Energia</a>
-                <a href="#bess" class="block text-base font-semibold text-navy mobile-link">BESS Ind e Com</a>
-                <a href="#AGRO" class="block text-base font-semibold text-navy mobile-link">Baterias Planos Safra 2026/27</a>
-                <a href="#contato" class="block text-base font-semibold text-[#f09433] mobile-link pb-6">Contato/Orçamento</a>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="md:hidden bg-white border-t border-slate-100 px-4 space-y-4">
+            <div class="py-6 space-y-4">
+                <a href="#inicio" class="block text-lg font-semibold text-navy mobile-link">Início</a>
+                <a href="#servicos" class="block text-lg font-semibold text-navy mobile-link">Serviços</a>
+                <a href="#projetos" class="block text-lg font-semibold text-navy mobile-link">Projetos</a>
+                <a href="#diferenciais" class="block text-lg font-semibold text-navy mobile-link">Energia Solar</a>
+                <a href="#hibridos" class="block text-lg font-semibold text-navy mobile-link">Baterias Anti Apagão</a>
+                <a href="#carregador" class="block text-lg font-semibold text-navy mobile-link">Auto Posto Elétrico</a>
+                <a href="#mercadolivre" class="block text-lg font-semibold text-[#f09433] mobile-link">Mercado Livre de Energia</a>
+                <a href="#bess" class="block text-lg font-semibold text-navy mobile-link">BESS Ind e Com</a>
+                <a href="#AGRO" class="block text-lg font-semibold text-navy mobile-link">Baterias Planos Safra 2026/27</a>
+                <a href="#contato" class="block text-lg font-semibold text-[#f09433] mobile-link" style="margin-bottom: 35px !important; display: block;">Contato/Orçamento</a>
+                <!-- <a href="#area-cliente" class="block text-lg font-semibold text-navy mobile-link">Área do cliente</a> -->
+                  <!--  <a href="https://wa.me/5547988692568" target="_blank" class="flex items-center justify-center gap-2 bg-safety text-white px-6 py-3 rounded-xl font-bold">
+                    <i data-lucide="message-circle" class="w-5 h-5"></i>
+                    Falar no WhatsApp
+                </a> -->
             </div>
         </div>
     </header>
-
-    <script>
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const links = document.querySelectorAll('.mobile-link');
-
-        function toggleMenu() {
-            mobileMenu.classList.toggle('open');
-        }
-
-        menuBtn.addEventListener('click', toggleMenu);
-
-        // Fecha o menu automaticamente ao clicar em qualquer item
-        links.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.remove('open');
-            });
-        });
-    </script>
 
     <!-- Hero Section -->
     <section id="inicio" class="relative min-h-screen flex items-center pt-6 overflow-hidden">
@@ -2018,19 +2020,23 @@ footer{
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-slate-300 cursor-pointer transition-all bg-white">
                     <input type="radio" name="consumo" value="300-500" class="w-4 h-4 text-safety focus:ring-safety border-slate-300">
-                    <span class="text-sm text-slate-700 font-medium">De R$ 500,00 a R$ 1.000,00</span>
+                    <span class="text-sm text-slate-700 font-medium">De R$ 300,00 a R$ 500,00</span>
                 </label>
                 <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-slate-300 cursor-pointer transition-all bg-white">
                     <input type="radio" name="consumo" value="501-700" class="w-4 h-4 text-safety focus:ring-safety border-slate-300">
-                    <span class="text-sm text-slate-700 font-medium">De R$ 1.000,00 a R$ 1.500,00</span>
+                    <span class="text-sm text-slate-700 font-medium">De R$ 501,00 a R$ 700,00</span>
                 </label>
                 <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-slate-300 cursor-pointer transition-all bg-white">
                     <input type="radio" name="consumo" value="701-1000" class="w-4 h-4 text-safety focus:ring-safety border-slate-300">
-                    <span class="text-sm text-slate-700 font-medium">De R$ 1.500,00 a R$ 2.600,00</span>
+                    <span class="text-sm text-slate-700 font-medium">De R$ 701,00 a R$ 1000,00</span>
+                </label>
+                <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-slate-300 cursor-pointer transition-all bg-white">
+                    <input type="radio" name="consumo" value="1001-1500" class="w-4 h-4 text-safety focus:ring-safety border-slate-300">
+                    <span class="text-sm text-slate-700 font-medium">De R$ 1001,00 a R$ 1500,00</span>
                 </label>
                 <label class="flex items-center gap-3 p-3 rounded-lg border border-slate-200 hover:border-slate-300 cursor-pointer transition-all bg-white">
                     <input type="radio" name="consumo" value="Acima-1500" class="w-4 h-4 text-safety focus:ring-safety border-slate-300">
-                    <span class="text-sm text-slate-700 font-medium">Acima de R$ 2.600,00</span>
+                    <span class="text-sm text-slate-700 font-medium">Acima de R$ 1500,00</span>
                 </label>
             </div>
         </div>
