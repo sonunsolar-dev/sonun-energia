@@ -98,15 +98,15 @@
         }
 
         /* Mobile Menu Animation */
-        #mobile-menu {
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+       #mobile-menu {
+            transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
             max-height: 0;
             opacity: 0;
-            overflow: hidden;
+            overflow-y: auto; /* Permite rolar se o conteúdo passar do tamanho */
         }
 
         #mobile-menu.open {
-            max-height: 410px;
+            max-height: 85vh; /* Ocupa até 85% do visor do celular de forma dinâmica */
             opacity: 1;
         }
 
