@@ -2093,25 +2093,32 @@ footer{
 </div>
 
 <script>
-    document.getElementById('meuFormulario').addEventListener('submit', function(event) {
-        // Impede a página de recarregar imediatamente
-        event.preventDefault(); 
-        
-        // Seus processos de envio (ex: fetch/axios) entrariam aqui
-        
-        // Mostra a mensagem de sucesso (removendo a classe 'hidden' do Tailwind)
+    // Garante que o script só rode após o HTML estar 100% carregado
+    document.addEventListener('DOMContentLoaded', function() {
+        const formulario = document.getElementById('meuFormulario');
         const feedback = document.getElementById('mensagemSucesso');
-        feedback.classList.remove('hidden');
-        
-        // Limpa o campo de texto após o envio
-        document.getElementById('mensagem').value = '';
-        
-        // Opcional: Ocultar a mensagem depois de 5 segundos
-        setTimeout(() => {
-            feedback.classList.add('hidden');
-        }, 5000);
+        const campoMensagem = document.getElementById('mensagem');
+
+        // Verifica se os elementos realmente existem na página para não dar erro
+        if (formulario && feedback) {
+            formulario.addEventListener('submit', function(event) {
+                event.preventDefault(); // Para o recarregamento da página
+                
+                // Mostra a mensagem de sucesso
+                feedback.classList.remove('hidden');
+                
+                // Limpa o campo
+                if (campoMensagem) campoMensagem.value = '';
+                
+                // Esconde depois de 5 segundos
+                setTimeout(() => {
+                    feedback.classList.add('hidden');
+                }, 5000);
+            });
+        }
     });
-</script></div>
+</script>
+            </div>
             </div>
             </div>
         </section>
