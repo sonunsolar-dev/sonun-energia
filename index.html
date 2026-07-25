@@ -1693,6 +1693,432 @@
   </div>
 </section>
 
+
+
+
+<!--MUNICIPIOS-->
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7H6CPQ3JL7"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-7H6CPQ3JL7');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SONUN Solar | Banco de Baterias BESS para Municípios</title>
+    <meta name="description" content="Sistemas BESS para municípios: segurança energética, eficiência e operação contínua em serviços públicos essenciais.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#003366',
+                        safety: '#E67E22',
+                        prussian: '#003153',
+                        midnight: '#002147'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Montserrat', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        @layer base {
+            html {
+                scroll-behavior: smooth;
+            }
+        }
+        
+        .glass-header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 51, 102, 0.1);
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, rgba(0, 33, 71, 0.95), rgba(0, 51, 102, 0.85));
+        }
+        
+        .card-shadow {
+            box-shadow: 0 10px 30px -5px rgba(0, 51, 102, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .card-shadow:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 51, 102, 0.2);
+        }
+
+        .btn-hover {
+            transition: all 0.3s ease;
+        }
+
+        .btn-hover:hover {
+            transform: scale(1.03);
+            filter: brightness(1.1);
+        }
+
+        /* Animação do Gráfico de Carga */
+        @keyframes pulseBar {
+            0%, 100% { height: 30%; }
+            50% { height: 90%; }
+        }
+
+        .animate-bar-1 { animation: pulseBar 4s infinite ease-in-out; }
+        .animate-bar-2 { animation: pulseBar 4s infinite ease-in-out 1s; }
+        .animate-bar-3 { animation: pulseBar 4s infinite ease-in-out 2s; }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #003366;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #002244;
+        }
+    </style>
+</head>
+    
+<body class="font-sans text-slate-800 bg-slate-50 overflow-x-hidden">
+
+    <section class="pt-32 pb-20 bg-midnight text-white relative overflow-hidden hero-gradient">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <span class="inline-block bg-safety/20 text-safety border border-safety/30 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase mb-6">
+                    Banco de Baterias BESS para Municípios
+                </span>
+                <h1 class="font-display text-3xl sm:text-5xl font-extrabold leading-tight mb-6">
+                    Economia e Segurança Energética para o Seu Município com Sistemas BESS
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-300 mb-8 font-light leading-relaxed">
+                    Proteja serviços essenciais, reduza custos de operação em horários de pico e garanta energia ininterrupta para hospitais, escolas e prédios públicos.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#contato" class="bg-safety hover:bg-orange-600 text-white font-bold py-4 px-8 rounded-lg text-center text-lg btn-hover shadow-lg">
+                        Solicitar Estudo Municipal
+                    </a>
+                    <a href="#beneficios" class="border border-white/30 hover:bg-white/10 text-white font-semibold py-4 px-8 rounded-lg text-center text-lg transition">
+                        Conhecer Benefícios
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="municipios" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-2xl sm:text-4xl font-bold text-navy mb-4">Por que implementar BESS na sua Cidade?</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Tecnologia avançada de armazenamento em baterias para elevar a resiliência da infraestrutura pública.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 card-shadow">
+                    <div class="w-14 h-14 bg-navy/10 text-navy rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="shield-check" class="w-8 h-8 text-navy"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-navy mb-3">Continuidade Operacional</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Solução contra o Apagão. O sistema BESS entra em ação instantaneamente durante quedas de rede, mantendo UPAs, postos de saúde e centrais de monitoramento 100% operacionais.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 card-shadow">
+                    <div class="w-14 h-14 bg-safety/10 text-safety rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="trending-down" class="w-8 h-8 text-safety"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-navy mb-3">Economia no Tarifaço (Peak Shaving)</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Armazene energia nos horários fora de ponta (mais baratos) ou via geração solar local para injetar nos horários de pico de consumo, reduzindo dramaticamente a fatura pública.
+                    </p>
+                </div>
+
+                <div class="bg-slate-50 p-8 rounded-2xl border border-slate-100 card-shadow">
+                    <div class="w-14 h-14 bg-navy/10 text-navy rounded-xl flex items-center justify-center mb-6">
+                        <i data-lucide="leaf" class="w-8 h-8 text-navy"></i>
+                    </div>
+                    <h3 class="font-display text-xl font-bold text-navy mb-3">Sustentabilidade e Descarbonização</h3>
+                    <p class="text-slate-600 leading-relaxed text-sm">
+                        Substitua geradores poluentes e ruidosos a diesel por uma solução limpa e renovável. Alinhe seu município às metas de ESG e desenvolvimento sustentável.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-2xl sm:text-4xl font-bold text-navy mb-4">Comparativo Operacional</h2>
+                <p class="text-slate-600">A diferença real no dia a dia da administração municipal</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl border-t-4 border-red-500 shadow-sm">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i data-lucide="x-circle" class="text-red-500 w-7 h-7"></i>
+                        <h3 class="font-display text-xl font-bold text-slate-800">Sem BESS (Modelo Tradicional)</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-600 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="alert-triangle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                            <span>Interrupção de serviços essenciais durante falhas na rede elétrica.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="alert-triangle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                            <span>Gastos elevados com diesel e manutenção constante de geradores mecânicos.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="alert-triangle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                            <span>Vulnerabilidade aos horários de ponta com tarifas de energia muito mais altas.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="alert-triangle" class="w-5 h-5 text-red-500 shrink-0 mt-0.5"></i>
+                            <span>Emissão contínua de ruídos e poluição ambiental no centro urbano.</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl border-t-4 border-green-500 shadow-sm border border-slate-200">
+                    <div class="flex items-center gap-3 mb-6">
+                        <i data-lucide="check-circle-2" class="text-green-500 w-7 h-7"></i>
+                        <h3 class="font-display text-xl font-bold text-navy">Com BESS (Tecnologia SONUN)</h3>
+                    </div>
+                    <ul class="space-y-4 text-slate-600 text-sm">
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0 mt-0.5"></i>
+                            <span>Transição imperceptível sem queda de energia ou interrupções.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0 mt-0.5"></i>
+                            <span>Custo operacional mínimo e ausência de necessidade de combustível fóssil.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0 mt-0.5"></i>
+                            <span>Gestão inteligente de demanda com barateamento do custo de energia do prédio público.</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i data-lucide="check" class="w-5 h-5 text-green-500 shrink-0 mt-0.5"></i>
+                            <span>Zero emissões de ruído e fumaça, totalmente sustentável.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-midnight text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-safety font-bold text-sm tracking-wider uppercase mb-2 block">Inteligência Operacional</span>
+                    <h2 class="font-display text-2xl sm:text-4xl font-bold mb-6">Gráfico Dinâmico de Nivelamento de Carga (Peak Shaving)</h2>
+                    <p class="text-slate-300 leading-relaxed mb-6 font-light">
+                        O BESS carrega suas baterias nos períodos em que a energia solar é abundante ou quando as tarifas da concessionária estão reduzidas. Durante os horários de pico, o sistema injeta energia armazenada no prédio público, achatando a curva de consumo da rede e reduzindo os custos com energia.
+                    </p>
+                    <div class="space-y-3 border-l-2 border-safety pl-4 text-sm">
+                        <p class="text-slate-200"><strong class="text-white">Linha Amarela:</strong> Geração Solar Continuada</p>
+                        <p class="text-slate-200"><strong class="text-white">Área Laranja:</strong> Armazenamento e Suporte de Bateria</p>
+                    </div>
+                </div>
+
+                <div class="bg-navy/60 p-6 rounded-2xl border border-white/10 card-shadow">
+                    <div class="flex justify-between items-center mb-6">
+                        <span class="text-xs font-semibold text-slate-300 flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-green-400 animate-ping"></span>
+                            Monitoramento BESS ao Vivo
+                        </span>
+                        <span class="text-xs bg-safety/20 text-safety px-2.5 py-1 rounded">Modo: Peak Shaving</span>
+                    </div>
+
+                    <div class="h-48 flex items-end justify-between gap-2 pt-6 border-b border-slate-700 pb-2">
+                        <div class="w-full bg-slate-700/50 rounded-t h-1/3 relative group">
+                            <div class="bg-navy-400 w-full rounded-t animate-bar-1 bg-blue-500/40"></div>
+                        </div>
+                        <div class="w-full bg-slate-700/50 rounded-t h-1/2 relative group">
+                            <div class="bg-navy-400 w-full rounded-t animate-bar-2 bg-blue-500/50"></div>
+                        </div>
+                        <div class="w-full bg-slate-700/50 rounded-t h-3/4 relative group">
+                            <div class="w-full rounded-t animate-bar-3 bg-safety"></div>
+                        </div>
+                        <div class="w-full bg-slate-700/50 rounded-t h-full relative group">
+                            <div class="w-full rounded-t animate-bar-1 bg-safety"></div>
+                        </div>
+                        <div class="w-full bg-slate-700/50 rounded-t h-2/3 relative group">
+                            <div class="w-full rounded-t animate-bar-2 bg-blue-500/50"></div>
+                        </div>
+                        <div class="w-full bg-slate-700/50 rounded-t h-1/3 relative group">
+                            <div class="w-full rounded-t animate-bar-3 bg-blue-500/30"></div>
+                        </div>
+                    </div>
+                    <div class="flex justify-between text-xs text-slate-400 mt-3">
+                        <span>06:00</span>
+                        <span>10:00</span>
+                        <span class="text-safety font-bold">18:00 (Pico)</span>
+                        <span class="text-safety font-bold">21:00 (Pico)</span>
+                        <span>00:00</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-slate-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <h2 class="font-display text-2xl sm:text-4xl font-bold text-navy mb-4">Como Funciona a Instalação Integrada</h2>
+                <p class="text-slate-600 max-w-2xl mx-auto">Fluxo simplificado de integração do sistema BESS com a infraestrutura pré-existente.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-6 relative">
+                <div class="bg-white p-6 rounded-xl border border-slate-200 text-center relative z-10">
+                    <div class="w-12 h-12 bg-navy text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">1</div>
+                    <i data-lucide="sun" class="w-8 h-8 text-safety mx-auto mb-3"></i>
+                    <h4 class="font-bold text-navy mb-2">Fonte de Energia</h4>
+                    <p class="text-xs text-slate-600">Rede da concessionária ou gerador solar fotovoltaico existente.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 text-center relative z-10">
+                    <div class="w-12 h-12 bg-navy text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">2</div>
+                    <i data-lucide="cpu" class="w-8 h-8 text-navy mx-auto mb-3"></i>
+                    <h4 class="font-bold text-navy mb-2">Inversor / EMS</h4>
+                    <p class="text-xs text-slate-600">Gestão inteligente de energia e conversão em tempo real.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 text-center relative z-10">
+                    <div class="w-12 h-12 bg-navy text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">3</div>
+                    <i data-lucide="battery-charging" class="w-8 h-8 text-safety mx-auto mb-3"></i>
+                    <h4 class="font-bold text-navy mb-2">Banco de Baterias BESS</h4>
+                    <p class="text-xs text-slate-600">Armazenamento seguro de lítio para pronta utilização.</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl border border-slate-200 text-center relative z-10">
+                    <div class="w-12 h-12 bg-navy text-white rounded-full flex items-center justify-center font-bold text-lg mx-auto mb-4">4</div>
+                    <i data-lucide="building-2" class="w-8 h-8 text-navy mx-auto mb-3"></i>
+                    <h4 class="font-bold text-navy mb-2">Cargas Prioritárias</h4>
+                    <p class="text-xs text-slate-600">Alimentação ininterrupta do prédio ou equipamento público.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-navy text-white rounded-3xl p-8 sm:p-12 overflow-hidden relative card-shadow">
+                <div class="max-w-3xl relative z-10">
+                    <span class="text-safety font-bold text-xs uppercase tracking-widest mb-3 block">Proposta de Valor Institucional</span>
+                    <h2 class="font-display text-2xl sm:text-4xl font-extrabold mb-6">Em que o Município está, de fato, investindo?</h2>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 my-8">
+                        <div class="flex items-start gap-4">
+                            <div class="p-2 bg-white/10 rounded-lg text-safety shrink-0"><i data-lucide="shield" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Tranquilidade Gestora</h4>
+                                <p class="text-slate-300 text-sm">Proteção contra crises energéticas e paralisia de serviços essenciais na sua gestão.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="p-2 bg-white/10 rounded-lg text-safety shrink-0"><i data-lucide="piggy-bank" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Eficiência do Dinheiro Público</h4>
+                                <p class="text-slate-300 text-sm">Redução de despesas correntes com tarifas elevadas e manutenção de diesel.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="p-2 bg-white/10 rounded-lg text-safety shrink-0"><i data-lucide="award" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Legado de Modernização</h4>
+                                <p class="text-slate-300 text-sm">Transformação do município em referência de inovação e Cidade Inteligente.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-4">
+                            <div class="p-2 bg-white/10 rounded-lg text-safety shrink-0"><i data-lucide="thumbs-up" class="w-6 h-6"></i></div>
+                            <div>
+                                <h4 class="font-bold text-lg mb-1">Aprovação da População</h4>
+                                <p class="text-slate-300 text-sm">Atendimento ininterrupto em postos de saúde e escolas, garantindo respeito ao cidadão.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SEÇÃO FINAL: Espaço para Fotos e Botão de Ação -->
+    <main class="py-20 bg-slate-50 flex flex-col items-center">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+            
+            <h1 class="font-display text-3xl sm:text-4xl font-extrabold text-navy mb-4 leading-tight">
+                Prepare seu Município para o Futuro Energético
+            </h1>
+            <p class="text-slate-600 mb-12 max-w-2xl mx-auto text-base sm:text-lg">
+                Entre em contato com a equipe de especialistas da SONUN e receba um estudo de viabilidade técnica e financeira customizado para o setor público.
+            </p>
+
+            <!-- Galeria de 2 Fotos -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+                <!-- Foto 1 -->
+                <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md hover:shadow-xl transition group">
+                    <img src="https://via.placeholder.com/600x400?text=Foto+1+-+Equipamento+BESS" alt="BESS Battery Energy Storage System" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-4 bg-white text-left border-t border-slate-100">
+                        <p class="text-sm font-semibold text-navy">Fácil Instalação e Operação</p>
+                        <p class="text-xs text-slate-500">Armazenamento inteligente e modular para prédios públicos.</p>
+                    </div>
+                </div>
+
+                <!-- Foto 2 -->
+                <div class="relative overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-md hover:shadow-xl transition group">
+                    <img src="https://via.placeholder.com/600x400?text=Foto+2+-+Aplicação+Municipal" alt="BESS Maior Capacidade" class="w-full h-64 object-cover group-hover:scale-105 transition duration-500">
+                    <div class="p-4 bg-white text-left border-t border-slate-100">
+                        <p class="text-sm font-semibold text-navy">Garantia para Serviços Essenciais</p>
+                        <p class="text-xs text-slate-500">Operação contínua em UPAs, escolas e secretarias.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Botão de Chamada -->
+            <div>
+                <a href="#contato" class="inline-flex items-center justify-center gap-3 bg-safety hover:bg-orange-600 text-white font-extrabold py-5 px-10 rounded-xl text-xl btn-hover shadow-xl">
+                    <i data-lucide="file-text" class="w-6 h-6"></i>
+                    Solicitar Estudo Técnico
+                </a>
+            </div>
+
+        </div>
+    </main>
+    
+    <script>
+        lucide.createIcons();
+    </script>
+
     <!-- AGRO-->
 
 <section id="AGRO">
