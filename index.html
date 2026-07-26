@@ -101,18 +101,21 @@
         }
 
         /* Mobile Menu Animation (INTACTO) */
-        #mobile-menu {
-            transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out;
-            max-height: 0;
-            opacity: 0;
-            overflow-y: auto;
-        }
+        #mobile-menu{
+    max-height:0;
+    opacity:0;
+    overflow:hidden;
+    visibility:hidden;
+    pointer-events:none;
+    transition:max-height .35s ease, opacity .25s ease;
+}
 
-        #mobile-menu.open {
-            max-height: 85vh;
-            opacity: 1;
-        }
-
+#mobile-menu.open{
+    max-height:85vh;
+    opacity:1;
+    visibility:visible;
+    pointer-events:auto;
+}
         @media (max-width: 480px) and (orientation: portrait) {
             .hero-btn {
                 font-size: 17px;
@@ -263,18 +266,7 @@
         </div>
     </section>
 
-    <!-- Script Lucide Icons -->
-    <script>
-        lucide.createIcons();
-
-        // Script simples para abrir/fechar o menu mobile
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-
-        mobileMenuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('open');
-        });
-    </script>
+    
 </body>
 </html>
  
@@ -1732,7 +1724,7 @@
 
 <!--MUNICIPIOS-->
 
-<head>
+
   
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-7H6CPQ3JL7"></script>
     <script>
@@ -1836,7 +1828,7 @@
             background: #002244;
         }
     </style>
-</head>
+
     
 <body class="font-sans text-slate-800 bg-slate-50 overflow-x-hidden">
     <section id="municipios" class="pt-24 pb-20 bg-midnight text-white relative overflow-hidden hero-gradient">
