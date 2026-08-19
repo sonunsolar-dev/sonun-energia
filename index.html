@@ -12,9 +12,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SONUN Solar | Apagão Nunca Mais</title>
-    <meta name="description" content="Gere sua própria energia e armazene em baterias...">
+    <meta name="description" content="Reduza até 90% da sua conta de luz com Energia Solar e fique protegido contra apagões com Baterias de Lítio. Atendemos PR e SC. Simulação gratuita, fale agora com um especialista.">
+    <link rel="canonical" href="https://www.sonun.com.br/">
+    <link rel="icon" type="image/png" href="https://www.sonun.com.br/logonova3.png">
+    <!-- Open Graph / Instagram, WhatsApp e Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.sonun.com.br/">
+    <meta property="og:site_name" content="SONUN Solar">
     <meta property="og:title" content="SONUN Solar | Apagão Nunca Mais">
-    <meta property="og:description" content="Gere sua própria energia e armazene em baterias...">
+    <meta property="og:description" content="Energia Solar, Baterias Anti Apagão e BESS. Reduza até 90% da sua conta e fique protegido contra quedas de energia. Simulação gratuita.">
+    <meta property="og:image" content="https://www.sonun.com.br/ftft.png">
+    <meta property="og:locale" content="pt_BR">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="SONUN Solar | Apagão Nunca Mais">
+    <meta name="twitter:description" content="Energia Solar, Baterias Anti Apagão e BESS. Reduza até 90% da sua conta e fique protegido contra quedas de energia.">
+    <meta name="twitter:image" content="https://www.sonun.com.br/ftft.png">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -53,7 +66,7 @@
             border-bottom: 1px solid rgba(0, 51, 102, 0.1);
         }
         .hero-gradient {
-            background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 51, 102, 0.4));
+            background: linear-gradient(160deg, rgba(0, 33, 71, 0.88) 0%, rgba(0, 51, 102, 0.62) 55%, rgba(230, 126, 34, 0.28) 100%);
         }
         .card-shadow {
             box-shadow: 0 10px 30px -5px rgba(0, 51, 102, 0.1);
@@ -69,6 +82,71 @@
         .btn-hover:hover {
             transform: scale(1.05);
             filter: brightness(1.1);
+        }
+        /* CTA principal do formulário de contato (não existia estilo antes) */
+        .btn-primary {
+            background: linear-gradient(135deg, #E67E22 0%, #d35400 100%);
+            color: #fff;
+            padding: 16px 20px;
+            border-radius: 12px;
+            font-size: 16px;
+            box-shadow: 0 10px 25px -5px rgba(230, 126, 34, 0.45);
+            transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+        }
+        .btn-primary:hover {
+            transform: translateY(-2px) scale(1.01);
+            box-shadow: 0 16px 32px -6px rgba(230, 126, 34, 0.55);
+            filter: brightness(1.05);
+        }
+        .btn-primary:active {
+            transform: translateY(0) scale(0.99);
+        }
+        .btn-primary:disabled {
+            cursor: not-allowed;
+        }
+        /* Melhor foco no teclado para acessibilidade */
+        a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+            outline: 2px solid #E67E22;
+            outline-offset: 2px;
+        }
+        /* Revelação suave de seções ao rolar a página */
+        .reveal-up {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.7s ease, transform 0.7s ease;
+        }
+        .reveal-up.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Banner de boas-vindas para visitantes vindos do Instagram */
+        #instagram-banner {
+            display: none;
+        }
+        #instagram-banner.show {
+            display: flex;
+        }
+        /* Barra fixa de conversão para mobile (tráfego do Instagram é majoritariamente mobile) */
+        #mobile-cta-bar {
+            position: fixed;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 60;
+            display: flex;
+            gap: 8px;
+            padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+            background: rgba(0, 33, 71, 0.97);
+            backdrop-filter: blur(8px);
+            border-top: 1px solid rgba(255,255,255,0.08);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        #mobile-cta-bar.hide {
+            transform: translateY(110%);
+        }
+        @media (min-width: 1024px) {
+            #mobile-cta-bar { display: none; }
         }
         /* Custom scrollbar */
         ::-webkit-scrollbar {
@@ -120,6 +198,14 @@
             background: currentColor;
             animation: pulse-dot 1.8s ease-in-out infinite;
         }
+        /* Animação do Gráfico de Carga (Peak Shaving) */
+        @keyframes pulseBar {
+            0%, 100% { height: 30%; }
+            50% { height: 90%; }
+        }
+        .animate-bar-1 { animation: pulseBar 4s infinite ease-in-out; }
+        .animate-bar-2 { animation: pulseBar 4s infinite ease-in-out 1s; }
+        .animate-bar-3 { animation: pulseBar 4s infinite ease-in-out 2s; }
     </style>
 </head>
 <body class="font-sans text-slate-800 bg-white overflow-x-hidden">
@@ -318,9 +404,7 @@
             });
         });
     </script>
-</body>
-</html>
- 
+
     <!-- Services Section -->
     <section id="servicos" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1499,8 +1583,7 @@
 
     <!--MERCADO LIVRE-->
 
-<section id="mercadolivre"
-        <section class="mercado-livre-section">
+<section id="mercadolivre" class="mercado-livre-section">
   <div class="ml-container">
     
     <div class="ml-header">
@@ -1968,123 +2051,15 @@
 </section>
 
 <!--MUNICIPIOS-->
-
-
-  
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7H6CPQ3JL7"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-7H6CPQ3JL7');
-    </script>
-
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SONUN Solar | Banco de Baterias BESS para Municípios</title>
-    <meta name="description" content="Sistemas BESS para municípios: segurança energética, eficiência e operação contínua em serviços públicos essenciais.">
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
-    
-    <script src="https://cdn.tailwindcss.com"></script>
-    
-    <script src="https://unpkg.com/lucide@latest"></script>
-    
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        navy: '#003366',
-                        safety: '#E67E22',
-                        prussian: '#003153',
-                        midnight: '#002147'
-                    },
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                        display: ['Montserrat', 'sans-serif'],
-                    },
-                }
-            }
-        }
-    </script>
-    
-    <style>
-        @layer base {
-            html {
-                scroll-behavior: smooth;
-            }
-        }
-        
-        .glass-header {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(0, 51, 102, 0.1);
-        }
-        
-        .hero-gradient {
-            background: linear-gradient(135deg, rgba(0, 33, 71, 0.75), rgba(0, 51, 102, 0.65));
-        }
-        
-        .card-shadow {
-            box-shadow: 0 10px 30px -5px rgba(0, 51, 102, 0.1);
-            transition: all 0.3s ease;
-        }
-        
-        .card-shadow:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px -10px rgba(0, 51, 102, 0.2);
-        }
-
-        .btn-hover {
-            transition: all 0.3s ease;
-        }
-
-        .btn-hover:hover {
-            transform: scale(1.03);
-            filter: brightness(1.1);
-        }
-
-        /* Animação do Gráfico de Carga */
-        @keyframes pulseBar {
-            0%, 100% { height: 30%; }
-            50% { height: 90%; }
-        }
-
-        .animate-bar-1 { animation: pulseBar 4s infinite ease-in-out; }
-        .animate-bar-2 { animation: pulseBar 4s infinite ease-in-out 1s; }
-        .animate-bar-3 { animation: pulseBar 4s infinite ease-in-out 2s; }
-
-        /* Custom scrollbar */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #003366;
-            border-radius: 4px;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #002244;
-        }
-    </style>
-
-    
-<body class="font-sans text-slate-800 bg-slate-50 overflow-x-hidden">
     <section id="municipios" class="pt-24 pb-20 bg-midnight text-white relative overflow-hidden hero-gradient">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
             <div class="max-w-3xl mx-auto text-center">
                 <span class="inline-block bg-safety/20 text-safety border border-safety/30 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wide uppercase mb-6">
                     Banco de Baterias BESS para Municípios
                 </span>
-                <h1 class="font-display text-3xl sm:text-5xl font-extrabold leading-tight mb-6">
+                <h2 class="font-display text-3xl sm:text-5xl font-extrabold leading-tight mb-6">
                     Economia e Segurança Energética para o Seu Município com Sistemas BESS
-                </h1>
+                </h2>
                 <p class="text-lg sm:text-xl text-slate-300 mb-8 font-light leading-relaxed">
                     Proteja serviços essenciais, reduza custos de operação em horários de pico e garanta energia ininterrupta para hospitais, escolas e prédios públicos.
                 </p>
@@ -2346,9 +2321,9 @@
     <main class="py-20 bg-slate-50 flex flex-col items-center">
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
             
-            <h1 class="font-display text-3xl sm:text-4xl font-extrabold text-navy mb-4 leading-tight">
+            <h2 class="font-display text-3xl sm:text-4xl font-extrabold text-navy mb-4 leading-tight">
                 Prepare seu Município para o Futuro Energético
-            </h1>
+            </h2>
             <p class="text-slate-600 mb-12 max-w-2xl mx-auto text-base sm:text-lg">
                 Entre em contato com a equipe de especialistas da SONUN e receba um estudo de viabilidade técnica e financeira customizado para o setor público.
             </p>
@@ -2392,25 +2367,13 @@
     <!-- AGRO-->
 
 <section id="AGRO">
-<meta charset="UTF-6">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Plano Safra 2026/2027 | SONUN Energia</title>
-
 <style>
-{
-    margin:0;
-    font-family:Arial,sans-serif;
-    background:#f5f7fb;
-    color:#243447;
-}
-
-/* ===== HEADER ===== */
-.hero{
+#AGRO .hero{
     background:
         linear-gradient(rgba(0,51,102,0.70), rgba(0,51,102,0.70)),
         url("imgsafra.png") center center/cover no-repeat;
     color:#fff;
-    min-height:550px;
+    min-height:480px;
     padding:80px 20px;
     text-align:center;
     display:flex;
@@ -2419,24 +2382,24 @@
     align-items:center;
 }
 
-.hero h1{
-    font-size:50px;
+#AGRO .hero h2{
+    font-size:clamp(28px, 5vw, 50px);
     margin:0;
-    font-weight:700;
+    font-weight:800;
     text-shadow:0 3px 10px rgba(0,0,0,.4);
 }
 
-.hero p{
-    font-size:28px;
+#AGRO .hero p{
+    font-size:clamp(16px, 2.4vw, 22px);
     max-width:900px;
-    margin:25px auto 35px;
+    margin:20px auto 30px;
     line-height:1.6;
     text-shadow:0 2px 8px rgba(0,0,0,.4);
 }
 
-.btn{
+#AGRO .btn{
     display:inline-block;
-    background:#ff8c00;
+    background:#E67E22;
     color:#fff;
     padding:16px 34px;
     border-radius:10px;
@@ -2445,60 +2408,59 @@
     transition:.3s;
 }
 
-.btn:hover{
+#AGRO .btn:hover{
     background:#ff9f1f;
     transform:translateY(-2px);
     box-shadow:0 10px 25px rgba(0,0,0,.25);
 }
 
-.section{
+#AGRO .section{
     max-width:1200px;
     margin:auto;
     padding:60px 20px;
 }
 
-.grid{
+#AGRO .grid{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
     gap:24px;
 }
 
-.card{
+#AGRO .card{
     background:#fff;
     border-radius:18px;
     padding:28px;
     box-shadow:0 8px 25px rgba(0,0,0,.08);
+    transition: transform .3s ease, box-shadow .3s ease;
 }
 
-.card h3{
+#AGRO .card:hover{
+    transform: translateY(-4px);
+    box-shadow: 0 16px 35px rgba(0,0,0,.12);
+}
+
+#AGRO .card h3{
     color:#003366;
 }
 
-.highlight{
+#AGRO .highlight{
     background:#002147;
     color:#fff;
     border-radius:18px;
     padding:40px;
     text-align:center;
 }
-
-footer{
-    background:#003366;
-    color:#fff;
-    text-align:center;
-    padding:30px;
-}
 </style>
 
 <section class="hero">
 
-    <h1>Plano Safra 2026/27</h1>
+    <h2>Plano Safra 2026/27</h2>
 
     <p>
         Inclua Baterias e Energia Solar no seu Financiamento do Plano Safra.
     </p>
 
-    <a class="btn" href="https://wa.me/5547988692568">
+    <a class="btn" href="https://wa.me/5547988692568?text=Ol%C3%A1!%20Vim%20do%20site%20e%20quero%20uma%20simula%C3%A7%C3%A3o%20do%20Plano%20Safra%202026%2F27.">
         Solicite uma Simulação
     </a>
 
@@ -2601,7 +2563,9 @@ footer{
     </div>
   </div>
 </section>
-    
+</section>
+<!-- fim #AGRO -->
+
     <!-- Contact Section -->
     <section id="contato" class="py-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -2844,6 +2808,7 @@ footer{
           btn.style.background = '#7a9e7e';
           statusEl.style.color = '#0f5132';
           statusEl.textContent = 'Mensagem enviada com sucesso!';
+          document.dispatchEvent(new CustomEvent('sonun:lead_submitted'));
           form.reset();
 
           setTimeout(() => {
@@ -2875,9 +2840,7 @@ footer{
 </div>
 </div>
 </section>
-</main>
 
-    
     <!-- Área do Cliente -->
 <section id="area-cliente" class="py-16 bg-gray-50">
     <div class="container mx-auto px-4">
@@ -3059,9 +3022,10 @@ footer{
             });
         });
 
-        // Header Scroll Effect 
-        const header = document.getElementById('header');
+        // Header Scroll Effect
+        const header = document.getElementById('topo');
         window.addEventListener('scroll', () => {
+            if (!header) return;
             if (window.scrollY > 50) {
                 header.classList.add('shadow-md');
             } else {
@@ -3098,11 +3062,15 @@ footer{
         background-color: #128C7E;
         color: #FFF;
     }
+    /* No mobile a barra fixa inferior já cobre o WhatsApp, evita duplicidade/sobreposição */
+    @media (max-width: 1023px) {
+        .whatsapp-link { display: none !important; }
+    }
 </style>
 
-<a href="https://wa.me/5547988692568?text=Olá! Estive no seu site e gostaria de tirar uma dúvida sobre energia solar." 
-   class="whatsapp-link" 
-   target="_blank">
+<a id="whatsapp-float" href="https://wa.me/5547988692568?text=Ol%C3%A1!%20Estive%20no%20seu%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20energia%20solar."
+   class="whatsapp-link"
+   target="_blank" rel="noopener">
     <i class="fa fa-whatsapp"></i>
 </a>
 
@@ -3112,6 +3080,178 @@ footer{
         lucide.createIcons();
     }
 </script>
+
+    <!-- ======= Barra fixa de conversão (mobile) ======= -->
+    <div id="mobile-cta-bar">
+        <a id="mobile-cta-whatsapp" href="https://wa.me/5547988692568?text=Ol%C3%A1!%20Vim%20do%20site%20e%20quero%20falar%20com%20um%20especialista."
+           target="_blank" rel="noopener"
+           class="flex-1 inline-flex items-center justify-center gap-2 bg-[#25d366] text-white font-bold text-sm py-3 rounded-xl">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp
+        </a>
+        <a href="#contato"
+           class="flex-1 inline-flex items-center justify-center gap-2 bg-safety text-white font-bold text-sm py-3 rounded-xl">
+            Simular Grátis
+        </a>
+    </div>
+
+    <!-- ======= Banner para visitantes vindos do Instagram ======= -->
+    <div id="instagram-banner" class="fixed z-[70] left-4 right-4 sm:left-auto sm:right-6 sm:max-w-sm bottom-24 items-start gap-3 bg-white rounded-2xl shadow-2xl border border-slate-200 p-4">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-[#c07629] to-[#e08a30] flex items-center justify-center shrink-0">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5" fill="#fff">
+                <path d="M7 2C4.243 2 2 4.243 2 7v10c0 2.757 2.243 5 5 5h10c2.757 0 5-2.243 5-5V7c0-2.757-2.243-5-5-5H7zm5 5a5 5 0 100 10 5 5 0 000-10zm6.5-4a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z"/>
+            </svg>
+        </div>
+        <div class="flex-1">
+            <p class="text-sm font-bold text-navy">Vindo do Instagram? 👋</p>
+            <p class="text-xs text-slate-600 mt-1 leading-relaxed">Fale agora no WhatsApp e garanta sua simulação de economia gratuita.</p>
+            <a id="instagram-banner-wa" href="#" target="_blank" rel="noopener"
+               class="mt-3 inline-flex items-center gap-2 bg-safety text-white text-xs font-bold px-4 py-2 rounded-full btn-hover">
+                Chamar no WhatsApp
+            </a>
+        </div>
+        <button id="instagram-banner-close" type="button" aria-label="Fechar aviso" class="text-slate-400 hover:text-slate-600 text-lg leading-none">&times;</button>
+    </div>
+
+    <!-- ======= Meta Pixel (Facebook/Instagram Ads) ======= -->
+    <!-- Para ativar: troque SEU_PIXEL_ID_AQUI pelo ID do seu Pixel (Gerenciador de Eventos do Meta) -->
+    <script>
+        /*
+        !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+        n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+        n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+        t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+        document,'script','https://connect.facebook.net/en_US/fbevents.js');
+        fbq('init', 'SEU_PIXEL_ID_AQUI');
+        fbq('track', 'PageView');
+        */
+    </script>
+
+    <!-- ======= Captação de leads do Instagram: UTM, banner, eventos de conversão ======= -->
+    <script>
+    (function () {
+        // 1) Captura UTM/origem do clique (Instagram, Facebook Ads, Google Ads etc.)
+        var params = new URLSearchParams(window.location.search);
+        var utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term', 'fbclid', 'gclid'];
+        var stored = {};
+        try { stored = JSON.parse(sessionStorage.getItem('sonun_lead_source') || '{}'); } catch (e) { stored = {}; }
+
+        var hasNewUtm = false;
+        utmKeys.forEach(function (key) {
+            var val = params.get(key);
+            if (val) { stored[key] = val; hasNewUtm = true; }
+        });
+        if (!stored.referrer) stored.referrer = document.referrer || '';
+        if (!stored.landing_page) stored.landing_page = window.location.href;
+        try { sessionStorage.setItem('sonun_lead_source', JSON.stringify(stored)); } catch (e) {}
+
+        // Detecta origem Instagram (utm_source=instagram OU referrer do Instagram/link in bio)
+        var refLower = (stored.referrer || '').toLowerCase();
+        var isFromInstagram =
+            (stored.utm_source || '').toLowerCase().indexOf('instagram') > -1 ||
+            refLower.indexOf('instagram.com') > -1 ||
+            refLower.indexOf('l.instagram.com') > -1;
+
+        // 2) Injeta campos ocultos com a origem em TODOS os formulários (Formspree recebe isso no e-mail)
+        document.querySelectorAll('form').forEach(function (form) {
+            Object.keys(stored).forEach(function (key) {
+                if (!stored[key]) return;
+                if (form.querySelector('[name="' + key + '"]')) return;
+                var input = document.createElement('input');
+                input.type = 'hidden';
+                input.name = key;
+                input.value = stored[key];
+                form.appendChild(input);
+            });
+            var origemInput = document.createElement('input');
+            origemInput.type = 'hidden';
+            origemInput.name = 'origem_lead';
+            origemInput.value = isFromInstagram ? 'Instagram' : (stored.utm_source || 'Direto/Outro');
+            form.appendChild(origemInput);
+        });
+
+        // 3) Personaliza mensagem do WhatsApp quando o lead vem do Instagram
+        var waMsg = isFromInstagram
+            ? 'Olá! Vim do Instagram da SONUN e quero uma simulação gratuita de economia.'
+            : 'Olá! Estive no site da SONUN e gostaria de tirar uma dúvida sobre energia solar.';
+        var waLink = 'https://wa.me/5547988692568?text=' + encodeURIComponent(waMsg);
+
+        var waFloat = document.getElementById('whatsapp-float');
+        if (waFloat) waFloat.href = waLink;
+        var waMobileBar = document.getElementById('mobile-cta-whatsapp');
+        if (waMobileBar) waMobileBar.href = waLink;
+        var waBanner = document.getElementById('instagram-banner-wa');
+        if (waBanner) waBanner.href = waLink;
+
+        // 4) Exibe o banner de boas-vindas do Instagram (uma vez por sessão)
+        if (isFromInstagram && !sessionStorage.getItem('sonun_ig_banner_shown')) {
+            var banner = document.getElementById('instagram-banner');
+            if (banner) {
+                setTimeout(function () { banner.classList.add('show'); }, 1200);
+                sessionStorage.setItem('sonun_ig_banner_shown', '1');
+            }
+        }
+        var closeBtn = document.getElementById('instagram-banner-close');
+        if (closeBtn) {
+            closeBtn.addEventListener('click', function () {
+                document.getElementById('instagram-banner').classList.remove('show');
+            });
+        }
+
+        // 5) Eventos de conversão (GA4 + Meta Pixel) em cliques de WhatsApp
+        document.querySelectorAll('a[href*="wa.me"]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                if (typeof gtag === 'function') {
+                    gtag('event', 'whatsapp_click', { origem_lead: isFromInstagram ? 'Instagram' : (stored.utm_source || 'Direto/Outro') });
+                }
+                if (typeof fbq === 'function') { fbq('track', 'Contact'); }
+            });
+        });
+
+        // 6) Evento de conversão em envio de formulário concluído com sucesso
+        document.addEventListener('sonun:lead_submitted', function () {
+            if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', { origem_lead: isFromInstagram ? 'Instagram' : (stored.utm_source || 'Direto/Outro') });
+            }
+            if (typeof fbq === 'function') { fbq('track', 'Lead'); }
+        });
+
+        // 7) Esconde a barra fixa mobile quando o formulário de contato já está visível
+        var contato = document.getElementById('contato');
+        var ctaBar = document.getElementById('mobile-cta-bar');
+        if (contato && ctaBar && 'IntersectionObserver' in window) {
+            new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    ctaBar.classList.toggle('hide', entry.isIntersecting);
+                });
+            }, { threshold: 0.2 }).observe(contato);
+        }
+
+        // 8) Revelação suave das seções ao rolar (não aplica na dobra inicial/hero)
+        var revealTargets = document.querySelectorAll(
+            'section:not(#inicio) > div.max-w-7xl, section:not(#inicio) > div.max-w-5xl, ' +
+            'section:not(#inicio) > div.max-w-4xl, section:not(#inicio) > div.max-w-3xl, ' +
+            '#mercadolivre .ml-container, #AGRO > section'
+        );
+        if ('IntersectionObserver' in window) {
+            var revealObserver = new IntersectionObserver(function (entries, obs) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -60px 0px' });
+            revealTargets.forEach(function (el) {
+                el.classList.add('reveal-up');
+                revealObserver.observe(el);
+            });
+            // Rede de segurança: garante que nada fique invisível por engano
+            setTimeout(function () {
+                revealTargets.forEach(function (el) { el.classList.add('is-visible'); });
+            }, 4000);
+        }
+    })();
+    </script>
 </body>
 </html>
 
