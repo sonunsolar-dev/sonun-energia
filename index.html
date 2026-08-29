@@ -11,6 +11,8 @@
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Reduz vazamento de dados de navegação para sites de terceiros ao clicar em links externos -->
+    <meta name="referrer" content="strict-origin-when-cross-origin">
     <title>SONUN Solar | Apagão Nunca Mais</title>
     <meta name="description" content="Reduza até 90% da sua conta de luz com Energia Solar e fique protegido contra apagões com Baterias de Lítio. Atendemos PR e SC. Simulação gratuita, fale agora com um especialista.">
     <link rel="canonical" href="https://www.sonun.com.br/">
@@ -2586,7 +2588,7 @@
                         </div>
                     </div>
  <div class="mt-8 flex gap-4 relative z-10">
-  <a href="https://instagram.com/sonunsolar" target="_blank" 
+  <a href="https://instagram.com/sonunsolar" target="_blank" rel="noopener noreferrer"
      class="flex items-center justify-center gap-6 bg-white/10 rounded-xl px-3 py-1.5 font-bold text-[10px] hover:bg-[#c07629] transition-all ml-0.35 uppercase tracking-wider shadow-sm border border-white/10">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-4 h-4">
       <defs>
@@ -3006,8 +3008,8 @@
             <div class="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500">
                 <p>&copy; 2026 SONUN Energia Solar e Baterias. Todos os direitos reservados.</p>
                 <div class="flex gap-6">
-                    <a href="#contato" class="hover:text-white transition-colors">Política de Privacidade</a>
-                    <a href="#contato" class="hover:text-white transition-colors">Termos de Uso</a>
+                    <a href="/politica-de-privacidade.html" class="hover:text-white transition-colors">Política de Privacidade</a>
+                    <a href="/termos-de-uso.html" class="hover:text-white transition-colors">Termos de Uso</a>
                 </div>
             </div>
         </div>
@@ -3045,7 +3047,7 @@
         });
     </script>
     
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <!-- Font Awesome removido: não é mais usado (ícone do WhatsApp agora é SVG embutido) -->
 
 <style>
     .whatsapp-link {
@@ -3089,7 +3091,10 @@
    class="whatsapp-link"
    target="_blank" rel="noopener"
    aria-label="Falar no WhatsApp">
-    <i class="fa fa-whatsapp" aria-hidden="true"></i>
+    <svg viewBox="0 0 24 24" width="32" height="32" fill="#fff" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12.014 2c-5.523 0-10 4.478-10 10 0 1.766.464 3.484 1.343 4.997L2 22l5.135-1.34A9.958 9.958 0 0012.014 22c5.522 0 10-4.478 10-10s-4.478-10-10-10zm0 18.083a8.05 8.05 0 01-4.11-1.13l-.294-.174-3.05.796.814-2.968-.192-.305a8.075 8.075 0 01-1.24-4.302c0-4.46 3.628-8.083 8.084-8.083 4.457 0 8.084 3.623 8.084 8.083 0 4.46-3.627 8.083-8.084 8.083z"/>
+    </svg>
 </a>
 
     <!-- Script para renderizar todos os ícones do Lucide no site -->
