@@ -28,6 +28,8 @@
     <meta name="twitter:title" content="SONUN Solar | Apagão Nunca Mais">
     <meta name="twitter:description" content="Energia Solar, Baterias Anti Apagão e BESS. Reduza até 90% da sua conta e fique protegido contra quedas de energia.">
     <meta name="twitter:image" content="https://www.sonun.com.br/ftft.png">
+    <!-- Google reCAPTCHA (proteção anti-spam do formulário de contato) -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,28 +128,7 @@
         #instagram-banner.show {
             display: flex;
         }
-        /* Barra fixa de conversão para mobile (tráfego do Instagram é majoritariamente mobile) */
-        #mobile-cta-bar {
-            position: fixed;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 60;
-            display: flex;
-            gap: 8px;
-            padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
-            background: rgba(0, 33, 71, 0.97);
-            backdrop-filter: blur(8px);
-            border-top: 1px solid rgba(255,255,255,0.08);
-            transform: translateY(0);
-            transition: transform 0.3s ease;
-        }
-        #mobile-cta-bar.hide {
-            transform: translateY(110%);
-        }
-        @media (min-width: 1024px) {
-            #mobile-cta-bar { display: none; }
-        }
+        /* Barra fixa de conversão mobile removida - substituída pelo botão flutuante único do WhatsApp (responsivo) */
         /* Custom scrollbar */
         ::-webkit-scrollbar {
             width: 8px;
@@ -2625,7 +2606,11 @@
 <!-- Contact Form -->
 <div class="lg:w-3/5 p-8 sm:p-12">
   <form class="space-y-6 ajax-form" data-endpoint="https://formspree.io/f/mwvakapq" novalidate>
-    
+
+    <!-- Honeypot anti-spam: campo invisível para humanos, bots costumam preenchê-lo -->
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"
+           style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;">
+
     <div class="grid md:grid-cols-2 gap-6">
       <div class="space-y-2">
         <label for="nome" class="block text-sm font-bold text-navy">Nome Completo</label>
@@ -2752,6 +2737,11 @@
       ></textarea>
     </div>
 
+    <!-- CAPTCHA (Google reCAPTCHA v2 - caixa "Não sou um robô") -->
+    <div class="flex justify-center">
+      <div class="g-recaptcha" data-sitekey="6Lft_Z0tAAAAANg_4RbS-cji8moPNocHrNMBHqhP"></div>
+    </div>
+
     <!-- Área de status -->
     <div class="form-status text-sm font-medium" role="status" aria-live="polite" style="min-height:1.2em;"></div>
 
@@ -2787,6 +2777,17 @@
         return;
       }
 
+      // Validação do reCAPTCHA (só bloqueia se já estiver configurado e carregado)
+      if (form.querySelector('.g-recaptcha') && window.grecaptcha && typeof grecaptcha.getResponse === 'function') {
+        try {
+          if (grecaptcha.getResponse().length === 0) {
+            statusEl.style.color = '#7a1f1f';
+            statusEl.textContent = 'Por favor, confirme que você não é um robô.';
+            return;
+          }
+        } catch (captchaErr) { /* reCAPTCHA ainda não configurado com uma chave válida - segue com o honeypot */ }
+      }
+
       statusEl.textContent = '';
       statusEl.style.color = '';
       btn.disabled = true;
@@ -2810,6 +2811,9 @@
           statusEl.textContent = 'Mensagem enviada com sucesso!';
           document.dispatchEvent(new CustomEvent('sonun:lead_submitted'));
           form.reset();
+          if (form.querySelector('.g-recaptcha') && window.grecaptcha && typeof grecaptcha.reset === 'function') {
+            try { grecaptcha.reset(); } catch (captchaErr) {}
+          }
 
           setTimeout(() => {
             btn.disabled = false;
@@ -2855,6 +2859,10 @@
             <!-- Formulário -->
             <div class="p-8 sm:p-12">
                 <form class="space-y-6" action="https://formspree.io/f/mwvakapq" method="POST">
+
+                    <!-- Honeypot anti-spam: campo invisível para humanos, bots costumam preenchê-lo -->
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"
+                           style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;">
 
                     <!-- Identificação opcional -->
                     <div class="space-y-2">
@@ -2980,6 +2988,9 @@
   <p class="text-slate-400 mb-4 text-sm">Receba novidades sobre tecnologia solar.</p>
   
   <form action="https://formspree.io/f/mwvakapq" method="POST" class="flex gap-2">
+    <!-- Honeypot anti-spam: campo invisível para humanos, bots costumam preenchê-lo -->
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true"
+           style="position:absolute; left:-9999px; width:1px; height:1px; opacity:0; pointer-events:none;">
     <input type="email" name="email" placeholder="Seu e-mail" 
            class="bg-white/5 border border-white/10 rounded-lg px-4 py-2 outline-none focus:border-safety w-full text-sm" 
            required>
@@ -3041,7 +3052,7 @@
         position: fixed;
         width: 60px;
         height: 60px;
-        bottom: 20px; /* Distância da borda inferior */
+        bottom: max(20px, env(safe-area-inset-bottom)); /* Distância da borda inferior, respeitando área segura do celular */
         right: 20px;  /* Distância da borda direita */
         background-color: #25d366;
         color: #FFF;
@@ -3062,16 +3073,23 @@
         background-color: #128C7E;
         color: #FFF;
     }
-    /* No mobile a barra fixa inferior já cobre o WhatsApp, evita duplicidade/sobreposição */
-    @media (max-width: 1023px) {
-        .whatsapp-link { display: none !important; }
+    /* Responsivo: botão um pouco menor em telas pequenas e respeitando a área segura (notch/home indicator) */
+    @media (max-width: 480px) {
+        .whatsapp-link {
+            width: 52px;
+            height: 52px;
+            font-size: 24px;
+            right: 16px;
+            bottom: max(16px, env(safe-area-inset-bottom));
+        }
     }
 </style>
 
 <a id="whatsapp-float" href="https://wa.me/5547988692568?text=Ol%C3%A1!%20Estive%20no%20seu%20site%20e%20gostaria%20de%20tirar%20uma%20d%C3%BAvida%20sobre%20energia%20solar."
    class="whatsapp-link"
-   target="_blank" rel="noopener">
-    <i class="fa fa-whatsapp"></i>
+   target="_blank" rel="noopener"
+   aria-label="Falar no WhatsApp">
+    <i class="fa fa-whatsapp" aria-hidden="true"></i>
 </a>
 
     <!-- Script para renderizar todos os ícones do Lucide no site -->
@@ -3080,19 +3098,6 @@
         lucide.createIcons();
     }
 </script>
-
-    <!-- ======= Barra fixa de conversão (mobile) ======= -->
-    <div id="mobile-cta-bar">
-        <a id="mobile-cta-whatsapp" href="https://wa.me/5547988692568?text=Ol%C3%A1!%20Vim%20do%20site%20e%20quero%20falar%20com%20um%20especialista."
-           target="_blank" rel="noopener"
-           class="flex-1 inline-flex items-center justify-center gap-2 bg-[#25d366] text-white font-bold text-sm py-3 rounded-xl">
-            <i class="fa fa-whatsapp" aria-hidden="true"></i> WhatsApp
-        </a>
-        <a href="#contato"
-           class="flex-1 inline-flex items-center justify-center gap-2 bg-safety text-white font-bold text-sm py-3 rounded-xl">
-            Simular Grátis
-        </a>
-    </div>
 
     <!-- ======= Banner para visitantes vindos do Instagram ======= -->
     <div id="instagram-banner" class="fixed z-[70] left-4 right-4 sm:left-auto sm:right-6 sm:max-w-sm bottom-24 items-start gap-3 bg-white rounded-2xl shadow-2xl border border-slate-200 p-4">
@@ -3177,8 +3182,6 @@
 
         var waFloat = document.getElementById('whatsapp-float');
         if (waFloat) waFloat.href = waLink;
-        var waMobileBar = document.getElementById('mobile-cta-whatsapp');
-        if (waMobileBar) waMobileBar.href = waLink;
         var waBanner = document.getElementById('instagram-banner-wa');
         if (waBanner) waBanner.href = waLink;
 
@@ -3215,18 +3218,7 @@
             if (typeof fbq === 'function') { fbq('track', 'Lead'); }
         });
 
-        // 7) Esconde a barra fixa mobile quando o formulário de contato já está visível
-        var contato = document.getElementById('contato');
-        var ctaBar = document.getElementById('mobile-cta-bar');
-        if (contato && ctaBar && 'IntersectionObserver' in window) {
-            new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    ctaBar.classList.toggle('hide', entry.isIntersecting);
-                });
-            }, { threshold: 0.2 }).observe(contato);
-        }
-
-        // 8) Revelação suave das seções ao rolar (não aplica na dobra inicial/hero)
+        // 7) Revelação suave das seções ao rolar (não aplica na dobra inicial/hero)
         var revealTargets = document.querySelectorAll(
             'section:not(#inicio) > div.max-w-7xl, section:not(#inicio) > div.max-w-5xl, ' +
             'section:not(#inicio) > div.max-w-4xl, section:not(#inicio) > div.max-w-3xl, ' +
