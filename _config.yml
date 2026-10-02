@@ -1,0 +1,4 @@
+exclude:
+  - docs
+  - .superpowers
+  - README.md
