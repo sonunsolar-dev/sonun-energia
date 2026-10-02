@@ -116,6 +116,29 @@
     a.addEventListener('click', function () { evento('whatsapp_click'); });
   });
 
+  // ---------- reCAPTCHA: só carrega quando a pessoa chega perto do formulário ----------
+  var caixas = document.querySelectorAll('.g-recaptcha');
+  var carregarCaptcha = function () {
+    if (window.__sonunCaptcha) return;
+    window.__sonunCaptcha = true;
+    var s = document.createElement('script');
+    s.src = 'https://www.google.com/recaptcha/api.js';
+    s.async = true; s.defer = true;
+    document.head.appendChild(s);
+  };
+  if (caixas.length) {
+    caixas.forEach(function (c) {
+      var f = c.closest('form');
+      if (f) ['focusin', 'pointerdown'].forEach(function (ev) { f.addEventListener(ev, carregarCaptcha, { once: true }); });
+    });
+    if ('IntersectionObserver' in window) {
+      var ioCap = new IntersectionObserver(function (itens) {
+        if (itens.some(function (i) { return i.isIntersecting; })) { carregarCaptcha(); ioCap.disconnect(); }
+      }, { rootMargin: '300px 0px' });
+      caixas.forEach(function (c) { ioCap.observe(c); });
+    } else { carregarCaptcha(); }
+  }
+
   // ---------- formulários (Formspree + reCAPTCHA) ----------
   document.querySelectorAll('form[data-endpoint]').forEach(function (form) {
     var status = form.querySelector('.status');
@@ -125,6 +148,11 @@
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       if (!form.checkValidity()) { form.reportValidity(); return; }
+      if (form.querySelector('.g-recaptcha') && !(window.grecaptcha && typeof grecaptcha.getResponse === 'function')) {
+        carregarCaptcha();
+        aviso('Carregando a verificação "Não sou um robô"… marque a caixa e envie de novo.', 'erro');
+        return;
+      }
       var temCaptcha = form.querySelector('.g-recaptcha') && window.grecaptcha && typeof grecaptcha.getResponse === 'function';
       if (temCaptcha) {
         try {
