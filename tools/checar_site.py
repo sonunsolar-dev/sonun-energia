@@ -60,7 +60,7 @@ class Coletor(HTMLParser):
         self.tags.append((tag, a))
         if tag == "h1":
             self.h1 += 1
-        if tag == "title":
+        if tag == "title" and not self.title:  # só o <title> do <head>, não o de SVGs
             self._no_title = True
         if tag == "script" and a.get("type") == "application/ld+json":
             self._ld = ""
