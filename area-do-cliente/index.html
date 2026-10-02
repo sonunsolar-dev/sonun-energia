@@ -31,6 +31,7 @@
 <link rel="preload" as="image" href="/img/capa-area-cliente.webp" fetchpriority="high">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-7H6CPQ3JL7"></script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-7H6CPQ3JL7');</script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
 <script type="application/ld+json">
 {
  "@context": "https://schema.org",
@@ -139,6 +140,7 @@
     <div><label for="ac-whats">WhatsApp</label><input type="tel" id="ac-whats" name="whatsapp" autocomplete="tel" required></div>
     <div class="full"><label for="ac-email">E-mail</label><input type="email" id="ac-email" name="email" autocomplete="email"></div>
     <div class="full"><label for="ac-obs">Sua observação</label><textarea id="ac-obs" name="observacao" rows="4" required></textarea></div>
+    <div class="full g-recaptcha" data-sitekey="6LewBp4tAAAAANQUFOf2tw92V0TgIVuCQObh6iIX" data-theme="dark"></div>
     <p class="status full" role="status" aria-live="polite"></p>
     <button class="btn btn-sol full" type="submit">Enviar mensagem <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
   </form>
@@ -162,13 +164,12 @@
       </ul></div>
       <div><h2>Novidades</h2>
         <p>Receba novidades sobre energia solar e baterias.</p>
-        <form class="news" data-endpoint="https://formspree.io/f/mwvakapq" method="POST" action="https://formspree.io/f/mwvakapq">
+        <form class="news" method="POST" action="https://formspree.io/f/mwvakapq">
           <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="armadilha">
           <input type="hidden" name="formulario" value="newsletter">
           <label class="sr" for="news-email">Seu e-mail</label>
           <input id="news-email" type="email" name="email" placeholder="Seu e-mail" required>
           <button class="btn btn-sol btn-p" type="submit" aria-label="Assinar"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
-          <p class="status" role="status" aria-live="polite"></p>
         </form>
       </div>
     </div>

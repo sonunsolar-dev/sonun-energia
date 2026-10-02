@@ -103,7 +103,7 @@ ul { margin: 0; padding: 0; }
   box-shadow: 0 1px 0 var(--linha);
 }
 .topo .wrap { display: flex; align-items: center; justify-content: space-between; height: 84px; gap: 20px; }
-.logo img { height: 46px; width: auto; filter: brightness(0) invert(1); }
+.logo img { height: 74px; width: auto; filter: brightness(0) invert(1); }
 .menu { display: flex; align-items: center; gap: 30px; list-style: none; }
 .menu a, .menu summary { text-decoration: none; font-size: 15.5px; color: var(--tinta-suave); transition: color .25s; cursor: pointer; }
 .menu a:hover, .menu summary:hover, .menu a[aria-current="page"] { color: #fff; }
@@ -392,6 +392,7 @@ a.card { text-decoration: none; display: block; }
   :root { --lado: 20px; }
   body { font-size: 16.5px; }
   .topo-acoes .btn-sol { display: none; }
+  .topo .logo img { height: 66px; }
   .g2, .g3, .duo, .versus, .form, .posts { grid-template-columns: 1fr; }
   .duo { gap: 26px; }
   .secao { padding-top: 64px; }
