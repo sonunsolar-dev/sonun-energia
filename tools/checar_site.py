@@ -173,6 +173,11 @@ def checar():
                         f = os.path.join(f, "index.html")
                 if not os.path.exists(f):
                     e(f"link quebrado {attr}={v}")
+            for attr in ("srcset", "imagesrcset"):
+                for parte in (a.get(attr) or "").split(","):
+                    u = parte.strip().split(" ")[0]
+                    if u.startswith("/") and not os.path.exists(arquivo_de(u)):
+                        e(f"{attr} quebrado: {u}")
             if tag == "img":
                 if a.get("alt") is None:
                     e(f"img sem alt: {a.get('src')}")
