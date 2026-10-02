@@ -1,4 +1,5 @@
 exclude:
   - docs
   - .superpowers
+  - tools
   - README.md
