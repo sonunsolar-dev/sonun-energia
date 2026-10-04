@@ -84,6 +84,8 @@
   var ref = (origem.referrer || '').toLowerCase();
   var doInstagram = (origem.utm_source || '').toLowerCase().indexOf('instagram') > -1 || ref.indexOf('instagram.com') > -1;
   var rotuloOrigem = doInstagram ? 'Instagram' : (origem.utm_source || 'Direto/Outro');
+  // código do anúncio (utm_content), ex.: IG-BAT1 — só no formato combinado, para não injetar texto qualquer
+  var codigo = /^[A-Z]{2,3}-[A-Z0-9]{2,12}$/.test(origem.utm_content || '') ? origem.utm_content : '';
 
   // campos ocultos com a origem em todos os formulários (chegam no e-mail do Formspree)
   document.querySelectorAll('form').forEach(function (form) {
@@ -93,13 +95,14 @@
     });
     var o = document.createElement('input'); o.type = 'hidden'; o.name = 'origem_lead'; o.value = rotuloOrigem; form.appendChild(o);
     var p = document.createElement('input'); p.type = 'hidden'; p.name = 'pagina'; p.value = location.pathname; form.appendChild(p);
+    if (codigo) { var k = document.createElement('input'); k.type = 'hidden'; k.name = 'codigo_anuncio'; k.value = codigo; form.appendChild(k); }
   });
 
   // WhatsApp com mensagem conforme a origem
   var msg = doInstagram
     ? 'Olá! Vim do Instagram da SONUN e quero uma simulação gratuita de economia.'
     : 'Olá! Estive no site da SONUN e gostaria de tirar uma dúvida.';
-  var link = 'https://wa.me/5547988692568?text=' + encodeURIComponent(msg);
+  var link = 'https://wa.me/5547988692568?text=' + encodeURIComponent(msg + (codigo ? ' [' + codigo + ']' : ''));
   document.querySelectorAll('[data-whats]').forEach(function (a) { a.href = link; });
 
   var banner = document.getElementById('instagram-banner');
@@ -111,7 +114,7 @@
   if (fechar) fechar.addEventListener('click', function () { banner.classList.remove('show'); });
 
   // eventos do Google Analytics
-  var evento = function (nome) { if (typeof gtag === 'function') gtag('event', nome, { origem_lead: rotuloOrigem, pagina: location.pathname }); };
+  var evento = function (nome) { if (typeof gtag === 'function') gtag('event', nome, { origem_lead: rotuloOrigem, pagina: location.pathname, codigo_anuncio: codigo || '(sem código)' }); };
   document.querySelectorAll('a[href*="wa.me"], [data-whats]').forEach(function (a) {
     a.addEventListener('click', function () { evento('whatsapp_click'); });
   });
