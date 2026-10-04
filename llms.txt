@@ -1,0 +1,47 @@
+# SONUN Energia Solar e Baterias
+
+> Empresa de energia solar e baterias de lítio com sede em Balneário Camboriú (SC), que atende o Vale do Itajaí e a Região de Curitiba (PR). Projeta, homologa, instala e monitora sistemas solares, sistemas híbridos com baterias anti apagão e armazenamento de energia (BESS) para residências, comércios, indústrias, agronegócio e prefeituras.
+
+## O que a SONUN faz
+
+- Energia solar conectada à rede (on-grid): redução de até 85% na conta de luz, com inversor string ou microinversores.
+- Energia solar com baterias (sistema híbrido): se a rede da concessionária cair, a casa ou o comércio continua com luz em milissegundos; as baterias também podem ser usadas no horário de pico.
+- BESS para empresas: armazenamento em baterias para indústria, comércio e agro — peak shaving, backup crítico e time shifting.
+- BESS para municípios: prédios e serviços públicos (UPAs, escolas) ligados no apagão e economia no horário de pico.
+- Mercado Livre de Energia: migração de empresas do Grupo A, com economia de até 30%.
+- Recarga veicular: estações de recarga para carros elétricos em postos, comércios e frotas.
+- Plano Safra 2026/27: baterias e energia solar para propriedades rurais (irrigação, ordenha, refrigeração).
+
+## Como funciona
+
+1. Simulação gratuita a partir da conta de luz.
+2. Visita técnica (telhado, parte elétrica e padrão de entrada).
+3. Projeto e escolha dos equipamentos (marcas Tier 1, TÜV Rheinland e TOP PVEL).
+4. Instalação por equipe própria e homologação na Copel ou na Celesc (100% de aprovação).
+5. Monitoramento e suporte técnico depois da instalação.
+
+## Informações importantes
+
+- Região atendida: Balneário Camboriú e Vale do Itajaí (SC); Curitiba, Pinhais, São José dos Pinhais, Araucária, Fazenda Rio Grande e Campo Largo (PR).
+- Financiamento em até 72 parcelas com até 120 dias de carência, sujeito a análise de crédito.
+- Os percentuais de economia ("até 85%", "até 30%") são máximos e dependem do consumo e do projeto de cada cliente.
+- Contato: WhatsApp (47) 98869-2568 · contato@sonun.com.br · Instagram @sonunsolar
+
+## Páginas principais
+
+- [Início](https://www.sonun.com.br/): visão geral das soluções
+- [Energia Solar](https://www.sonun.com.br/energia-solar/): sistemas on-grid residenciais, comerciais e industriais
+- [Energia Solar com Baterias](https://www.sonun.com.br/energia-solar-com-baterias/): sistema híbrido anti apagão e simulador de autonomia
+- [BESS para Empresas](https://www.sonun.com.br/bess/): armazenamento de energia para indústria, comércio e agro
+- [BESS para Municípios](https://www.sonun.com.br/bess-municipios/): baterias para prédios públicos
+- [Mercado Livre de Energia](https://www.sonun.com.br/mercado-livre-de-energia/): economia para empresas do Grupo A
+- [Recarga Veicular](https://www.sonun.com.br/recarga-veicular/): eletropostos para postos e frotas
+- [Plano Safra 2026/27](https://www.sonun.com.br/baterias-agro-plano-safra/): baterias e solar no agro
+- [Projetos](https://www.sonun.com.br/projetos/): instalações realizadas em SC e PR
+- [Contato](https://www.sonun.com.br/contato/): simulação gratuita
+
+## Blog
+
+- [Energia solar vale a pena em 2026? Lei 14.300 e Fio B](https://www.sonun.com.br/blog/energia-solar-vale-a-pena-2026-lei-14300/)
+- [Inversor string ou microinversor: qual escolher?](https://www.sonun.com.br/blog/inversor-string-ou-microinversor/)
+- [Bateria anti apagão: como funciona o sistema híbrido](https://www.sonun.com.br/blog/bateria-anti-apagao-sistema-hibrido/)
