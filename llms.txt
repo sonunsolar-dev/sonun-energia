@@ -38,6 +38,7 @@
 - [Mercado Livre de Energia](https://www.sonun.com.br/mercado-livre-de-energia/): economia para empresas do Grupo A
 - [Recarga Veicular](https://www.sonun.com.br/recarga-veicular/): eletropostos para postos e frotas
 - [Plano Safra 2026/27](https://www.sonun.com.br/baterias-agro-plano-safra/): baterias e solar no agro
+- [Quem somos](https://www.sonun.com.br/quem-somos/): história (desde 2019; fundadores no setor desde 2014), equipe e dados da empresa
 - [Projetos](https://www.sonun.com.br/projetos/): instalações realizadas em SC e PR
 - [Contato](https://www.sonun.com.br/contato/): simulação gratuita
 

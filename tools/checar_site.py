@@ -27,6 +27,7 @@ PAGINAS = {
     "/recarga-veicular/": True,
     "/baterias-agro-plano-safra/": True,
     "/projetos/": True,
+    "/quem-somos/": True,
     "/contato/": True,
     "/blog/": True,
     "/blog/energia-solar-vale-a-pena-2026-lei-14300/": True,
