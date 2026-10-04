@@ -19,6 +19,7 @@ EMPRESA_ID = SITE + "/#empresa"
 PAGINAS = {
     "/": True,
     "/energia-solar/": True,
+    "/energia-solar-curitiba/": True,
     "/energia-solar-com-baterias/": True,
     "/bess/": True,
     "/mercado-livre-de-energia/": True,
