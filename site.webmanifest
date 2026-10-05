@@ -1,0 +1,13 @@
+{
+  "name": "SONUN Energia Solar e Armazenamento",
+  "short_name": "SONUN",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#0b1a2c",
+  "icons": [
+    { "src": "/img/icone-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/img/icone-512-branco.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/img/icone-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

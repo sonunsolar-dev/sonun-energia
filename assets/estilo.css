@@ -335,7 +335,7 @@ a.card { text-decoration: none; display: block; }
 
 /* ---------- rodapé ---------- */
 .rodape { margin-top: 100px; border-top: 1px solid var(--linha); background: linear-gradient(180deg, var(--fundo) 0%, #071320 100%); padding: 70px 0 34px; }
-.rod-grade { display: grid; grid-template-columns: 1.3fr 1fr 1fr 1.2fr; gap: 40px; }
+.rod-grade { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 40px; }
 .rodape .logo img { height: 70px; }
 .rodape p, .rodape li { color: var(--tinta-fraca); font-size: 15px; }
 .rodape h2 { font-size: 15px; font-weight: 400; letter-spacing: .14em; text-transform: uppercase; color: var(--laranja-claro); margin-bottom: 16px; }
@@ -347,9 +347,6 @@ a.card { text-decoration: none; display: block; }
 .atendemos .olho { margin: 0 14px 0 0; font-size: 12px; }
 .copy { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; padding-top: 24px; font-size: 14px; color: var(--tinta-fraca); }
 .copy nav { display: flex; gap: 20px; }
-.news { display: flex; gap: 8px; margin-top: 10px; }
-.news input { flex: 1; min-width: 0; font: 300 15px "Outfit", sans-serif; color: #fff; padding: 12px 14px; border-radius: 12px; border: 1px solid rgba(255, 255, 255, .22); background: rgba(255, 255, 255, .06); outline: none; }
-.news input:focus { border-color: var(--laranja-claro); }
 .social { display: flex; gap: 10px; margin-top: 18px; }
 .social a { width: 44px; height: 44px; border-radius: 12px; display: grid; place-items: center; }
 .social svg { width: 20px; height: 20px; }
