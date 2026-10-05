@@ -37,6 +37,7 @@ PAGINAS = {
     "/politica-de-privacidade.html": False,
     "/termos-de-uso.html": False,
     "/404.html": False,
+    "/campanha/bateria-curitiba/": False,
 }
 
 
