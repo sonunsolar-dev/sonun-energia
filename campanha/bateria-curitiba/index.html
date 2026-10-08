@@ -205,7 +205,7 @@
       return;
     }
     var rot = { '701a1500': 'de R$ 701 a R$ 1.500', 'acima1500': 'acima de R$ 1.500', vista: 'à vista', financiado: 'financiado', naosei: 'ainda não sei' };
-    var msg = 'Olá! Vi o anúncio da SONUN sobre bateria contra apagão e quero uma simulação. Conta: ' + rot[conta] + '. Pagamento: ' + rot[pag] + '.' + (codigo ? ' [' + codigo + ']' : '');
+    var msg = 'Olá! Vi o anúncio da SONUN sobre bateria contra apagão e quero um orçamento. Conta: ' + rot[conta] + '. Pagamento: ' + rot[pag] + '.' + (codigo ? ' [' + codigo + ']' : '');
     if (typeof gtag === 'function') {
       gtag('event', 'lead_qualificado_pagina', { conta: conta, pagamento: pag, codigo_anuncio: codigo || '(sem código)' });
       gtag('event', 'whatsapp_click', { origem_lead: 'campanha', pagina: location.pathname, codigo_anuncio: codigo || '(sem código)' });

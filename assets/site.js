@@ -100,7 +100,7 @@
 
   // WhatsApp com mensagem conforme a origem
   var msg = doInstagram
-    ? 'Olá! Vim do Instagram da SONUN e quero uma simulação gratuita de economia.'
+    ? 'Olá! Vim do Instagram da SONUN e quero um orçamento grátis.'
     : 'Olá! Estive no site da SONUN e gostaria de tirar uma dúvida.';
   var link = 'https://wa.me/5547988692568?text=' + encodeURIComponent(msg + (codigo ? ' [' + codigo + ']' : ''));
   // data-whats-msg: mensagem própria da página (o código do anúncio continua indo junto)
