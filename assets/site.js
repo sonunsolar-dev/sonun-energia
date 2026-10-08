@@ -187,3 +187,30 @@
     });
   });
 })();
+
+// ---------- aviso de cookies (LGPD) + Consent Mode: a escolha fica guardada no navegador ----------
+(function () {
+  var escolha = '';
+  try { escolha = localStorage.getItem('sonun_cookies') || ''; } catch (e) {}
+  if (escolha) return;
+  var barra = document.createElement('div');
+  barra.id = 'aviso-cookies';
+  barra.className = 'vidro';
+  barra.setAttribute('role', 'region');
+  barra.setAttribute('aria-label', 'Aviso de cookies');
+  barra.innerHTML = '<p>Usamos cookies para medir as visitas e melhorar nossos anúncios. Você pode recusar. ' +
+    '<a href="/politica-de-privacidade.html">Política de privacidade</a></p>' +
+    '<div class="acoes-cookies"><button type="button" class="btn btn-sol btn-p" data-ck="aceito">Aceitar</button>' +
+    '<button type="button" class="btn-recusar" data-ck="recusado">Recusar</button></div>';
+  document.body.appendChild(barra);
+  barra.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-ck]');
+    if (!b) return;
+    var v = b.getAttribute('data-ck');
+    try { localStorage.setItem('sonun_cookies', v); } catch (err) {}
+    if (v === 'recusado' && typeof gtag === 'function') {
+      gtag('consent', 'update', { ad_storage: 'denied', analytics_storage: 'denied', ad_user_data: 'denied', ad_personalization: 'denied' });
+    }
+    barra.remove();
+  });
+})();

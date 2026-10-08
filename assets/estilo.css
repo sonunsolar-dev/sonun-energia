@@ -446,3 +446,13 @@ a.card { text-decoration: none; display: block; }
 .sim-aviso { border-radius: 16px; padding: 16px 18px; background: rgba(242, 84, 91, .12); border: 1px solid rgba(242, 84, 91, .4); color: #ffd0d2; font-size: 15px; margin: 0; }
 .sim-nota { font-size: 13px; color: var(--tinta-fraca); margin: 0; }
 @media (max-width: 860px) { .simulador { grid-template-columns: 1fr; padding: 22px; } }
+
+/* ---------- aviso de cookies ---------- */
+#aviso-cookies { position: fixed; z-index: 96; left: 20px; bottom: 20px; max-width: 420px; border-radius: 18px; padding: 16px 18px; display: grid; gap: 12px; background: rgba(11, 26, 44, .92); }
+#aviso-cookies p { margin: 0; font-size: 14.5px; line-height: 1.5; color: var(--tinta-suave); }
+#aviso-cookies a { color: var(--laranja-claro); }
+#aviso-cookies .acoes-cookies { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+#aviso-cookies .btn-recusar { background: none; border: 1px solid var(--vidro-borda); color: var(--tinta); border-radius: 999px; padding: 10px 18px; font: inherit; font-size: 15px; cursor: pointer; }
+#aviso-cookies .btn-recusar:hover { border-color: var(--tinta-suave); }
+#aviso-cookies button:focus-visible { outline: 2px solid var(--laranja-claro); outline-offset: 2px; }
+@media (max-width: 760px) { #aviso-cookies { left: 14px; right: 80px; bottom: 14px; max-width: none; } }
