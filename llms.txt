@@ -33,6 +33,7 @@
 - [Energia Solar](https://www.sonun.com.br/energia-solar/): sistemas on-grid residenciais, comerciais e industriais
 - [Curitiba e região](https://www.sonun.com.br/energia-solar-curitiba/): energia solar e baterias na Região Metropolitana de Curitiba, com equipe própria
 - [Energia Solar com Baterias](https://www.sonun.com.br/energia-solar-com-baterias/): sistema híbrido anti apagão e simulador de autonomia
+- [Bateria para quem já tem energia solar](https://www.sonun.com.br/bateria-para-sistema-solar-instalado/): vistoria técnica sem custo para ver se o sistema solar existente aceita bateria (depende do tempo de instalação e das marcas do inversor e dos módulos); orçamento sem compromisso
 - [BESS para Empresas](https://www.sonun.com.br/bess/): armazenamento de energia para indústria, comércio e agro
 - [BESS para Municípios](https://www.sonun.com.br/bess-municipios/): baterias para prédios públicos
 - [Mercado Livre de Energia](https://www.sonun.com.br/mercado-livre-de-energia/): economia para empresas do Grupo A

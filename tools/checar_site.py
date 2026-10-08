@@ -21,6 +21,7 @@ PAGINAS = {
     "/energia-solar/": True,
     "/energia-solar-curitiba/": True,
     "/energia-solar-com-baterias/": True,
+    "/bateria-para-sistema-solar-instalado/": True,
     "/bess/": True,
     "/mercado-livre-de-energia/": True,
     "/bess-municipios/": True,

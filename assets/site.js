@@ -103,7 +103,12 @@
     ? 'Olá! Vim do Instagram da SONUN e quero uma simulação gratuita de economia.'
     : 'Olá! Estive no site da SONUN e gostaria de tirar uma dúvida.';
   var link = 'https://wa.me/5547988692568?text=' + encodeURIComponent(msg + (codigo ? ' [' + codigo + ']' : ''));
-  document.querySelectorAll('[data-whats]').forEach(function (a) { a.href = link; });
+  // data-whats-msg: mensagem própria da página (o código do anúncio continua indo junto)
+  document.querySelectorAll('[data-whats]').forEach(function (a) {
+    a.href = a.dataset.whatsMsg
+      ? 'https://wa.me/5547988692568?text=' + encodeURIComponent(a.dataset.whatsMsg + (codigo ? ' [' + codigo + ']' : ''))
+      : link;
+  });
 
   var banner = document.getElementById('instagram-banner');
   if (banner && doInstagram && !sessionStorage.getItem('sonun_ig_banner_shown')) {
