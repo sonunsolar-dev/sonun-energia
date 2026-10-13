@@ -123,6 +123,9 @@
   document.querySelectorAll('a[href*="wa.me"], [data-whats]').forEach(function (a) {
     a.addEventListener('click', function () { evento('whatsapp_click'); });
   });
+  document.querySelectorAll('a[href*="instagram.com"]').forEach(function (a) {
+    a.addEventListener('click', function () { evento('click_instagram'); });
+  });
 
   // ---------- reCAPTCHA: só carrega quando a pessoa chega perto do formulário ----------
   var caixas = document.querySelectorAll('.g-recaptcha');
