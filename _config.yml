@@ -3,3 +3,5 @@ exclude:
   - .superpowers
   - tools
   - README.md
+include:
+  - .well-known
