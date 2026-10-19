@@ -133,6 +133,9 @@
 .qualifica .intro-q { margin: 0; color: rgba(255, 255, 255, .85); font-size: 16px; }
 .qualifica .intro-q b { color: #fff; }
 .nota-whats { margin: 12px 0 0; color: rgba(255, 255, 255, .8); font-size: 15px; }
+.ligamos { max-width: 640px; }
+.ligamos .nota-lig { margin: 0; font-size: 13.5px; color: var(--tinta-fraca); }
+@media (max-width: 560px) { .ligamos { grid-template-columns: 1fr; } }
 </style>
 </head>
 <body>
@@ -149,7 +152,7 @@
     <span class="olho">Curitiba e região · Para contas acima de R$ 700</span>
     <h1>Bateria contra apagão em Curitiba: <b>sua casa segue com luz</b></h1>
     <p class="lead">Sistema solar com bateria de lítio: se a rede da Copel cair, a energia continua em milissegundos, e no dia a dia você economiza na conta. Equipe própria em Curitiba e região, desde 2019.</p>
-    <div class="acoes"><a class="btn btn-sol" href="https://wa.me/5547988692568" data-whats data-whats-msg="Olá! Vi o anúncio da SONUN sobre bateria contra apagão e quero um orçamento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg> Falar agora no WhatsApp</a></div>
+    <div class="acoes"><a class="btn btn-sol" href="https://wa.me/5547988692568" data-whats data-whats-msg="Olá! Vi o anúncio da SONUN sobre bateria contra apagão e quero um orçamento." target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm0 18.2c-1.5 0-3-.4-4.3-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.2-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.8 11.9 11.9 0 0 0 4.6 4c1.7.7 2.4.8 3.2.7.5-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.2-1.2-.1-.1-.2-.2-.5-.3z"/></svg> Falar agora no WhatsApp</a><a class="btn btn-vidro vidro" href="#ligamos">Prefiro que me liguem</a></div>
     <p class="nota-whats">Equipe própria em Curitiba e região · orçamento sem custo</p>
     <form class="form vidro qualifica" id="qualifica" novalidate>
       <p class="full intro-q"><b>Quer um orçamento mais rápido?</b> Responda 2 perguntas (opcional).</p>
@@ -171,6 +174,22 @@
     <a href="https://wa.me/5547988692568" data-whats hidden tabindex="-1" aria-hidden="true"></a>
   </div>
 </section>
+<section class="secao" id="ligamos"><div class="wrap">
+  <div class="titulo-sec reveal"><span class="olho">Sem WhatsApp</span><h2>Prefere que a gente <b>ligue para você?</b></h2></div>
+  <form class="form vidro ligamos" data-endpoint="https://formspree.io/f/mwvakapq" novalidate>
+    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="armadilha">
+    <input type="hidden" name="formulario" value="ligamos-bateria-curitiba">
+    <input type="hidden" name="_subject" value="Pedido de ligação - anúncio bateria Curitiba">
+    <div><label for="lig-nome">Seu nome</label><input type="text" id="lig-nome" name="nome" autocomplete="name" placeholder="Seu nome" required></div>
+    <div><label for="lig-tel">Telefone</label><input type="tel" id="lig-tel" name="telefone" autocomplete="tel" inputmode="tel" placeholder="(41) 00000-0000" required></div>
+    <fieldset class="full"><legend>Melhor horário (opcional)</legend>
+      <div class="opcoes"><label><input type="radio" name="horario" value="manha"><span>manhã</span></label><label><input type="radio" name="horario" value="tarde"><span>tarde</span></label><label><input type="radio" name="horario" value="noite"><span>início da noite</span></label></div></fieldset>
+    <div class="full g-recaptcha" data-sitekey="6LewBp4tAAAAANQUFOf2tw92V0TgIVuCQObh6iIX" data-theme="dark"></div>
+    <p class="status full" role="status" aria-live="polite"></p>
+    <button class="btn btn-sol full" type="submit">Quero que me liguem <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+    <p class="full nota-lig">Um especialista da SONUN liga para você. Orçamento sem custo. Ao enviar, você concorda com a nossa <a href="/politica-de-privacidade.html">Política de Privacidade</a>.</p>
+  </form>
+</div></section>
 <section class="secao"><div class="wrap duo">
   <div class="moldura reveal"><img src="/img/residencia-curitiba.webp" srcset="/img/residencia-curitiba-800.webp 800w, /img/residencia-curitiba.webp 1200w" sizes="(max-width: 760px) 100vw, 50vw" alt="Residência em Curitiba com painéis solares instalados pela SONUN, com uma araucária ao fundo" width="1200" height="1200" loading="lazy" decoding="async"></div>
   <div class="reveal"><div class="titulo-sec reveal"><span class="olho">Instalação real</span><h2>Residência em Curitiba <b>com energia solar</b></h2></div>
@@ -185,8 +204,8 @@
 <section class="secao"><div class="wrap"><div class="titulo-sec reveal"><span class="olho">Depoimentos</span><h2>O que dizem os clientes <b>de Curitiba</b></h2></div><div class="grade g3"><figure class="depo vidro reveal"><blockquote>Reduzimos em 90% nossa fatura de energia. Optamos pelo sistema String para nossa casa e o atendimento pós-venda superou as expectativas!</blockquote><figcaption><cite>Paulo M.</cite><small>Residencial · Sistema String · Curitiba, PR</small></figcaption></figure><figure class="depo vidro reveal"><blockquote>Como queríamos segurança e maior economia para nossa empresa, o sistema com Microinversores foi a escolha perfeita.</blockquote><figcaption><cite>Clóvis A.</cite><small>Comercial · Microinversores · Curitiba, PR</small></figcaption></figure><figure class="depo vidro reveal"><blockquote>Atendimento impecável da equipe técnica desde o projeto até a instalação. Agilidade e muita segurança em todo o processo.</blockquote><figcaption><cite>Álvaro S.</cite><small>Comercial · Inversor String · Curitiba, PR</small></figcaption></figure></div></div></section>
 <section class="secao"><div class="wrap"><div class="titulo-sec reveal"><span class="olho">Dúvidas</span><h2>Perguntas <b>frequentes</b></h2></div><div class="faq"><details class="vidro reveal" open><summary><h3>Funciona sem painéis solares?</h3></summary><p>Sim. A bateria pode carregar pela rede e servir só de backup. Com painéis, ela também reduz a conta.</p></details><details class="vidro reveal"><summary><h3>Posso pôr bateria no sistema solar que já tenho?</h3></summary><p>Na maioria dos casos, sim. Avaliamos o seu inversor e a instalação sem custo.</p></details><details class="vidro reveal"><summary><h3>Quanto tempo dura a instalação?</h3></summary><p>Em média de 1 a 2 dias, dependendo do padrão de entrada e do tamanho do banco de baterias.</p></details><details class="vidro reveal"><summary><h3>Qual a garantia?</h3></summary><p>A garantia é da fábrica. Trabalhamos com marcas que garantem até 10 anos.</p></details></div></div></section>
 <section class="secao"><div class="wrap"><div class="cta-foto reveal"><img src="/img/capa-baterias.webp" srcset="/img/capa-baterias-800.webp 800w, /img/capa-baterias-1200.webp 1200w, /img/capa-baterias.webp 1408w" sizes="(max-width: 1200px) 100vw, 1120px" alt="" width="1408" height="768" loading="lazy" decoding="async">
-  <h2>Nunca mais fique <b>sem energia</b></h2><p>Fale com um especialista no WhatsApp. O orçamento é sem custo.</p>
-  <div class="acoes"><a class="btn btn-sol" href="https://wa.me/5547988692568" data-whats data-whats-msg="Olá! Vi o anúncio da SONUN sobre bateria contra apagão e quero um orçamento." target="_blank" rel="noopener">Falar no WhatsApp</a><a class="btn btn-vidro vidro" href="#qualifica">Responder 2 perguntas</a></div>
+  <h2>Nunca mais fique <b>sem energia</b></h2><p>Fale com um especialista no WhatsApp ou deixe seu telefone. O orçamento é sem custo.</p>
+  <div class="acoes"><a class="btn btn-sol" href="https://wa.me/5547988692568" data-whats data-whats-msg="Olá! Vi o anúncio da SONUN sobre bateria contra apagão e quero um orçamento." target="_blank" rel="noopener">Falar no WhatsApp</a><a class="btn btn-vidro vidro" href="#ligamos">Prefiro que me liguem</a></div>
 </div></div></section>
 </main>
 <footer class="rodape">
