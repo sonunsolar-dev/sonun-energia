@@ -33,6 +33,8 @@ PAGINAS = {
     "/blog/": True,
     "/blog/energia-solar-vale-a-pena-2026-lei-14300/": True,
     "/blog/bateria-anti-apagao-sistema-hibrido/": True,
+    "/blog/energia-solar-curitiba-vale-a-pena/": True,
+    "/blog/bateria-para-apagao-curitiba/": True,
     "/area-do-cliente/": False,
     "/politica-de-privacidade.html": False,
     "/termos-de-uso.html": False,
