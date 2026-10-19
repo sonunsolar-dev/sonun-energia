@@ -46,5 +46,4 @@
 ## Blog
 
 - [Energia solar vale a pena em 2026? Lei 14.300 e Fio B](https://www.sonun.com.br/blog/energia-solar-vale-a-pena-2026-lei-14300/)
-- [Inversor string ou microinversor: qual escolher?](https://www.sonun.com.br/blog/inversor-string-ou-microinversor/)
 - [Bateria anti apagão: como funciona o sistema híbrido](https://www.sonun.com.br/blog/bateria-anti-apagao-sistema-hibrido/)

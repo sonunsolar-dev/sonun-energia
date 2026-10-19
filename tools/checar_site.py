@@ -32,7 +32,6 @@ PAGINAS = {
     "/contato/": True,
     "/blog/": True,
     "/blog/energia-solar-vale-a-pena-2026-lei-14300/": True,
-    "/blog/inversor-string-ou-microinversor/": True,
     "/blog/bateria-anti-apagao-sistema-hibrido/": True,
     "/area-do-cliente/": False,
     "/politica-de-privacidade.html": False,
