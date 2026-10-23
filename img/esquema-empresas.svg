@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 720" role="img" aria-labelledby="t d">
+  <title id="t">Como funciona a energia solar com bateria em uma empresa</title>
+  <desc id="d">Os painéis solares geram energia, o inversor híbrido distribui para a câmara fria e as máquinas e carrega a bateria. Quando a rede cai, a bateria assume em milissegundos.</desc>
+  <defs>
+    <linearGradient id="fundo" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0f2238"/><stop offset="1" stop-color="#0b1a2c"/></linearGradient>
+    <linearGradient id="sol" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffc24a"/><stop offset="1" stop-color="#f08a24"/></linearGradient>
+    <marker id="seta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#f5a142"/></marker>
+    <marker id="setaR" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#7d8ea3"/></marker>
+    <style>
+      .cx{fill:rgba(255,255,255,.06);stroke:rgba(255,255,255,.22);stroke-width:2}
+      .t{font:600 26px 'Outfit','Segoe UI',Arial,sans-serif;fill:#fff}
+      .s{font:400 17px 'Outfit','Segoe UI',Arial,sans-serif;fill:#c6d2e0}
+      .fl{fill:none;stroke:#f5a142;stroke-width:4;stroke-linecap:round;stroke-dasharray:2 12}
+      .ic{fill:none;stroke:#f5a142;stroke-width:3;stroke-linecap:round;stroke-linejoin:round}
+    </style>
+  </defs>
+  <rect width="1200" height="720" rx="28" fill="url(#fundo)"/>
+
+  <!-- sol -->
+  <circle cx="130" cy="120" r="46" fill="url(#sol)"/>
+  <g stroke="#ffc24a" stroke-width="5" stroke-linecap="round">
+    <path d="M130 44v-16M130 212v-16M54 120h-16M222 120h-16M76 66l-11-11M195 185l-11-11M76 174l-11 11M195 55l-11 11"/>
+  </g>
+
+  <!-- painéis -->
+  <rect class="cx" x="60" y="250" width="250" height="150" rx="20"/>
+  <g transform="translate(95 272)"><path d="M10 50l20-40h120l20 40z" fill="rgba(245,161,66,.18)" stroke="#f5a142" stroke-width="3" stroke-linejoin="round"/><path d="M50 10l-10 40M90 10v40M130 10l10 40M20 30h140" stroke="#f5a142" stroke-width="2"/></g>
+  <text class="t" x="185" y="360" text-anchor="middle">Painéis solares</text>
+  <text class="s" x="185" y="386" text-anchor="middle">no telhado ou em solo</text>
+  <path class="fl" d="M140 175 L170 245" marker-end="url(#seta)"/>
+
+  <!-- inversor -->
+  <rect class="cx" x="470" y="250" width="260" height="150" rx="20" style="stroke:#f5a142"/>
+  <g transform="translate(570 270)"><rect class="ic" x="0" y="0" width="60" height="64" rx="8"/><path class="ic" d="M14 22h32M14 34h20M30 48l-6 10h12l-6 10"/></g>
+  <text class="t" x="600" y="365" text-anchor="middle">Inversor híbrido</text>
+  <text class="s" x="600" y="390" text-anchor="middle">decide de onde vem a energia</text>
+  <path class="fl" d="M312 325 H462" marker-end="url(#seta)"/>
+
+  <!-- rede -->
+  <rect class="cx" x="470" y="40" width="260" height="130" rx="20"/>
+  <g transform="translate(578 56)"><path d="M22 0v58M0 14h44M6 30h32M10 14l-8 44M34 14l8 44" stroke="#7d8ea3" stroke-width="3" fill="none" stroke-linecap="round"/></g>
+  <text class="t" x="600" y="140" text-anchor="middle">Rede elétrica</text>
+  <text class="s" x="600" y="162" text-anchor="middle">Copel / Celesc</text>
+  <path d="M600 172 V244" stroke="#7d8ea3" stroke-width="4" stroke-dasharray="10 10" marker-end="url(#setaR)"/>
+  <g transform="translate(630 196)"><circle r="17" fill="#c0392b"/><path d="M-7-7l14 14M7-7l-14 14" stroke="#fff" stroke-width="3.5" stroke-linecap="round"/></g>
+  <text class="s" x="660" y="203" style="fill:#ff9a8c">caiu? a bateria assume</text>
+
+  <!-- bateria -->
+  <rect class="cx" x="470" y="500" width="260" height="170" rx="20"/>
+  <g transform="translate(565 520)"><rect class="ic" x="0" y="6" width="70" height="44" rx="7"/><path class="ic" d="M70 22v12"/><rect x="8" y="14" width="44" height="28" rx="3" fill="rgba(245,161,66,.45)"/></g>
+  <text class="t" x="600" y="610" text-anchor="middle">Bateria / BESS</text>
+  <text class="s" x="600" y="636" text-anchor="middle">guarda energia e segura o apagão</text>
+  <path class="fl" d="M585 404 V492" marker-end="url(#seta)"/>
+  <path class="fl" d="M615 494 V408" marker-end="url(#seta)"/>
+
+  <!-- cargas -->
+  <rect class="cx" x="890" y="160" width="260" height="150" rx="20"/>
+  <g transform="translate(990 180)"><rect class="ic" x="0" y="0" width="56" height="70" rx="6"/><path class="ic" d="M0 28h56M10 12v8M10 40v12M38 46l8 8M46 46l-8 8"/></g>
+  <text class="t" x="1020" y="280" text-anchor="middle">Câmara fria</text>
+  <rect class="cx" x="890" y="360" width="260" height="150" rx="20"/>
+  <g transform="translate(985 378)"><circle class="ic" cx="34" cy="34" r="22"/><circle class="ic" cx="34" cy="34" r="8"/><path class="ic" d="M34 4v8M34 56v8M4 34h8M56 34h8M13 13l6 6M49 49l6 6M13 55l6-6M49 19l6-6"/></g>
+  <text class="t" x="1020" y="480" text-anchor="middle">Máquinas</text>
+  <path class="fl" d="M732 300 C810 300 810 235 882 235" marker-end="url(#seta)"/>
+  <path class="fl" d="M732 350 C810 350 810 435 882 435" marker-end="url(#seta)"/>
+
+  <text class="s" x="1020" y="580" text-anchor="middle" style="fill:#fff;font-weight:600">Sem parar no apagão.</text>
+  <text class="s" x="1020" y="608" text-anchor="middle">Menos custo na conta todo mês.</text>
+</svg>
