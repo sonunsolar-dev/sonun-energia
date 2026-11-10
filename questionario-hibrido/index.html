@@ -6,7 +6,7 @@
 <title>Questionário do sistema híbrido | SONUN Energia Solar</title>
 <meta name="description" content="Questionário rápido para a SONUN Energia Solar dimensionar seu sistema solar híbrido com baterias.">
 <meta name="robots" content="noindex, nofollow">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com; connect-src https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action https://formspree.io; base-uri 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google.com/recaptcha/ https://www.gstatic.com/recaptcha/; frame-src https://www.google.com/recaptcha/ https://recaptcha.google.com/recaptcha/; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.google-analytics.com https://www.googletagmanager.com https://www.gstatic.com; connect-src https://www.google.com/recaptcha/ https://formspree.io https://*.google-analytics.com https://*.analytics.google.com https://www.googletagmanager.com; form-action https://formspree.io; base-uri 'none'; object-src 'none'">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="theme-color" content="#092a33">
 <link rel="icon" href="/favicon.ico?v=4" sizes="16x16 32x32 48x48">
@@ -50,6 +50,16 @@ textarea{min-height:80px;resize:vertical}
 .submit:disabled{opacity:.6;cursor:wait}
 .fine{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}
 .armadilha{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.equip{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.equip .item{display:flex;align-items:center;gap:8px;border:1px solid #cbd8da;border-radius:10px;padding:8px 10px;background:#fff}
+.equip .item:has(input[type=checkbox]:checked){border-color:var(--orange);background:#fff3ed}
+.equip .item label{flex:1;display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:400}
+.equip input[type=checkbox]{margin:0;accent-color:var(--orange)}
+.equip .qtd{display:none;align-items:center;gap:4px;font-size:13px;color:var(--muted)}
+.equip .item:has(input[type=checkbox]:checked) .qtd{display:flex}
+.equip .qtd input{width:58px;padding:6px;border:1px solid #cbd8da;border-radius:6px;font:inherit}
+.captcha{margin:14px 0;min-height:78px}
+@media(max-width:620px){.equip{grid-template-columns:1fr}}
 .ok{display:none;text-align:center}
 .ok h2{border:0}
 .zap{display:inline-block;margin-top:10px;background:#25d366;color:#fff;font-weight:700;text-decoration:none;padding:14px 22px;border-radius:10px}
@@ -87,7 +97,7 @@ textarea{min-height:80px;resize:vertical}
 <label><input type="radio" name="Fornecimento" value="Bifásico">Bifásico</label>
 <label><input type="radio" name="Fornecimento" value="Trifásico">Trifásico</label>
 <label><input type="radio" name="Fornecimento" value="Não sei">Não sei</label></div></div>
-<div class="field"><label for="eq">Tem ou vai ter equipamentos que gastam muito?</label><input id="eq" name="Equipamentos de alto consumo" type="text" maxlength="200" placeholder="Ex.: ar-condicionado, chuveiro, piscina aquecida, carro elétrico"></div>
+<div class="field"><label for="eq">Tem ou vai ter equipamentos que gastam muito? Quantos?</label><input id="eq" name="Equipamentos de alto consumo e quantidades" type="text" maxlength="300" placeholder="Ex.: 3 ar-condicionado, 2 chuveiros, 1 piscina aquecida, 1 carro elétrico"></div>
 </section>
 
 <section class="section"><h2>3. O que você quer</h2>
@@ -111,18 +121,25 @@ textarea{min-height:80px;resize:vertical}
 </section>
 
 <section class="section"><h2>4. O que precisa funcionar na falta de luz?</h2>
-<div class="field"><span class="question">Marque o que for essencial</span><div class="choices">
-<label><input type="checkbox" name="Cargas essenciais" value="Casa toda">A casa toda</label>
-<label><input type="checkbox" name="Cargas essenciais" value="Geladeira/freezer">Geladeira / freezer</label>
-<label><input type="checkbox" name="Cargas essenciais" value="Iluminação">Iluminação</label>
-<label><input type="checkbox" name="Cargas essenciais" value="Internet/TV">Internet / TV</label>
-<label><input type="checkbox" name="Cargas essenciais" value="Computadores/home office">Computadores / home office</label>
-<label><input type="checkbox" name="Cargas essenciais" value="Portão/câmeras/alarme">Portão, câmeras, alarme</label>
-<label><input type="checkbox" name="Cargas essenciais" value="Bomba de água">Bomba de água</label>
-<label><input type="checkbox" name="Cargas essenciais" value="Ar-condicionado">Ar-condicionado</label>
-<label><input type="checkbox" name="Cargas essenciais" value="Chuveiro elétrico">Chuveiro elétrico</label>
-<label><input type="checkbox" name="Cargas essenciais" value="Equipamento médico">Equipamento médico</label></div></div>
-<div class="field"><label for="outros">Outros ou algo que não pode desligar de jeito nenhum</label><input id="outros" name="Outros equipamentos / não pode desligar" type="text" maxlength="200"></div>
+<div class="field"><span class="question">Marque o que for essencial e diga quantos são<span class="hint">Ao marcar, aparece o campo de quantidade.</span></span>
+<div class="choices" style="margin-bottom:10px"><label><input type="checkbox" name="Casa toda" value="Sim">Quero manter praticamente a casa toda</label></div>
+<div class="equip">
+<div class="item"><label><input type="checkbox" name="Essencial - Geladeira" value="Sim">Geladeira</label><span class="qtd">qtd <input type="number" name="Qtd - Geladeira" min="1" max="99" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Freezer" value="Sim">Freezer</label><span class="qtd">qtd <input type="number" name="Qtd - Freezer" min="1" max="99" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Iluminação" value="Sim">Lâmpadas</label><span class="qtd">qtd <input type="number" name="Qtd - Lâmpadas" min="1" max="999" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Televisores" value="Sim">Televisores</label><span class="qtd">qtd <input type="number" name="Qtd - Televisores" min="1" max="99" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Internet/roteador" value="Sim">Internet / roteador</label><span class="qtd">qtd <input type="number" name="Qtd - Roteadores" min="1" max="99" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Computadores" value="Sim">Computadores</label><span class="qtd">qtd <input type="number" name="Qtd - Computadores" min="1" max="99" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Ar-condicionado" value="Sim">Ar-condicionado</label><span class="qtd">qtd <input type="number" name="Qtd - Ar-condicionado" min="1" max="99" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Chuveiro elétrico" value="Sim">Chuveiro elétrico</label><span class="qtd">qtd <input type="number" name="Qtd - Chuveiros" min="1" max="99" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Bomba de água" value="Sim">Bomba de água / poço</label><span class="qtd">qtd <input type="number" name="Qtd - Bombas" min="1" max="99" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Portão eletrônico" value="Sim">Portão eletrônico</label><span class="qtd">qtd <input type="number" name="Qtd - Portões" min="1" max="99" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Câmeras/alarme" value="Sim">Câmeras / alarme</label><span class="qtd">qtd <input type="number" name="Qtd - Câmeras" min="1" max="99" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Micro-ondas" value="Sim">Micro-ondas</label><span class="qtd">qtd <input type="number" name="Qtd - Micro-ondas" min="1" max="99" inputmode="numeric"></span></div>
+<div class="item"><label><input type="checkbox" name="Essencial - Equipamento médico" value="Sim">Equipamento médico</label><span class="qtd">qtd <input type="number" name="Qtd - Equip. médico" min="1" max="99" inputmode="numeric"></span></div>
+</div></div>
+<div class="field"><label for="outros">Outros equipamentos (com a quantidade)<span class="hint">Ex.: 2 freezers de açougue, 1 aquário, 1 bomba de piscina.</span></label><input id="outros" name="Outros equipamentos e quantidades" type="text" maxlength="300"></div>
+<div class="field"><label for="naopode">Algum deles não pode desligar de jeito nenhum? Qual?</label><input id="naopode" name="Não pode desligar" type="text" maxlength="200"></div>
 </section>
 
 <section class="section"><h2>5. Sua casa</h2>
@@ -143,6 +160,7 @@ textarea{min-height:80px;resize:vertical}
 <label class="consent"><input type="checkbox" name="Consentimento" value="Autorizo contato" required> <span>Autorizo a SONUN Energia Solar a usar estas informações para analisar o projeto e entrar em contato. <span class="req">*</span></span></label>
 </section>
 
+<div class="captcha g-recaptcha" data-sitekey="6LewBp4tAAAAANQUFOf2tw92V0TgIVuCQObh6iIX"></div>
 <button class="submit" type="submit">Enviar questionário</button>
 <p class="erro" id="erro">Não foi possível enviar. Verifique sua internet e tente de novo, ou fale com a gente no WhatsApp.</p>
 <p class="fine">Depois de enviar, você pode mandar uma foto da conta de luz pelo WhatsApp. Isso agiliza a avaliação.</p>
@@ -158,16 +176,22 @@ textarea{min-height:80px;resize:vertical}
 <script>
 (function(){
   var f=document.getElementById('q'),btn=f.querySelector('.submit'),erro=document.getElementById('erro');
+  // reCAPTCHA so carrega quando a pessoa comeca a preencher (pagina abre mais rapido)
+  var cap=0;function carregar(){if(cap)return;cap=1;var s=document.createElement('script');s.src='https://www.google.com/recaptcha/api.js';s.async=true;s.defer=true;document.head.appendChild(s);}
+  ['focusin','pointerdown'].forEach(function(ev){f.addEventListener(ev,carregar,{once:true});});
+  function aviso(t){erro.textContent=t;erro.style.display='block';}
   f.addEventListener('submit',function(e){
     if(!window.fetch||!window.FormData)return; // navegador antigo: envio normal
     e.preventDefault();
+    if(!(window.grecaptcha&&grecaptcha.getResponse)){carregar();aviso('Carregando a verificação "Não sou um robô"… marque a caixa e envie de novo.');return;}
+    try{if(grecaptcha.getResponse().length===0){aviso('Marque a caixa "Não sou um robô" acima do botão.');return;}}catch(_){}
     btn.disabled=true;btn.textContent='Enviando...';erro.style.display='none';
     fetch(f.action,{method:'POST',body:new FormData(f),headers:{Accept:'application/json'}})
       .then(function(r){if(!r.ok)throw 0;
         f.style.display='none';document.getElementById('ok').style.display='block';scrollTo(0,0);
         try{gtag('event','generate_lead',{form:'questionario_hibrido'});}catch(_){}
       })
-      .catch(function(){btn.disabled=false;btn.textContent='Enviar questionário';erro.style.display='block';});
+      .catch(function(){btn.disabled=false;btn.textContent='Enviar questionário';try{grecaptcha.reset();}catch(_){}aviso('Não foi possível enviar. Verifique sua internet e tente de novo, ou fale com a gente no WhatsApp.');});
   });
 })();
 </script>
