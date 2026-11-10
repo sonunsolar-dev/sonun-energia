@@ -180,6 +180,19 @@
         .then(function (r) {
           if (!r.ok) throw new Error('http');
           aviso('Mensagem enviada! Em breve um especialista fala com você.', 'ok');
+          // quem pediu baterias ganha o link do questionario tecnico (segundo passo, opcional)
+          var fId = form.querySelector('input[name="formulario"]');
+          var querBateria = form.querySelector('input[value="Baterias-Anti-Apagao"]:checked') ||
+            (fId && fId.value === 'ligamos-bateria-curitiba');
+          if (querBateria && status) {
+            var q = document.createElement('a');
+            q.href = '/questionario-hibrido/';
+            q.target = '_blank'; q.rel = 'noopener';
+            q.style.cssText = 'display:block;margin-top:6px;text-decoration:underline;font-weight:600';
+            q.textContent = 'Quer agilizar? Responda o questionário técnico do sistema com baterias (3 min) →';
+            q.addEventListener('click', function () { evento('click_questionario'); });
+            status.appendChild(q);
+          }
           evento('generate_lead');
           form.reset();
           if (temCaptcha) { try { grecaptcha.reset(); } catch (err) {} }
