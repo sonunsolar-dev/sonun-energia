@@ -1,5 +1,7 @@
-/* Simulador de autonomia de baterias SONUN (mesmo cálculo do site antigo).
-   Baterias de lítio LFP, 192 V, 90% de profundidade de descarga (DoD), regra 1C. */
+/* Simulador de autonomia de baterias SONUN, com o mesmo cálculo do gerador de propostas:
+   baterias de lítio LFP, 90% de profundidade de descarga (DoD), cerca de 10% de perdas na
+   conversão (autonomia = energia útil × 0,9 ÷ kW) e regra 1C.
+   Os inversores sugeridos são os híbridos do catálogo para rede 127/220 V. */
 (function () {
   var raiz = document.getElementById('simulador');
   if (!raiz) return;
@@ -24,7 +26,7 @@
 
   document.getElementById('sim-calcular').addEventListener('click', function () {
     var cap = parseFloat(document.getElementById('cap-bateria').value);
-    var capUtil = cap * 0.9;          // 90% DoD
+    var capUtil = cap * 0.9 * 0.9;    // 90% DoD e ~10% de perdas na conversão (igual às propostas)
     var limite = cap * 1.0;           // regra 1C (ex.: 5 kWh = 5 kW máx.)
     var consumoTemp = 0, picoTemp = 0;
     for (var i in potTemp) {
@@ -43,21 +45,22 @@
     var sobra = capUtil - consumoTemp;
     if (sobra <= 0) { avisar('Atenção: o consumo dos equipamentos de pico esgota a bateria rapidamente. Aumente o banco de baterias.'); return; }
 
+    // inversores híbridos do catálogo (rede 127/220 V), com 10% de folga sobre a demanda
     var potInv = demanda * 1.1, inv;
-    if (potInv <= 5) inv = 'Fox ESS 5.0 (Híbrido)';
-    else if (potInv <= 6) inv = 'Fox ESS 6.0 (Híbrido)';
-    else if (potInv <= 8) inv = 'Fox ESS 8.0 (Híbrido)';
-    else if (potInv <= 10) inv = 'Fox ESS H3-10.0 (Híbrido)';
-    else if (potInv <= 12) inv = 'Fox ESS H3-12.0 (Híbrido)';
-    else inv = 'Sistemas em paralelo (2x H3-10.0)';
+    if (potInv <= 5.5) inv = 'Híbrido de 5,5 kW (Hoymiles HYS-5.5LV)';
+    else if (potInv <= 7.5) inv = 'Híbrido de 7,5 kW (FOX ESS alta tensão ou Hoymiles HYS-7.5LV)';
+    else if (potInv <= 10.5) inv = 'Híbrido de 10,5 kW (Hoymiles HYS-10.5LV)';
+    else inv = 'Acima de 10,5 kW: inversores em paralelo, definidos no projeto';
 
     var txt;
     if (consumoHora === 0) txt = 'Check OK';
     else {
       var h = sobra / consumoHora;
       if (h >= 24) txt = (h / 24).toFixed(1).replace('.', ',') + ' dias';
-      else if (h < 1) txt = (h * 60).toFixed(0) + ' min';
-      else txt = h.toFixed(1).replace('.', ',') + ' horas';
+      else {
+        var min = Math.round(h * 60), hh = Math.floor(min / 60), mm = min % 60;
+        txt = hh === 0 ? mm + ' min' : hh + ' h' + (mm ? ' ' + String(mm).padStart(2, '0') + ' min' : '');
+      }
     }
     aviso.hidden = true;
     document.getElementById('sim-autonomia').textContent = txt;
