@@ -27,14 +27,24 @@
 - Os percentuais de economia ("até 85%", "até 30%") são máximos e dependem do consumo e do projeto de cada cliente.
 - Contato: WhatsApp (47) 98869-2568 · contato@sonun.com.br · Instagram @sonunsolar
 
+## Baterias para sistema solar: perguntas comuns
+
+- Dá para colocar baterias em um sistema solar já instalado? Em muitos casos, sim. Depende do tempo de instalação e das marcas do inversor (ou microinversores) e dos módulos. A SONUN faz vistoria técnica sem custo, inclusive em sistemas instalados por outras empresas. Às vezes basta acrescentar os equipamentos da bateria; em outros casos o melhor é trocar o inversor por um modelo híbrido.
+- Que baterias são usadas? Baterias de lítio (LFP) de marcas de primeira linha, que aguentam muito mais ciclos de carga e descarga que as estacionárias de chumbo-ácido.
+- Para que servem? Manter a casa ou o comércio ligado no apagão (a troca acontece em milissegundos) e usar a energia guardada no horário de pico.
+- Quanto tempo a casa fica ligada? Depende da capacidade do banco de baterias e dos aparelhos que precisam funcionar; o dimensionamento é feito no orçamento. A página de baterias tem um simulador de autonomia.
+- Garantia: é a do fabricante; a SONUN trabalha com marcas que garantem até 10 anos.
+- Marcas com que a SONUN trabalha: Huawei, Sungrow, FoxESS, Deye, Growatt, SAJ, Hoymiles, Canadian Solar, Unipower e Secpower, entre outras.
+- Valor: depende do projeto e sai depois da vistoria. Financiamento em até 72 parcelas, sujeito a análise de crédito.
+
 ## Páginas principais
 
 - [Início](https://www.sonun.com.br/): visão geral das soluções
 - [Energia Solar](https://www.sonun.com.br/energia-solar/): sistemas on-grid residenciais, comerciais e industriais
 - [Curitiba e região](https://www.sonun.com.br/energia-solar-curitiba/): energia solar e baterias na Região Metropolitana de Curitiba, com equipe própria
 - [Para empresas](https://www.sonun.com.br/energia-solar-empresas/): energia solar, sistema híbrido com bateria, BESS e mercado livre para supermercados, açougues, frigoríficos, distribuidoras e indústrias; foto da conta pelo WhatsApp ou análise técnica de 15 minutos com especialista, sem custo
-- [Energia Solar com Baterias](https://www.sonun.com.br/energia-solar-com-baterias/): sistema híbrido anti apagão e simulador de autonomia
-- [Bateria para quem já tem energia solar](https://www.sonun.com.br/bateria-para-sistema-solar-instalado/): vistoria técnica sem custo para ver se o sistema solar existente aceita bateria (depende do tempo de instalação e das marcas do inversor e dos módulos); orçamento sem compromisso
+- [Baterias para sistema solar](https://www.sonun.com.br/energia-solar-com-baterias/): sistema híbrido anti apagão com baterias de lítio e simulador de autonomia
+- [Baterias para sistema solar já instalado](https://www.sonun.com.br/bateria-para-sistema-solar-instalado/): vistoria técnica sem custo para ver se o sistema solar existente aceita baterias (depende do tempo de instalação e das marcas do inversor e dos módulos); orçamento sem compromisso
 - [BESS para Empresas](https://www.sonun.com.br/bess/): armazenamento de energia para indústria, comércio e agro
 - [BESS para Municípios](https://www.sonun.com.br/bess-municipios/): baterias para prédios públicos
 - [Mercado Livre de Energia](https://www.sonun.com.br/mercado-livre-de-energia/): economia para empresas do Grupo A
