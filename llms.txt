@@ -33,6 +33,11 @@
 - Que baterias são usadas? Baterias de lítio (LFP) de marcas de primeira linha, que aguentam muito mais ciclos de carga e descarga que as estacionárias de chumbo-ácido.
 - Para que servem? Manter a casa ou o comércio ligado no apagão (a troca acontece em milissegundos) e usar a energia guardada no horário de pico.
 - Quanto tempo a casa fica ligada? Depende da capacidade do banco de baterias e dos aparelhos que precisam funcionar; o dimensionamento é feito no orçamento. A página de baterias tem um simulador de autonomia.
+- Quantos kWh para vários dias sem luz? Consumo diário dos aparelhos que ficam ligados × número de dias, mais cerca de 20% (a bateria de lítio usa 90% da carga e a conversão perde cerca de 10%). Exemplo: 10 kWh/dia → cerca de 12 kWh para 1 dia sem sol e cerca de 37 kWh para 3 dias. Com sol, os painéis recarregam e o banco pode ser menor.
+- Chuveiro elétrico: funciona se o inversor tiver potência (5.500 a 7.500 W), mas gasta muito: 30 min de um chuveiro de 7.500 W ≈ 3,7 kWh. Pode ficar fora dos circuitos da bateria.
+- Tipo de ligação: há inversores híbridos para ligação monofásica, bifásica e trifásica; o modelo é escolhido na visita técnica.
+- Ampliação: na maioria dos casos dá para aumentar o banco de baterias depois, se o inversor e a bateria aceitarem módulos a mais (ideal: mesma marca e modelo; planejar no projeto).
+- Inverno e dias nublados: os painéis carregam menos; com a rede ligada, o sistema completa a carga pela rede; o projeto considera o inverno de Curitiba.
 - Garantia: é a do fabricante; a SONUN trabalha com marcas que garantem até 10 anos.
 - Marcas com que a SONUN trabalha: Huawei, Sungrow, FoxESS, Deye, Growatt, SAJ, Hoymiles, Canadian Solar, Unipower e Secpower, entre outras.
 - Valor: depende do projeto e sai depois da vistoria. Financiamento em até 72 parcelas, sujeito a análise de crédito.
